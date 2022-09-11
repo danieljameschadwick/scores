@@ -1,0 +1,32 @@
+{
+  "name": "@scores/monorepo",
+  "private": true,
+  "version": "0.0.1",
+  "workspaces": {
+      "packages": [
+          "packages/*",
+          "services/*"
+      ],
+      "installConfig": {
+          "hoistingLimits": "dependencies"
+      }
+  },
+  "scripts": {
+      "install": "yarn lerna exec yarn install",
+      "web:start:dev": "yarn lerna run dev --scope=@scores/web",
+      "bootstrap": "yarn lerna bootstrap",
+      "clean": "rm -rf ./packages/*/node_modules && rm -rf ./services/*/node_modules",
+      "graph": "yarn nx graph"
+  },
+  "devDependencies": {
+      "lerna": "^5.1.6",
+      "nx": "^14.3.6",
+      "react": "17.0.2",
+      "react-dom": "17.0.2",
+      "react-native": "0.68.2",
+      "react-native-media-query": "1.0.11",
+      "react-native-web": "0.17.7",
+      "expo-yarn-workspaces": "^2.0.0"
+  },
+  "packageManager": "yarn@1.22.1"
+}
