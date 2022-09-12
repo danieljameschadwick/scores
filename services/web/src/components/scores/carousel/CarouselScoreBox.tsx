@@ -1,14 +1,17 @@
+import { GAME_RESULT } from "@src/enum/GameResult";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-const ScoreBoxRow = ({ abbreviation, goals, winner }) => {
-  const teamNameText = [];
+const ScoreBoxRow = ({ abbreviation, score, result }) => {
+  const teamNameText = [styles.teamName];
   const goalsText = [styles.goalsText];
 
-  if (winner) {
+  if (result === GAME_RESULT.WIN) {
     teamNameText.push(styles.winText);
     goalsText.push(styles.winText);
-  } else {
+  }
+
+  if (result === GAME_RESULT.LOSS) {
     teamNameText.push(styles.lossText);
     goalsText.push(styles.lossText);
   }
@@ -16,30 +19,12 @@ const ScoreBoxRow = ({ abbreviation, goals, winner }) => {
   return (
     <View style={[styles.row]}>
       <Text style={teamNameText}>{abbreviation}</Text>
-      <Text style={goalsText}>{goals}</Text>
+      <Text style={goalsText}>{score}</Text>
     </View>
   );
 };
 
-export const CarouselScoreBox = () => {
-  // @TODO: formatting of data into home/away
-  const home = {
-    id: 33,
-    name: "Manchester United",
-    abbreviation: "MUN",
-    logo: "https://media.api-sports.io/football/teams/33.png",
-    winner: true,
-    goals: 3,
-  };
-  const away = {
-    id: 42,
-    name: "Arsenal",
-    abbreviation: "ARS",
-    logo: "https://media.api-sports.io/football/teams/42.png",
-    winner: false,
-    goals: 1,
-  };
-
+export const CarouselScoreBox = ({ home, away }) => {
   return (
     <View style={styles.container}>
       <Text style={[styles.status]}>FT</Text>
@@ -72,12 +57,15 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   status: {
-    fontSize: 12,
+    fontSize: 10,
     fontWeight: "600",
     marginBottom: 3,
   },
-  teamName: {},
+  teamName: {
+    fontSize: 12,
+  },
   goalsText: {
+    fontSize: 12,
     fontWeight: "600",
   },
   winText: {

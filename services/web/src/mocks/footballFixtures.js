@@ -48,12 +48,14 @@ export default {
         "home": {
           "id": 35,
           "name": "Bournemouth",
+          "abbreviation": "BOU",
           "logo": "https://media.api-sports.io/football/teams/35.png",
           "winner": null
         },
         "away": {
           "id": 39,
           "name": "Wolves",
+          "abbreviation": "WOL",
           "logo": "https://media.api-sports.io/football/teams/39.png",
           "winner": null
         }
@@ -116,12 +118,14 @@ export default {
         "home": {
           "id": 42,
           "name": "Arsenal",
+          "abbreviation": "ARS",
           "logo": "https://media.api-sports.io/football/teams/42.png",
           "winner": true
         },
         "away": {
           "id": 66,
           "name": "Aston Villa",
+          "abbreviation": "AST",
           "logo": "https://media.api-sports.io/football/teams/66.png",
           "winner": false
         }
@@ -184,12 +188,14 @@ export default {
         "home": {
           "id": 36,
           "name": "Fulham",
+          "abbreviation": "FUL",
           "logo": "https://media.api-sports.io/football/teams/36.png",
           "winner": true
         },
         "away": {
           "id": 51,
           "name": "Brighton",
+          "abbreviation": "BRI",
           "logo": "https://media.api-sports.io/football/teams/51.png",
           "winner": false
         }
@@ -252,12 +258,14 @@ export default {
         "home": {
           "id": 63,
           "name": "Leeds",
+          "abbreviation": "LDS",
           "logo": "https://media.api-sports.io/football/teams/63.png",
           "winner": null
         },
         "away": {
           "id": 45,
           "name": "Everton",
+          "abbreviation": "EVE",
           "logo": "https://media.api-sports.io/football/teams/45.png",
           "winner": null
         }
@@ -320,12 +328,14 @@ export default {
         "home": {
           "id": 46,
           "name": "Leicester",
+          "abbreviation": "LEI",
           "logo": "https://media.api-sports.io/football/teams/46.png",
           "winner": false
         },
         "away": {
           "id": 33,
           "name": "Manchester United",
+          "abbreviation": "MUN",
           "logo": "https://media.api-sports.io/football/teams/33.png",
           "winner": true
         }
@@ -388,12 +398,14 @@ export default {
         "home": {
           "id": 48,
           "name": "West Ham",
+          "abbreviation": "WHU",
           "logo": "https://media.api-sports.io/football/teams/48.png",
           "winner": null
         },
         "away": {
           "id": 47,
           "name": "Tottenham",
+          "abbreviation": "TOT",
           "logo": "https://media.api-sports.io/football/teams/47.png",
           "winner": null
         }
@@ -456,12 +468,14 @@ export default {
         "home": {
           "id": 52,
           "name": "Crystal Palace",
+          "abbreviation": "CRY",
           "logo": "https://media.api-sports.io/football/teams/52.png",
           "winner": null
         },
         "away": {
           "id": 55,
           "name": "Brentford",
+          "abbreviation": "BRE",
           "logo": "https://media.api-sports.io/football/teams/55.png",
           "winner": null
         }
@@ -524,12 +538,14 @@ export default {
         "home": {
           "id": 41,
           "name": "Southampton",
+          "abbreviation": "SOU",
           "logo": "https://media.api-sports.io/football/teams/41.png",
           "winner": true
         },
         "away": {
           "id": 49,
           "name": "Chelsea",
+          "abbreviation": "CHE",
           "logo": "https://media.api-sports.io/football/teams/49.png",
           "winner": false
         }
@@ -592,12 +608,14 @@ export default {
         "home": {
           "id": 40,
           "name": "Liverpool",
+          "abbreviation": "LIV",
           "logo": "https://media.api-sports.io/football/teams/40.png",
           "winner": true
         },
         "away": {
           "id": 34,
           "name": "Newcastle",
+          "abbreviation": "NEW",
           "logo": "https://media.api-sports.io/football/teams/34.png",
           "winner": false
         }
@@ -660,12 +678,14 @@ export default {
         "home": {
           "id": 50,
           "name": "Manchester City",
+          "abbreviation": "MCI",
           "logo": "https://media.api-sports.io/football/teams/50.png",
           "winner": true
         },
         "away": {
           "id": 65,
           "name": "Nottingham Forest",
+          "abbreviation": "NFO",
           "logo": "https://media.api-sports.io/football/teams/65.png",
           "winner": false
         }
@@ -728,12 +748,14 @@ export default {
         "home": {
           "id": 66,
           "name": "Aston Villa",
+          "abbreviation": "AST",
           "logo": "https://media.api-sports.io/football/teams/66.png",
           "winner": null
         },
         "away": {
           "id": 50,
           "name": "Manchester City",
+          "abbreviation": "MCI",
           "logo": "https://media.api-sports.io/football/teams/50.png",
           "winner": null
         }
@@ -796,12 +818,14 @@ export default {
         "home": {
           "id": 55,
           "name": "Brentford",
+          "abbreviation": "BRE",
           "logo": "https://media.api-sports.io/football/teams/55.png",
           "winner": true
         },
         "away": {
           "id": 63,
           "name": "Leeds",
+          "abbreviation": "LDS",
           "logo": "https://media.api-sports.io/football/teams/63.png",
           "winner": false
         }
@@ -864,12 +888,14 @@ export default {
         "home": {
           "id": 51,
           "name": "Brighton",
+          "abbreviation": "BRI",
           "logo": "https://media.api-sports.io/football/teams/51.png",
           "winner": true
         },
         "away": {
           "id": 46,
           "name": "Leicester",
+          "abbreviation": "LEI",
           "logo": "https://media.api-sports.io/football/teams/46.png",
           "winner": false
         }
@@ -932,12 +958,14 @@ export default {
         "home": {
           "id": 49,
           "name": "Chelsea",
+          "abbreviation": "CHE",
           "logo": "https://media.api-sports.io/football/teams/49.png",
           "winner": true
         },
         "away": {
           "id": 48,
           "name": "West Ham",
+          "abbreviation": "WHU",
           "logo": "https://media.api-sports.io/football/teams/48.png",
           "winner": false
         }
@@ -1000,12 +1028,14 @@ export default {
         "home": {
           "id": 45,
           "name": "Everton",
+          "abbreviation": "EVE",
           "logo": "https://media.api-sports.io/football/teams/45.png",
           "winner": null
         },
         "away": {
           "id": 40,
           "name": "Liverpool",
+          "abbreviation": "LIV",
           "logo": "https://media.api-sports.io/football/teams/40.png",
           "winner": null
         }
@@ -1068,12 +1098,14 @@ export default {
         "home": {
           "id": 33,
           "name": "Manchester United",
+          "abbreviation": "MUN",
           "logo": "https://media.api-sports.io/football/teams/33.png",
           "winner": true
         },
         "away": {
           "id": 42,
           "name": "Arsenal",
+          "abbreviation": "ARS",
           "logo": "https://media.api-sports.io/football/teams/42.png",
           "winner": false
         }
@@ -1136,12 +1168,14 @@ export default {
         "home": {
           "id": 34,
           "name": "Newcastle",
+          "abbreviation": "NEW",
           "logo": "https://media.api-sports.io/football/teams/34.png",
           "winner": null
         },
         "away": {
           "id": 52,
           "name": "Crystal Palace",
+          "abbreviation": "CRY",
           "logo": "https://media.api-sports.io/football/teams/52.png",
           "winner": null
         }
@@ -1204,12 +1238,14 @@ export default {
         "home": {
           "id": 65,
           "name": "Nottingham Forest",
+          "abbreviation": "NFO",
           "logo": "https://media.api-sports.io/football/teams/65.png",
           "winner": false
         },
         "away": {
           "id": 35,
           "name": "Bournemouth",
+          "abbreviation": "BOU",
           "logo": "https://media.api-sports.io/football/teams/35.png",
           "winner": true
         }
@@ -1272,12 +1308,14 @@ export default {
         "home": {
           "id": 47,
           "name": "Tottenham",
+          "abbreviation": "TOT",
           "logo": "https://media.api-sports.io/football/teams/47.png",
           "winner": true
         },
         "away": {
           "id": 36,
           "name": "Fulham",
+          "abbreviation": "FUL",
           "logo": "https://media.api-sports.io/football/teams/36.png",
           "winner": false
         }
@@ -1340,12 +1378,14 @@ export default {
         "home": {
           "id": 39,
           "name": "Wolves",
+          "abbreviation": "WOL",
           "logo": "https://media.api-sports.io/football/teams/39.png",
           "winner": true
         },
         "away": {
           "id": 41,
           "name": "Southampton",
+          "abbreviation": "SOU",
           "logo": "https://media.api-sports.io/football/teams/41.png",
           "winner": false
         }

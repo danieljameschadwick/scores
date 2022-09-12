@@ -15,7 +15,7 @@ export const CarouselText: React.FC<Props> = ({ text }) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: 80,
+    minWidth: 55,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -24,9 +24,11 @@ const styles = StyleSheet.create({
     borderRightColor: "rgb(215, 220, 224)",
     borderBottomWidth: 1,
     borderBottomColor: "rgb(215, 220, 224)",
+    paddingHorizontal: 20,
   },
   text: {
     fontSize: 11,
-    fontWeight: 600,
+    fontWeight: "600",
+    textAlign: "center",
   },
 });
