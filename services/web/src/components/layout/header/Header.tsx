@@ -3,6 +3,7 @@ import { StyleSheet, View, Text } from "react-native";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { Z_INDEXES } from "@src/enum/zIndex";
+import { ScoresCarousel } from "@src/components/scores/ScoresCarousel";
 
 export const Header: React.FC = () => {
   const router = useRouter();
@@ -19,40 +20,45 @@ export const Header: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <Link href={"/"}>
-        <Text style={styles.logoText}>scores</Text>
-      </Link>
+      <View style={styles.headerContainer}>
+        <Link href={"/"}>
+          <Text style={styles.logoText}>scores</Text>
+        </Link>
 
-      <View style={styles.linksContainer}>
-        {user ? (
-          <>
-            <Text
-              accessibilityRole="link"
-              style={styles.link}
-              onPress={() => logout()}
-            >
-              Logout
-            </Text>
-          </>
-        ) : (
-          <>
-            <Text
-              accessibilityRole="link"
-              style={styles.link}
-              onPress={() => router.push("/login")}
-            >
-              Login
-            </Text>
+        <View style={styles.linksContainer}>
+          {user ? (
+            <>
+              <Text
+                accessibilityRole="link"
+                style={styles.link}
+                onPress={() => logout()}
+              >
+                Logout
+              </Text>
+            </>
+          ) : (
+            <>
+              <Text
+                accessibilityRole="link"
+                style={styles.link}
+                onPress={() => router.push("/login")}
+              >
+                Login
+              </Text>
 
-            <Text
-              accessibilityRole="link"
-              style={styles.link}
-              onPress={() => router.push("/register")}
-            >
-              Register
-            </Text>
-          </>
-        )}
+              <Text
+                accessibilityRole="link"
+                style={styles.link}
+                onPress={() => router.push("/register")}
+              >
+                Register
+              </Text>
+            </>
+          )}
+        </View>
+      </View>
+      <View>
+        <ScoresCarousel />
       </View>
     </View>
   );
@@ -60,11 +66,15 @@ export const Header: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    position: "fixed", // investigate fixed typehint, does work
+    position: "fixed",
     zIndex: Z_INDEXES.OVERLAY,
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "col",
     width: "100%",
+  },
+  headerContainer: {
+    display: "flex",
+    flexDirection: "row",
     height: 50,
     padding: 12,
     backgroundColor: "rgb(255,255,255)",
@@ -72,6 +82,9 @@ const styles = StyleSheet.create({
     borderTopWidth: 0,
     borderLeftWidth: 0,
     borderRightWidth: 0,
+  },
+  scoreboardContainer: {
+
   },
   logoText: {
     alignSelf: "center",
