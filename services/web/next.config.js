@@ -48,13 +48,6 @@ const nextConfig = {
         // include: path.resolve(__dirname, "src/styles"),
       },
     );
-    if (options.isServer) {
-      config.plugins.push(
-        new options.webpack.ProvidePlugin({
-          requestAnimationFrame: path.resolve(__dirname, './src/plugins/requestAnimationFrame.ts'),
-        }),
-      );
-    }
 
     return config;
   },

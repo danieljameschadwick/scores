@@ -1,6 +1,6 @@
 import { GAME_RESULT } from "@src/enum/GameResult";
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native-web";
 
 const ScoreBoxRow = ({ abbreviation, score, result }) => {
   const teamNameText = [styles.teamName];

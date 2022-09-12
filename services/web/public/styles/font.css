@@ -1,10 +1,20 @@
 @font-face {
+  src: url("assets/fonts/AntDesign.ttf");
+  font-family: "AntDesign";
+}
+
+@font-face {
+  src: url(Entypo.ttf);
+  font-family: "Entypo";
+}
+
+@font-face {
   src: url("assets/fonts/Ionicons.ttf");
   font-family: "Ionicons";
 }
 
 @font-face {
-  src: url("FontAwesome.ttf");
+  src: url("assets/fonts/FontAwesome.ttf");
   font-family: "FontAwesome";
 }
 

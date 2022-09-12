@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleProp, ViewStyle } from "react-native";
+import { StyleProp, ViewStyle } from "react-native-web";
 import StyleSheet from "react-native-media-query";
 import { View } from "react-native-web";
 

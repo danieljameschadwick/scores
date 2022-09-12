@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text } from "react-native-web";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { Z_INDEXES } from "@src/enum/zIndex";
