@@ -3,6 +3,9 @@ const { withExpo } = require("@expo/next-adapter");
 const withPlugins = require("next-compose-plugins");
 
 const withTM = require("next-transpile-modules")([
+  "@scores/state",
+  "@scores/theme",
+  "@scores/types",
   "react-native-vector-icons",
   "react-native-svg",
 ]);

@@ -4,8 +4,12 @@ import format from "date-fns/format";
 import NoSsrWrapper from "@src/components/util/noSsrWrapper";
 import { Header } from "@src/components/layout/header/Header";
 import { FluidPageContent } from "@src/components/layout/FluidPageContent";
+import { getTheme } from "@scores/theme/utils/theme";
+import { useAppSelector } from "@scores/state/hooks";
+import { selectTheme } from "@scores/state/reducer/ThemeReducer";
 
 const Index: React.FC = () => {
+  const themeStyles = getTheme(useAppSelector(selectTheme));
   const date = new Date();
 
   return (
@@ -14,9 +18,11 @@ const Index: React.FC = () => {
         <Header />
 
         <FluidPageContent styles={containerStyles}>
-            <Text style={styles.heading}>
+          <View style={[styles.pageContainer]}>
+            <Text style={[styles.heading, themeStyles.text]}>
               {format(date, "do MMMM, yyyy")}
             </Text>
+          </View>
         </FluidPageContent>
       </View>
     </NoSsrWrapper>
@@ -27,6 +33,9 @@ const styles = StyleSheet.create({
   container: {
     height: "100%",
   },
+  pageContainer: {
+    marginTop: 15,
+  },
   heading: {
     textAlign: "center",
     fontSize: "1.25em",
@@ -36,7 +45,7 @@ const styles = StyleSheet.create({
 
 const containerStyles = StyleSheet.create({
   container: {
-    marginTop: 135,
+    marginTop: 107.5,
   },
 });
 
