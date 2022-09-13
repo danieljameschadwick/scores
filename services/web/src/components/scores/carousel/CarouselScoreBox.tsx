@@ -46,8 +46,6 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     borderRightWidth: 1,
     borderRightColor: "rgb(215, 220, 224)",
-    borderBottomWidth: 1,
-    borderBottomColor: "rgb(215, 220, 224)",
     backgroundColor: "#FFFFFF",
   },
   row: {

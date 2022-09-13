@@ -1,34 +1,34 @@
 @font-face {
-  src: url("assets/fonts/AntDesign.ttf");
+  src: url("../assets/fonts/AntDesign.ttf");
   font-family: "AntDesign";
 }
 
 @font-face {
-  src: url(Entypo.ttf);
+  src: url("../assets/fonts/Entypo.ttf");
   font-family: "Entypo";
 }
 
 @font-face {
-  src: url("assets/fonts/Ionicons.ttf");
+  src: url("../assets/fonts/Ionicons.ttf");
   font-family: "Ionicons";
 }
 
 @font-face {
-  src: url("assets/fonts/FontAwesome.ttf");
+  src: url("../assets/fonts/FontAwesome.ttf");
   font-family: "FontAwesome";
 }
 
 @font-face {
-  src: url("assets/fonts/MaterialIcons.ttf");
+  src: url("../assets/fonts/MaterialIcons.ttf");
   font-family: "MaterialIcons";
 }
 
 @font-face {
-  src: url("assets/fonts/Feather.ttf");
+  src: url("../assets/fonts/Feather.ttf");
   font-family: "Feather";
 }
 
 @font-face {
-  src: url("assets/fonts/MaterialCommunityIcons.ttf");
+  src: url("../assets/fonts/MaterialCommunityIcons.ttf");
   font-family: "MaterialCommunityIcons";
 }
