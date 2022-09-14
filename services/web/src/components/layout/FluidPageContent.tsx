@@ -11,8 +11,7 @@ interface Props {
 }
 
 export const FluidPageContent: React.FC<Props> = ({ styles: propStyles, children }) => {
-  // @TODO: reuse dispatch in getTheme? rather than fetching each time
-  const themeStyles = getTheme(useAppSelector(selectTheme));
+  const themeStyles = getTheme();
 
   return (
     <View style={[ styles.container, themeStyles.container, propStyles?.container ]} dataSet={{ media: ids.container }}>

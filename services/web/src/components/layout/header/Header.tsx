@@ -14,8 +14,7 @@ export const Header: React.FC = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const theme = useAppSelector(selectTheme);
-  // @TODO: reuse dispatch in getTheme? rather than fetching each time
-  const themeStyles = getTheme(theme);
+  const themeStyles = getTheme();
   const user = null;
 
   const dispatchTheme = (theme: Theme) => {

@@ -5,11 +5,9 @@ import NoSsrWrapper from "@src/components/util/noSsrWrapper";
 import { Header } from "@src/components/layout/header/Header";
 import { FluidPageContent } from "@src/components/layout/FluidPageContent";
 import { getTheme } from "@scores/theme/utils/theme";
-import { useAppSelector } from "@scores/state/hooks";
-import { selectTheme } from "@scores/state/reducer/ThemeReducer";
 
 const Index: React.FC = () => {
-  const themeStyles = getTheme(useAppSelector(selectTheme));
+  const themeStyles = getTheme();
   const date = new Date();
 
   return (
