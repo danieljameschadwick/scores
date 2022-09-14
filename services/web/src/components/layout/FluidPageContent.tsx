@@ -1,8 +1,6 @@
 import React from "react";
 import { StyleProp, View, ViewStyle } from "react-native-web";
 import StyleSheet from "react-native-media-query";
-import { useAppSelector } from "@scores/state/hooks";
-import { selectTheme } from "@scores/state/reducer/ThemeReducer";
 import { getTheme } from "@scores/theme/utils/theme";
 
 interface Props {
@@ -14,7 +12,7 @@ export const FluidPageContent: React.FC<Props> = ({ styles: propStyles, children
   const themeStyles = getTheme();
 
   return (
-    <View style={[ styles.container, themeStyles.container, propStyles?.container ]} dataSet={{ media: ids.container }}>
+    <View style={[ styles.container, themeStyles.body, propStyles?.container ]} dataSet={{ media: ids.container }}>
       { children }
     </View>
   );
