@@ -60,6 +60,7 @@ export const ScoresCarousel = () => {
             />
           </TouchableOpacity>
         </View>
+
         <ScrollView
           ref={scrollRef}
           showsVerticalScrollIndicator={false}

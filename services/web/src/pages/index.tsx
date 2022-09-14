@@ -6,6 +6,7 @@ import { Header } from "@src/components/layout/header/Header";
 import { FluidPageContent } from "@src/components/layout/FluidPageContent";
 import { Panel } from "@src/components/layout/panel/Panel";
 import IonIcon from "react-native-vector-icons/Ionicons";
+import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import { getTheme } from "@scores/theme/utils/theme";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 
@@ -18,17 +19,30 @@ const Index: React.FC = () => {
         <Header />
 
         <FluidPageContent styles={containerStyles}>
-          <View style={[styles.pageContainer]} dataSet={{ media: ids.pageContainer }}>
-            <Panel title={"Football"} icon={<IonIcon name={"football"} size={24} color={getPrimaryText()} />}>
-              <Text style={[themeStyles.text]}>
-                Test
-              </Text>
+          <View
+            style={[styles.pageContainer]}
+            dataSet={{ media: ids.pageContainer }}
+          >
+            <Panel
+              title={"Football"}
+              icon={
+                <IonIcon name={"football"} size={24} color={getPrimaryText()} />
+              }
+            >
+              <Text style={[themeStyles.text]}>Football</Text>
             </Panel>
 
-            <Panel title={"Panel"}>
-              <Text style={[themeStyles.text]}>
-                Test
-              </Text>
+            <Panel
+              title={"Cricket"}
+              icon={
+                <MaterialCommunityIcon
+                  name={"cricket"}
+                  size={24}
+                  color={getPrimaryText()}
+                />
+              }
+            >
+              <Text style={[themeStyles.text]}>Cricket</Text>
             </Panel>
           </View>
         </FluidPageContent>
