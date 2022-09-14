@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native-web";
+import { getTheme } from "@scores/theme/utils/theme";
 
 interface Props {
   title: string;
@@ -8,6 +9,7 @@ interface Props {
 }
 
 export const Panel: React.FC<Props> = ({ title, icon = null, children }) => {
+  const themeStyles = getTheme();
   const containerStyles = [styles.container];
   const headingStyles = [styles.headingContainer];
 
@@ -17,11 +19,11 @@ export const Panel: React.FC<Props> = ({ title, icon = null, children }) => {
   }
 
   return (
-    <View style={[containerStyles]}>
+    <View style={[containerStyles, themeStyles.mediumContainer]}>
       <View style={[headingStyles]}>
-        {icon && <View style={[styles.headingIcon]}>{icon}</View>}
+        {icon && <View style={[styles.headingIcon, themeStyles.text]}>{icon}</View>}
 
-        <Text style={[styles.headingText]}>{title}</Text>
+        <Text style={[styles.headingText, themeStyles.text]}>{title}</Text>
       </View>
 
       <View>{children}</View>

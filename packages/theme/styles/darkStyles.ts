@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { primaryText } from "../variables/darkPalette";
 
 export const darkStyles = StyleSheet.create({
   body: {
@@ -7,13 +8,19 @@ export const darkStyles = StyleSheet.create({
   container: {
     backgroundColor: "rgb(19,19,19)",
   },
+  lightContainer: {
+    backgroundColor: "rgb(39, 39, 39)",
+  },
+  mediumContainer: {
+    backgroundColor: "rgb(58, 58, 58)",
+  },
   darkContainer: {
-    backgroundColor: "rgb(232 234 237)",
+    backgroundColor: "rgb(92, 92, 92)",
   },
   icon: {
-    color: "#FFF",
+    color: primaryText,
   },
   text: {
-    color: "#FFF",
+    color: primaryText,
   },
 });

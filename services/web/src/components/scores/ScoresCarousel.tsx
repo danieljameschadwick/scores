@@ -10,10 +10,13 @@ import { GAME_TYPE } from "@src/enum/GameType";
 import footballFixtures from "@src/mocks/footballFixtures";
 // import basketballFixtures from "@src/mocks/basketballFixtures";
 import { normaliseScores } from "@src/utils/scores/normaliseScores";
+import { getTheme } from "@scores/theme/utils/theme";
+import { getPrimaryText } from "@scores/theme/utils/variables";
 
 const SCROLL_DISTANCE = 500;
 
 export const ScoresCarousel = () => {
+  const themeStyles = getTheme();
   const scrollRef = useRef(null);
   const footballData = normaliseScores(footballFixtures, GAME_TYPE.FOOTBALL);
   const [position, setPosition] = useState<number>(0);
@@ -34,15 +37,29 @@ export const ScoresCarousel = () => {
 
   return (
     <View style={styles.container} dataSet={{ media: ids.container }}>
-      <View style={styles.scoresContainer} dataSet={{ media: ids.scoresContainer }}>
-        {position > 150 && (
-          <View style={[styles.arrowContainer, styles.arrowLeft]}>
-            <TouchableOpacity onPress={scrollLeft}>
-              <Icon name={"chevron-thin-left"} size={30} color={"rgb(0,0,0)"} />
-            </TouchableOpacity>
-          </View>
-        )}
-
+      <View
+        style={styles.scoresContainer}
+        dataSet={{ media: ids.scoresContainer }}
+      >
+        <View
+          style={[
+            styles.arrowContainer,
+            styles.arrowLeft,
+            position < 150 && styles.hiddenContainer,
+            themeStyles.lightContainer,
+          ]}
+        >
+          <TouchableOpacity
+            style={[styles.scrollContainer]}
+            onPress={scrollLeft}
+          >
+            <Icon
+              name={"chevron-thin-left"}
+              size={30}
+              color={getPrimaryText()}
+            />
+          </TouchableOpacity>
+        </View>
         <ScrollView
           ref={scrollRef}
           showsVerticalScrollIndicator={false}
@@ -58,9 +75,22 @@ export const ScoresCarousel = () => {
           {/* <CarouselGroup groupName={"NBA"} scores={basketballFixtures} /> */}
         </ScrollView>
 
-        <View style={[styles.arrowContainer, styles.arrowRight]}>
-          <TouchableOpacity onPress={scrollRight}>
-            <Icon name={"chevron-thin-right"} size={30} color={"rgb(0,0,0)"} />
+        <View
+          style={[
+            styles.arrowContainer,
+            styles.arrowRight,
+            themeStyles.lightContainer,
+          ]}
+        >
+          <TouchableOpacity
+            style={[styles.scrollContainer]}
+            onPress={scrollRight}
+          >
+            <Icon
+              name={"chevron-thin-right"}
+              size={30}
+              color={getPrimaryText()}
+            />
           </TouchableOpacity>
         </View>
       </View>
@@ -86,13 +116,20 @@ const { ids, styles } = StyleSheet.create({
   },
   arrowContainer: {
     position: "absolute",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
     height: "100%",
     width: 50,
     backgroundColor: "rgb(237, 238, 240)",
     zIndex: Z_INDEXES.OVERLAY_COVER,
+  },
+  hiddenContainer: {
+    opacity: 0,
+  },
+  scrollContainer: {
+    height: "100%",
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
   arrowLeft: {
     left: 0,

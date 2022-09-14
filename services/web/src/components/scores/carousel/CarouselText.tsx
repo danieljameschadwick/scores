@@ -1,3 +1,4 @@
+import { getTheme } from "@scores/theme/utils/theme";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native-web";
 
@@ -6,9 +7,11 @@ interface Props {
 }
 
 export const CarouselText: React.FC<Props> = ({ text }) => {
+  const themeStyles = getTheme();
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>{text}</Text>
+    <View style={[styles.container, themeStyles.lightContainer]}>
+      <Text style={[styles.text, themeStyles.text]}>{text}</Text>
     </View>
   );
 };

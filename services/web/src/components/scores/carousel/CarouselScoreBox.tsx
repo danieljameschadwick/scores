@@ -1,8 +1,10 @@
+import { getTheme } from "@scores/theme/utils/theme";
 import { GAME_RESULT } from "@src/enum/GameResult";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native-web";
 
 const ScoreBoxRow = ({ abbreviation, score, result }) => {
+  const themeStyles = getTheme();
   const teamNameText = [styles.teamName];
   const goalsText = [styles.goalsText];
 
@@ -18,16 +20,18 @@ const ScoreBoxRow = ({ abbreviation, score, result }) => {
 
   return (
     <View style={[styles.row]}>
-      <Text style={teamNameText}>{abbreviation}</Text>
-      <Text style={goalsText}>{score}</Text>
+      <Text style={[teamNameText, themeStyles.text]}>{abbreviation}</Text>
+      <Text style={[goalsText, themeStyles.text]}>{score}</Text>
     </View>
   );
 };
 
 export const CarouselScoreBox = ({ home, away }) => {
+  const themeStyles = getTheme();
+
   return (
-    <View style={styles.container}>
-      <Text style={[styles.status]}>FT</Text>
+    <View style={[styles.container, themeStyles.darkContainer]}>
+      <Text style={[styles.status, themeStyles.text]}>FT</Text>
       <ScoreBoxRow {...home} />
       <ScoreBoxRow {...away} />
     </View>
@@ -67,7 +71,7 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
   winText: {
-    fontWeight: "600",
+    fontWeight: "700",
   },
   lossText: {
     color: "#a5a6a7",
