@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "rgb(232 234 237)",
     borderRightWidth: 1,
-    borderRightColor: "rgb(215, 220, 224)",
     paddingHorizontal: 20,
   },
   text: {

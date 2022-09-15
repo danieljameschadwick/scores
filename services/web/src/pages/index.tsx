@@ -1,18 +1,13 @@
 import React from "react";
-import { View, Text } from "react-native-web";
+import { View } from "react-native-web";
 import StyleSheet from "react-native-media-query";
 import NoSsrWrapper from "@src/components/util/noSsrWrapper";
 import { Header } from "@src/components/layout/header/Header";
 import { FluidPageContent } from "@src/components/layout/FluidPageContent";
-import { Panel } from "@src/components/layout/panel/Panel";
-import IonIcon from "react-native-vector-icons/Ionicons";
-import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
-import { getTheme } from "@scores/theme/utils/theme";
-import { getPrimaryText } from "@scores/theme/utils/variables";
+import { FootballPanel } from "@src/components/layout/panel/FootballPanel";
+import { CricketPanel } from "@src/components/layout/panel/CricketPanel";
 
 const Index: React.FC = () => {
-  const themeStyles = getTheme();
-
   return (
     <NoSsrWrapper>
       <View style={styles.container}>
@@ -23,27 +18,8 @@ const Index: React.FC = () => {
             style={[styles.pageContainer]}
             dataSet={{ media: ids.pageContainer }}
           >
-            <Panel
-              title={"Football"}
-              icon={
-                <IonIcon name={"football"} size={24} color={getPrimaryText()} />
-              }
-            >
-              <Text style={[themeStyles.text]}>Football</Text>
-            </Panel>
-
-            <Panel
-              title={"Cricket"}
-              icon={
-                <MaterialCommunityIcon
-                  name={"cricket"}
-                  size={24}
-                  color={getPrimaryText()}
-                />
-              }
-            >
-              <Text style={[themeStyles.text]}>Cricket</Text>
-            </Panel>
+            <FootballPanel />
+            <CricketPanel />
           </View>
         </FluidPageContent>
       </View>
@@ -59,8 +35,8 @@ const { ids, styles } = StyleSheet.create({
     marginTop: 15,
     marginHorizontal: "auto",
     width: "100%",
-    "@media (min-width: 800px)": {
-      width: 800,
+    "@media (min-width: 667px)": {
+      width: 660,
     },
   },
   heading: {

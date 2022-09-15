@@ -1,8 +1,8 @@
 import { useAppSelector } from "@scores/state/hooks";
 import { selectTheme } from "@scores/state/reducer/ThemeReducer";
 import { Theme } from "@scores/types/enum/Theme";
-import { primaryText as darkPrimaryText } from "../variables/darkPalette";
-import { primaryText } from "../variables/lightPalette";
+import { primaryText as darkPrimaryText, primaryBorderColor as darkPrimaryBorderColor } from "../variables/darkPalette";
+import { primaryText, primaryBorderColor } from "../variables/lightPalette";
 
 /**
  * // @TODO: refactor to map

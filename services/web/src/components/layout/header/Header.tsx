@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
 
   return (
     <View style={[styles.container]}>
-      <View style={[styles.headerContainer, themeStyles.container]}>
+      <View style={[styles.headerContainer, themeStyles.lightContainer]}>
         <Link href={"/"}>
           <Text style={styles.logoText}>scores</Text>
         </Link>
@@ -101,10 +101,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     height: 50,
     padding: 12,
-    border: "1px solid rgb(215 220 224)",
-    borderTopWidth: 0,
-    borderLeftWidth: 0,
-    borderRightWidth: 0,
+    borderBottomWidth: 1,
   },
   logoText: {
     alignSelf: "center",

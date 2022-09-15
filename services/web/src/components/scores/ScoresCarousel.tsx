@@ -36,7 +36,7 @@ export const ScoresCarousel = () => {
   };
 
   return (
-    <View style={styles.container} dataSet={{ media: ids.container }}>
+    <View style={[styles.container, themeStyles.darkContainer]} dataSet={{ media: ids.container }}>
       <View
         style={styles.scoresContainer}
         dataSet={{ media: ids.scoresContainer }}
@@ -107,7 +107,6 @@ const { ids, styles } = StyleSheet.create({
     zIndex: Z_INDEXES.OVERLAY,
     backgroundColor: "rgb(237, 238, 240)",
     borderBottomWidth: 1,
-    borderBottomColor: "rgb(215, 220, 224)",
   },
   scoresContainer: {
     width: "100%",
@@ -135,11 +134,9 @@ const { ids, styles } = StyleSheet.create({
   arrowLeft: {
     left: 0,
     borderRightWidth: 1,
-    borderRightColor: "rgb(215, 220, 224)",
   },
   arrowRight: {
     right: 0,
     borderLeftWidth: 1,
-    borderLeftColor: "rgb(215, 220, 224)",
   },
 });
