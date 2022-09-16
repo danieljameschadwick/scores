@@ -38,7 +38,7 @@ export const FixtureRow: React.FC<ScoreInterface> = ({
           )}
         </View>
 
-        <Text style={[teamNameText, themeStyles.text]}>{name}</Text>
+        <Text style={[teamNameText, themeStyles.text]} dataSet={{ media: ids.teamNameText }}>{name}</Text>
       </View>
 
       <View style={[styles.scoreContainer]}>
@@ -66,6 +66,12 @@ const { styles, ids } = StyleSheet.create({
   },
   teamNameText: {
     fontSize: 16,
+    "@media (max-width: 370px)": {
+      maxWidth: 120,
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+    },
   },
   scoreContainer: {
     width: 25,
