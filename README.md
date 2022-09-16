@@ -1,6 +1,16 @@
 # @scores
 
-Scores tracking application built to be cross platform.
+Scores tracking application built to be cross platform with React Native.
+
+### UI:
+
+Desktop                    |  Mobile
+:-------------------------:|:-------------------------:
+![Scores page on desktop.](./docs/images/scores-page--light-desktop.png) | ![Scores page on mobile.](./docs/images/scores-page--light-mobile.png)
+
+Desktop (Dark)             |  Mobile (Dark)
+:-------------------------:|:-------------------------:
+![Score page on desktop.](./docs/images/scores-page--dark-desktop.png) | ![Scores page on mobile.](./docs/images/scores-page--dark-mobile.png)
 
 ## Setup:
 

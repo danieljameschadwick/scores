@@ -50,6 +50,7 @@ const { ids, styles } = StyleSheet.create({
 const { styles: containerStyles } = StyleSheet.create({
   container: {
     marginTop: 107.5,
+    paddingBottom: 50,
   },
 });
 
