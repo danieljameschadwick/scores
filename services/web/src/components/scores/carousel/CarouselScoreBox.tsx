@@ -4,15 +4,16 @@ import { getTheme } from "@scores/theme/utils/theme";
 import { ScoreBoxRow } from "@src/components/scores/carousel/scoreBox/ScoreBoxRow";
 import { GAME_RESULT } from "@src/enum/GameResult";
 
-interface Score {
+interface ScoreInterface {
   abbreviation: string;
   score: number;
   result: GAME_RESULT;
+  logo?: string | null;
 }
 
 interface Props {
-  home: Score;
-  away: Score;
+  home: ScoreInterface;
+  away: ScoreInterface;
 }
 
 export const CarouselScoreBox: React.FC<Props> = ({ home, away }) => {

@@ -79,6 +79,7 @@ export const ScoresCarousel = () => {
         <View
           style={[
             styles.arrowContainer,
+            styles.relativeArrowContainer,
             styles.arrowRight,
             themeStyles.lightContainer,
           ]}
@@ -109,6 +110,8 @@ const { ids, styles } = StyleSheet.create({
     borderBottomWidth: 1,
   },
   scoresContainer: {
+    display: "flex",
+    flexDirection: "row",
     width: "100%",
     "@media (min-width: 1400px)": {
       width: 1400,
@@ -120,6 +123,10 @@ const { ids, styles } = StyleSheet.create({
     width: 50,
     backgroundColor: "rgb(237, 238, 240)",
     zIndex: Z_INDEXES.OVERLAY_COVER,
+  },
+  relativeArrowContainer: {
+    position: "relative",
+    height: "auto",
   },
   hiddenContainer: {
     opacity: 0,

@@ -5,16 +5,17 @@ import { GAME_RESULT } from "@src/enum/GameResult";
 import { FixtureRow } from "@src/components/layout/panel/fixture/FixtureRow";
 import { getTheme } from "@scores/theme/utils/theme";
 
-interface Score {
+interface ScoreInterface {
   name: string;
   abbreviation: string;
+  logo?: string | null;
   score: number;
   result: GAME_RESULT;
 }
 
 interface Props {
-  home: Score;
-  away: Score;
+  home: ScoreInterface;
+  away: ScoreInterface;
 }
 
 export const PanelFixture: React.FC<Props> = ({ home, away }) => {

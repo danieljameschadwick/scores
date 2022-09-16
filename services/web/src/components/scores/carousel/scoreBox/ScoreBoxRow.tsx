@@ -1,15 +1,23 @@
 import React from "react";
+import { View, Text, StyleSheet } from "react-native-web";
+import AntDesignIcon from "react-native-vector-icons/AntDesign";
 import { getTheme } from "@scores/theme/utils/theme";
 import { GAME_RESULT } from "@src/enum/GameResult";
-import { View, Text, StyleSheet } from "react-native-web";
+import { getPrimaryText } from "@scores/theme/utils/variables";
 
 interface Props {
   abbreviation: string;
   score: number;
   result: GAME_RESULT;
+  logo?: string | null;
 }
 
-export const ScoreBoxRow: React.FC<Props> = ({ abbreviation, score, result }) => {
+export const ScoreBoxRow: React.FC<Props> = ({
+  abbreviation,
+  score,
+  result,
+  logo = null,
+}) => {
   const themeStyles = getTheme();
   const teamNameText = [styles.teamName];
   const goalsText = [styles.goalsText];
@@ -26,7 +34,21 @@ export const ScoreBoxRow: React.FC<Props> = ({ abbreviation, score, result }) =>
 
   return (
     <View style={[styles.row]}>
-      <Text style={[teamNameText, themeStyles.text]}>{abbreviation}</Text>
+      <View style={[styles.teamContainer]}>
+        <View style={[styles.iconContainer]}>
+          {logo ? (
+            <img src={logo} />
+          ) : (
+            <AntDesignIcon
+              name={"questioncircle"}
+              size={20}
+              color={getPrimaryText()}
+            />
+          )}
+        </View>
+  
+        <Text style={[teamNameText, themeStyles.text]}>{abbreviation}</Text>
+      </View>
       <Text style={[goalsText, themeStyles.text]}>{score}</Text>
     </View>
   );
@@ -38,6 +60,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 2,
+  },
+  teamContainer: {
+    display: "flex",
+    flexDirection: "row",
+  },
+  iconContainer: {
+    width: 15,
+    marginRight: 3,
   },
   teamName: {
     fontSize: 12,

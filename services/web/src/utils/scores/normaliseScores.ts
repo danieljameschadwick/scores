@@ -1,8 +1,14 @@
 import parseISO from "date-fns/parseISO";
-import format from "date-fns/format";
 import { GAME_RESULT } from "@src/enum/GameResult";
 import { GAME_STATUS } from "@src/enum/GameStatus";
 import { GAME_TYPE } from "@src/enum/GameType";
+
+interface TeamInterface {
+  name: string;
+  abbreviation: string;
+  winner: boolean | null;
+  logo?: string | null;
+}
 
 /**
  * normaliseScores
@@ -32,11 +38,13 @@ const normaliseFootball = (data) => {
 
   for (const game of response) {
     const { fixture: { id, date }, goals, teams: { home, away } } = game;
-    const startOfDay = parseISO(date).setUTCHours(0,0,0,0);
+    const startOfDay = parseISO(date).setUTCHours(0, 0, 0, 0);
 
     if (!scoresByDate[startOfDay]) {
       scoresByDate[startOfDay] = [];
     }
+
+    console.log(game);
 
     scoresByDate[startOfDay].push({
       id: id,
@@ -51,19 +59,21 @@ const normaliseFootball = (data) => {
 };
 
 const normaliseNba = (data) => {
+  // @TODO: implement
 
-  console.log(data);
+  throw new Error('NotImplementedError');
 };
 
-const createScoreDTO = (team: { name: string, abbreviation: string, winner: boolean | null }, score: string) => {
-  const { name, abbreviation, winner } = team;
+const createScoreDTO = (team: TeamInterface, score: string) => {
+  const { name, abbreviation, winner, logo = null } = team;
 
   return {
     name,
     abbreviation,
     score,
     result: normaliseWinner(winner),
-  }
+    logo,
+  };
 };
 
 const normaliseWinner = (result: boolean | null) => {
@@ -74,4 +84,4 @@ const normaliseWinner = (result: boolean | null) => {
   return result
     ? GAME_RESULT.WIN
     : GAME_RESULT.LOSS;
-}
+};

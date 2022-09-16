@@ -6,13 +6,19 @@ import { GAME_RESULT } from "@src/enum/GameResult";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 import { getTheme } from "@scores/theme/utils/theme";
 
-interface Score {
+interface ScoreInterface {
   name: string;
   score: number;
   result: GAME_RESULT;
+  logo?: string | null;
 }
 
-export const FixtureRow: React.FC<Score> = ({ name, score, result }) => {
+export const FixtureRow: React.FC<ScoreInterface> = ({
+  name,
+  score,
+  result,
+  logo = null,
+}) => {
   const themeStyles = getTheme();
   const teamNameText = [styles.teamNameText];
   const scoreText = [styles.scoreText];
@@ -21,11 +27,15 @@ export const FixtureRow: React.FC<Score> = ({ name, score, result }) => {
     <View style={[styles.container]}>
       <View style={[styles.teamNameContainer]}>
         <View style={[styles.iconContainer]}>
-          <AntDesignIcon
-            name={"questioncircle"}
-            size={"20"}
-            color={getPrimaryText()}
-          />
+          {logo ? (
+            <img src={logo} />
+          ) : (
+            <AntDesignIcon
+              name={"questioncircle"}
+              size={20}
+              color={getPrimaryText()}
+            />
+          )}
         </View>
 
         <Text style={[teamNameText, themeStyles.text]}>{name}</Text>
@@ -43,6 +53,7 @@ const { styles, ids } = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
+    margin: 2.5,
   },
   teamNameContainer: {
     display: "flex",
@@ -51,6 +62,7 @@ const { styles, ids } = StyleSheet.create({
   },
   iconContainer: {
     marginRight: 5,
+    width: 20,
   },
   teamNameText: {
     fontSize: 16,

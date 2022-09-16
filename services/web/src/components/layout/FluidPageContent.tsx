@@ -20,7 +20,6 @@ export const FluidPageContent: React.FC<Props> = ({ styles: propStyles, children
 
 const { ids, styles } = StyleSheet.create({
   container: {
-    height: "100%",
     width: "100%",
     marginLeft: "auto",
     marginRight: "auto",
