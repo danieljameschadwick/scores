@@ -24,10 +24,7 @@ export const Navigator = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Index"
-        screenOptions={screenOptions}
-      >
+      <Stack.Navigator initialRouteName="Index" screenOptions={screenOptions}>
         <Stack.Screen
           name="Index"
           component={HomeScreen}

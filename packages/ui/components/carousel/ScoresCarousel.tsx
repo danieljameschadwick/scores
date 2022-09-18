@@ -60,12 +60,11 @@ export const ScoresCarousel: React.FC<Props> = ({ data }) => {
 
         <ScrollView
           ref={scrollRef}
-          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
           horizontal={true}
           onScroll={(e) => setPosition(e.nativeEvent.contentOffset.x)}
           scrollEventThrottle={0}
         >
-
           <CarouselGroup
             groupName={"Football"}
             leagueName={"PL"}

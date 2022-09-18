@@ -22,7 +22,7 @@ const envConfig = {
 const config = envConfig[STAGE ?? "development"];
 
 export default {
-  name: "Links",
+  name: "Scores",
   description: "",
   slug: "example",
   scheme: "example",
