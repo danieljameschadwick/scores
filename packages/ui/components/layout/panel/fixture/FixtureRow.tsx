@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native-web";
+import { View, Text, Image } from "react-native";
 import StyleSheet from "react-native-media-query";
 import AntDesignIcon from "react-native-vector-icons/AntDesign";
 import { GAME_RESULT } from "@scores/types/enum/GameResult";
@@ -28,8 +28,11 @@ export const FixtureRow: React.FC<ScoreInterface> = ({
       <View style={[styles.teamNameContainer]}>
         <View style={[styles.iconContainer]}>
           {logo ? (
-            <img src={logo} />
-          ) : (
+            <Image 
+              style={[styles.icon]}
+              source={{ uri: logo}}
+            />
+            ) : (
             <AntDesignIcon
               name={"questioncircle"}
               size={20}
@@ -62,6 +65,9 @@ const { styles, ids } = StyleSheet.create({
   },
   iconContainer: {
     marginRight: 5,
+  },
+  icon: {
+    height: 20,
     width: 20,
   },
   teamNameText: {

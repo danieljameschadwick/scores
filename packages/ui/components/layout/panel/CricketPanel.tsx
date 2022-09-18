@@ -1,7 +1,7 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native-web";
+import { StyleSheet, View, Text } from "react-native";
 import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
-import { Panel } from "@src/components/layout/panel/Panel";
+import { Panel } from "@scores/ui/components/layout/panel/Panel";
 import { getTheme } from "@scores/theme/utils/theme";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 

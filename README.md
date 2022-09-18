@@ -4,13 +4,17 @@ Scores tracking application built to be cross platform with React Native.
 
 ### UI:
 
-Desktop                    |  Mobile
+Desktop                    |  Desktop Mobile
 :-------------------------:|:-------------------------:
-![Scores page on desktop.](./docs/images/scores-page--light-desktop.png) | ![Scores page on mobile.](./docs/images/scores-page--light-mobile.png)
+![Scores page on desktop.](./docs/images/scores-page--light-desktop.png) | ![Scores page on small desktop.](./docs/images/scores-page--light-mobile.png)
 
-Desktop (Dark)             |  Mobile (Dark)
+Desktop (Dark)             |  Desktop Mobile (Dark)
 :-------------------------:|:-------------------------:
-![Score page on desktop.](./docs/images/scores-page--dark-desktop.png) | ![Scores page on mobile.](./docs/images/scores-page--dark-mobile.png)
+![Score page on desktop.](./docs/images/scores-page--dark-desktop.png) | ![Scores page on small desktop.](./docs/images/scores-page--dark-mobile.png)
+
+Mobile                     |  Mobile (Dark)
+:-------------------------:|:-------------------------:
+![Score page on desktop.](./docs/images/scores-page--light-app.png) | ![Scores page on mobile.](./docs/images/scores-page--dark-app.png)
 
 ## Setup:
 

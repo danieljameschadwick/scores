@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native-web";
+import { StyleSheet, View } from "react-native";
 import IonIcon from "react-native-vector-icons/Ionicons";
-import { Panel } from "@src/components/layout/panel/Panel";
+import { Panel } from "@scores/ui/components/layout/panel/Panel";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 import { GAME_TYPE } from "@scores/types/enum/GameType";
-import { PanelFixture } from "@src/components/layout/panel/fixture/PanelFixture";
+import { PanelFixture } from "@scores/ui/components/layout/panel/fixture/PanelFixture";
 import { getFixtures } from "@scores/http/services/football";
 import { normaliseScores } from "@scores/http/utils/normaliseScores";
 

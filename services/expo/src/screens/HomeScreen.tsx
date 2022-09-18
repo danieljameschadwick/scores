@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../typing/typing";
 import { ScoresCarousel } from "@scores/ui/components/carousel/ScoresCarousel";
 import { normaliseScores } from "@scores/http/utils/normaliseScores";
 import { GAME_TYPE } from "@scores/types/enum/GameType";
 import { getFixtures } from "@scores/http/services/football";
 import { getTheme } from "@scores/theme/utils/theme";
+import { FootballPanel } from "@scores/ui/components/layout/panel/FootballPanel";
+import { CricketPanel } from "@scores/ui/components/layout/panel/CricketPanel";
 
-type Props = NativeStackScreenProps<RootStackParamList, "Index">;
-
-export const HomeScreen: React.FC<Props> = ({ navigation }) => {
+export const HomeScreen: React.FC = () => {
   const [footballData, setFootballData] = useState<{}>(null);
   const themeStyles = getTheme();
 
@@ -20,7 +18,6 @@ export const HomeScreen: React.FC<Props> = ({ navigation }) => {
     container: {
       height: "100%",
       width: "100%",
-      paddingBottom: insets.bottom,
     },
     heading: {
       textAlign: "center",
@@ -31,6 +28,15 @@ export const HomeScreen: React.FC<Props> = ({ navigation }) => {
     carouselContainer: {
       flexGrow: 0,
       height: 56.5,
+    },
+    contentContainer: {
+      paddingBottom: insets.bottom,
+    },
+    panelContainer: {
+      display: "flex",
+      flexDirection: "column",
+      marginTop: 15,
+      paddingHorizontal: 15,
     },
   });
 
@@ -47,6 +53,13 @@ export const HomeScreen: React.FC<Props> = ({ navigation }) => {
       <View style={[styles.carouselContainer]}>
         { footballData && <ScoresCarousel data={footballData} />}
       </View>
+
+      <ScrollView style={[styles.contentContainer]}>
+        <View style={[styles.panelContainer]}>
+          <FootballPanel />
+          <CricketPanel />
+        </View>
+      </ScrollView>
     </View>
   );
 };

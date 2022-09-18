@@ -4,8 +4,8 @@ import StyleSheet from "react-native-media-query";
 import NoSsrWrapper from "@src/components/util/noSsrWrapper";
 import { Header } from "@src/components/layout/header/Header";
 import { FluidPageContent } from "@src/components/layout/FluidPageContent";
-import { FootballPanel } from "@src/components/layout/panel/FootballPanel";
-import { CricketPanel } from "@src/components/layout/panel/CricketPanel";
+import { FootballPanel } from "@scores/ui/components/layout/panel/FootballPanel";
+import { CricketPanel } from "@scores/ui/components/layout/panel/CricketPanel";
 
 const Index: React.FC = () => {
   return (
