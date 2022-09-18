@@ -7,15 +7,18 @@ import { ScoresCarousel } from "@scores/ui/components/carousel/ScoresCarousel";
 import { normaliseScores } from "@scores/http/utils/normaliseScores";
 import { GAME_TYPE } from "@scores/types/enum/GameType";
 import { getFixtures } from "@scores/http/services/football";
+import { getTheme } from "@scores/theme/utils/theme";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Index">;
 
 export const HomeScreen: React.FC<Props> = ({ navigation }) => {
   const [footballData, setFootballData] = useState<{}>(null);
+  const themeStyles = getTheme();
 
   const insets = useSafeAreaInsets();
   const styles = StyleSheet.create({
     container: {
+      height: "100%",
       width: "100%",
       paddingBottom: insets.bottom,
     },
@@ -40,7 +43,7 @@ export const HomeScreen: React.FC<Props> = ({ navigation }) => {
   }, []);
 
   return (
-    <View style={[styles.container]}>
+    <View style={[styles.container, themeStyles.container]}>
       <View style={[styles.carouselContainer]}>
         { footballData && <ScoresCarousel data={footballData} />}
       </View>

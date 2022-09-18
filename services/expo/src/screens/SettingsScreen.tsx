@@ -19,12 +19,17 @@ export const SettingsScreen: React.FC<Props> = ({ navigation }) => {
   const insets = useSafeAreaInsets();
   const styles = StyleSheet.create({
     container: {
+      height: "100%",
       width: "100%",
       paddingBottom: insets.bottom,
+      paddingHorizontal: 15,
     },
     row: {
       display: "flex",
       flexDirection: "row",
+    },
+    text: {
+      marginRight: 5,
     },
   });
 
@@ -33,20 +38,20 @@ export const SettingsScreen: React.FC<Props> = ({ navigation }) => {
   };
 
   return (
-    <View style={[styles.container]}>
+    <View style={[styles.container, themeStyles.container]}>
       <View style={[styles.row]}>
-        <Text>Theme:</Text>
+        <Text style={[styles.text, themeStyles.text]}>Theme:</Text>
 
         {theme === Theme.LIGHT_MODE && (
-            <TouchableOpacity onPress={() => dispatchTheme(Theme.DARK_MODE)}>
-              <IonIcon style={[themeStyles.text]} name={"sunny"} />
-            </TouchableOpacity>
-          )}
-          {theme === Theme.DARK_MODE && (
-            <TouchableOpacity onPress={() => dispatchTheme(Theme.LIGHT_MODE)}>
-              <IonIcon style={[themeStyles.text]} name={"moon"} />
-            </TouchableOpacity>
-          )}
+          <TouchableOpacity onPress={() => dispatchTheme(Theme.DARK_MODE)}>
+            <IonIcon style={[themeStyles.text]} name={"sunny"} />
+          </TouchableOpacity>
+        )}
+        {theme === Theme.DARK_MODE && (
+          <TouchableOpacity onPress={() => dispatchTheme(Theme.LIGHT_MODE)}>
+            <IonIcon style={[themeStyles.text]} name={"moon"} />
+          </TouchableOpacity>
+        )}
       </View>
     </View>
   );

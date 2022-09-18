@@ -1,12 +1,12 @@
 import { StyleSheet } from "react-native";
-import { primaryBorderColor, primaryText } from "../variables/darkPalette";
+import { primaryBorderColor, primaryContainer, primaryText } from "../variables/darkPalette";
 
 export const darkStyles = StyleSheet.create({
   body: {
     backgroundColor: "rgb(19,19,19)",
   },
   container: {
-    backgroundColor: "rgb(19,19,19)",
+    backgroundColor: primaryContainer,
   },
   lightContainer: {
     backgroundColor: "rgb(39, 39, 39)",
