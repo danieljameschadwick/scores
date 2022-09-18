@@ -25,21 +25,16 @@ export const FootballPanel = () => {
       icon={<IonIcon name={"football"} size={24} color={getPrimaryText()} />}
     >
       <View style={[styles.container]}>
-        { fixtures && 
+        {fixtures &&
           Object.keys(fixtures)
             .sort()
             .map((key) => {
-              return (
-                <>
-                  {fixtures[key].map((score) => {
-                    const { id } = score;
+              return fixtures[key].map((score) => {
+                const { id } = score;
 
-                    return <PanelFixture key={id} {...score} />;
-                  })}
-                </>
-              );
-            }) 
-          }
+                return <PanelFixture key={id} {...score} />;
+              });
+            })}
       </View>
     </Panel>
   );
@@ -51,4 +46,5 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
   },
+  fixtureContainer: {},
 });
