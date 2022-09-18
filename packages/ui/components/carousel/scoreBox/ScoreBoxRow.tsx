@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native-web";
+import { View, Text, StyleSheet, Image } from "react-native";
 import AntDesignIcon from "react-native-vector-icons/AntDesign";
 import { getTheme } from "@scores/theme/utils/theme";
-import { GAME_RESULT } from "@src/enum/GameResult";
+import { GAME_RESULT } from "@scores/types/enum/GameResult";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 
 interface Props {
@@ -37,7 +37,10 @@ export const ScoreBoxRow: React.FC<Props> = ({
       <View style={[styles.teamContainer]}>
         <View style={[styles.iconContainer]}>
           {logo ? (
-            <img src={logo} />
+            <Image 
+              style={[styles.icon]}
+              source={{ uri: logo }}
+            />
           ) : (
             <AntDesignIcon
               name={"questioncircle"}
@@ -66,8 +69,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   iconContainer: {
-    width: 15,
     marginRight: 3,
+  },
+  icon: {
+    height: 15,
+    width: 15,
   },
   teamName: {
     fontSize: 12,

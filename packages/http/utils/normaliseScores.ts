@@ -1,7 +1,7 @@
 import parseISO from "date-fns/parseISO";
-import { GAME_RESULT } from "@src/enum/GameResult";
-import { GAME_STATUS } from "@src/enum/GameStatus";
-import { GAME_TYPE } from "@src/enum/GameType";
+import { GAME_RESULT } from "@scores/types/enum/GameResult";
+import { GAME_STATUS } from "@scores/types/enum/GameStatus";
+import { GAME_TYPE } from "@scores/types/enum/GameType";
 
 interface TeamInterface {
   name: string;
@@ -19,20 +19,19 @@ interface TeamInterface {
  * This will be replaced with an API when we cache data in 
  * the backend.
  */
-export const normaliseScores = (data: any, gameType: GAME_TYPE) => {
+export const normaliseScores = (data: any, gameType: GAME_TYPE): {} => {
   switch (gameType) {
     case GAME_TYPE.FOOTBALL:
       return normaliseFootball(data);
 
     case GAME_TYPE.NBA:
       return normaliseNba(data);
-
   }
 
   throw new Error(`Invalid gameType passed: ${gameType}`);
 };
 
-const normaliseFootball = (data) => {
+const normaliseFootball = (data): {} => {
   const { response } = data;
   const scoresByDate = {};
 
@@ -43,8 +42,6 @@ const normaliseFootball = (data) => {
     if (!scoresByDate[startOfDay]) {
       scoresByDate[startOfDay] = [];
     }
-
-    console.log(game);
 
     scoresByDate[startOfDay].push({
       id: id,

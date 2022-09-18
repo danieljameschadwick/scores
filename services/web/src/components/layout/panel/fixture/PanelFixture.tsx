@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native-web";
 import StyleSheet from "react-native-media-query";
-import { GAME_RESULT } from "@src/enum/GameResult";
+import { GAME_RESULT } from "@scores/types/enum/GameResult";
 import { FixtureRow } from "@src/components/layout/panel/fixture/FixtureRow";
 import { getTheme } from "@scores/theme/utils/theme";
 

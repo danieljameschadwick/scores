@@ -1,0 +1,13 @@
+{
+    "name": "@scores/http",
+    "version": "0.0.1",
+    "type": "module",
+    "license": "UNLICENSED",
+    "dependencies": {
+        "date-fns": "^2.29.3",
+        "react": "17.0.2",
+        "react-devtools": "4.22.0",
+        "react-dom": "17.0.2",
+        "react-native": "0.68.2"
+    }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import format from "date-fns/format";
-import { CarouselScoreBox } from "@src/components/scores/carousel/CarouselScoreBox";
-import { CarouselText } from "@src/components/scores/carousel/CarouselText";
+import { CarouselScoreBox } from "@scores/ui/components/carousel/CarouselScoreBox";
+import { CarouselText } from "@scores/ui/components/carousel/CarouselText";
 
 interface Props {
   groupName: string;

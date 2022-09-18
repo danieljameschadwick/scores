@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text } from "react-native-web";
 import StyleSheet from "react-native-media-query";
 import AntDesignIcon from "react-native-vector-icons/AntDesign";
-import { GAME_RESULT } from "@src/enum/GameResult";
+import { GAME_RESULT } from "@scores/types/enum/GameResult";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 import { getTheme } from "@scores/theme/utils/theme";
 

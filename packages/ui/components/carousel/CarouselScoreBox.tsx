@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native-web";
+import { View, Text, StyleSheet } from "react-native";
 import { getTheme } from "@scores/theme/utils/theme";
-import { ScoreBoxRow } from "@src/components/scores/carousel/scoreBox/ScoreBoxRow";
-import { GAME_RESULT } from "@src/enum/GameResult";
+import { ScoreBoxRow } from "@scores/ui/components/carousel/scoreBox/ScoreBoxRow";
+import { GAME_RESULT } from "@scores/types/enum/GameResult";
 
 interface ScoreInterface {
   abbreviation: string;
@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
   container: {
     width: 120,
     display: "flex",
-    flexWrap: "wrap",
     flexDirection: "column",
     paddingLeft: 12,
     paddingRight: 12,

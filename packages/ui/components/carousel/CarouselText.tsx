@@ -1,6 +1,6 @@
-import { getTheme } from "@scores/theme/utils/theme";
 import React from "react";
-import { View, Text, StyleSheet } from "react-native-web";
+import { View, Text, StyleSheet } from "react-native";
+import { getTheme } from "@scores/theme/utils/theme";
 
 interface Props {
   text: string;

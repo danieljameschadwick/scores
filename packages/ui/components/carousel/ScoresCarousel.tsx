@@ -1,24 +1,21 @@
 import React, { useRef, useState } from "react";
-import { ScrollView, View, TouchableOpacity } from "react-native-web";
+import { ScrollView, View, TouchableOpacity } from "react-native";
 import StyleSheet from "react-native-media-query";
 import Icon from "react-native-vector-icons/Entypo";
-import { CarouselGroup } from "@src/components/scores/carousel/CarouselGroup";
-import { Z_INDEXES } from "@src/enum/zIndex";
-import { GAME_TYPE } from "@src/enum/GameType";
-
-// @TODO: remove mocks with API
-import footballFixtures from "@src/mocks/footballFixtures";
-// import basketballFixtures from "@src/mocks/basketballFixtures";
-import { normaliseScores } from "@src/utils/scores/normaliseScores";
+import { CarouselGroup } from "@scores/ui/components/carousel/CarouselGroup";
+import { Z_INDEXES } from "@scores/types/enum/zIndex";
 import { getTheme } from "@scores/theme/utils/theme";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 
 const SCROLL_DISTANCE = 500;
 
-export const ScoresCarousel = () => {
+interface Props {
+  data: {};
+}
+
+export const ScoresCarousel: React.FC<Props> = ({ data }) => {
   const themeStyles = getTheme();
   const scrollRef = useRef(null);
-  const footballData = normaliseScores(footballFixtures, GAME_TYPE.FOOTBALL);
   const [position, setPosition] = useState<number>(0);
 
   const scrollLeft = () => {
@@ -68,10 +65,11 @@ export const ScoresCarousel = () => {
           onScroll={(e) => setPosition(e.nativeEvent.contentOffset.x)}
           scrollEventThrottle={0}
         >
+
           <CarouselGroup
             groupName={"Football"}
             leagueName={"PL"}
-            scores={footballData}
+            scores={data}
           />
           {/* <CarouselGroup groupName={"NBA"} scores={basketballFixtures} /> */}
         </ScrollView>
