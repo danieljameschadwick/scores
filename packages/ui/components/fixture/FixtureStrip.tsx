@@ -16,7 +16,7 @@ export const FixtureStrip = () => {
   } = fixture;
 
   return (
-    <View style={[styles.container]}>
+    <View style={[styles.container, themeStyles.lightContainer]}>
       <FixtureStripScore team={away} score={awayGoals} />
       <View style={[styles.statusContainer]}>
         <Text style={[styles.statusText, themeStyles.text]}>FT</Text>

@@ -6,7 +6,6 @@ import { getTheme } from "@scores/theme/utils/theme";
 import { getFixture } from "@scores/http/services/football";
 import { GameInterface } from "@scores/types/interfaces/GameInterface";
 import { Fixture } from "@scores/ui/components/fixture/Fixture";
-import { FixtureContext } from "@scores/ui/components/fixture/FixtureContext";
 import { Header } from "@src/components/layout/header/Header";
 import { FluidPageContent } from "@src/components/layout/FluidPageContent";
 
@@ -50,27 +49,9 @@ const FixturePage: React.FC = () => {
   );
 };
 
-const { ids, styles } = StyleSheet.create({
+const { styles } = StyleSheet.create({
   container: {
     minHeight: "100%",
-  },
-  pageContainer: {
-    marginTop: 15,
-    marginHorizontal: "auto",
-    width: "100%",
-    "@media (min-width: 667px)": {
-      width: 660,
-    },
-  },
-  heading: {
-    fontSize: 18,
-    fontWeight: "600",
-    textAlign: "center",
-    marginBottom: 10,
-  },
-  date: {
-    fontSize: 14,
-    textAlign: "center",
   },
 });
 

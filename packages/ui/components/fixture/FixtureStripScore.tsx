@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
+import { View, Text, Image } from "react-native";
+import StyleSheet from "react-native-media-query";
 import { getTheme } from "@scores/theme/utils/theme";
 
 interface Props {
@@ -19,21 +20,34 @@ export const FixtureStripScore: React.FC<Props> = ({
 
   const containerStyles = [styles.container];
   const nameContainer = [styles.nameContainer];
+  const abbreviationContainer = [styles.abbreviationContainer];
   const iconContainer = [styles.iconContainer];
   const scoreContainer = [styles.scoreContainer];
 
   if (isHome) {
     containerStyles.push(homeStyles.container);
     nameContainer.push(homeStyles.nameContainer);
+    abbreviationContainer.push(homeStyles.abbreviationContainer);
     iconContainer.push(homeStyles.iconContainer);
     scoreContainer.push(homeStyles.scoreContainer);
   }
 
-  const { name, logo } = team;
+  const { name, logo, abbreviation } = team;
 
   return (
     <View style={containerStyles}>
-      <Text style={[nameContainer, themeStyles.text]}>{name}</Text>
+      <Text
+        style={[nameContainer, themeStyles.text]}
+        dataSet={{ media: ids.nameContainer }}
+      >
+        {name}
+      </Text>
+      <Text
+        style={[nameContainer, abbreviationContainer, themeStyles.text]}
+        dataSet={{ media: ids.abbreviationContainer }}
+      >
+        {abbreviation}
+      </Text>
       {logo && (
         <View style={[iconContainer]}>
           <Image style={[styles.icon]} source={{ uri: logo }} />
@@ -44,12 +58,13 @@ export const FixtureStripScore: React.FC<Props> = ({
   );
 };
 
-const styles = StyleSheet.create({
+const { styles, ids } = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "flex-end",
+    width: 600,
     paddingVertical: 15,
     flexGrow: 1,
   },
@@ -58,6 +73,14 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     marginRight: 20,
     marginLeft: 0,
+    "@media (max-width: 1100px)": {
+      display: "none",
+    },
+  },
+  abbreviationContainer: {
+    "@media (min-width: 1100px)": {
+      display: "none",
+    },
   },
   iconContainer: {
     marginRight: 20,
@@ -77,15 +100,17 @@ const styles = StyleSheet.create({
   },
 });
 
-// just make one common container
-const homeStyles = StyleSheet.create({
+// @TODO: make one common container for margins
+const { styles: homeStyles } = StyleSheet.create({
   container: {
     flexDirection: "row-reverse",
+    justifyContent: "flex-end",
   },
   nameContainer: {
     marginRight: 0,
     marginLeft: 20,
   },
+  abbreviationContainer: {},
   iconContainer: {
     marginRight: 0,
     marginLeft: 20,
