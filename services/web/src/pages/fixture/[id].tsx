@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { View, Text } from "react-native-web";
+import { View } from "react-native-web";
 import StyleSheet from "react-native-media-query";
 import { useRouter } from "next/router";
-import format from "date-fns/format";
 import { getTheme } from "@scores/theme/utils/theme";
 import { getFixture } from "@scores/http/services/football";
 import { GameInterface } from "@scores/types/interfaces/GameInterface";
+import { Fixture } from "@scores/ui/components/fixture/Fixture";
+import { FixtureContext } from "@scores/ui/components/fixture/FixtureContext";
 import { Header } from "@src/components/layout/header/Header";
 import { FluidPageContent } from "@src/components/layout/FluidPageContent";
 
-const Fixture: React.FC = () => {
+const FixturePage: React.FC = () => {
   const router = useRouter();
   const { id: rawId } = router.query;
   const id = parseInt(rawId as string, 10);
@@ -38,28 +39,12 @@ const Fixture: React.FC = () => {
     throw new Error("Fixture not found");
   }
 
-  const {
-    fixture: { date },
-    teams: { home, away },
-  } = fixture;
-
   return (
     <View style={styles.container}>
       <Header />
 
       <FluidPageContent styles={containerStyles}>
-        <View
-          style={[styles.pageContainer]}
-          dataSet={{ media: ids.pageContainer }}
-        >
-          <Text style={[styles.heading, themeStyles.text]}>
-            {away.name} @ {home.name}
-          </Text>
-
-          <Text style={[styles.date, themeStyles.text]}>
-            {format(new Date(date), "dd/MM/yyyy")}
-          </Text>
-        </View>
+        <Fixture fixture={fixture} />
       </FluidPageContent>
     </View>
   );
@@ -86,7 +71,7 @@ const { ids, styles } = StyleSheet.create({
   date: {
     fontSize: 14,
     textAlign: "center",
-  }
+  },
 });
 
 const { styles: containerStyles } = StyleSheet.create({
@@ -97,4 +82,4 @@ const { styles: containerStyles } = StyleSheet.create({
   },
 });
 
-export default Fixture;
+export default FixturePage;
