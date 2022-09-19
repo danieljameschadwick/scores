@@ -9,7 +9,7 @@ import { Theme } from "@scores/types/enum/Theme";
 import { getTheme } from "@scores/theme/utils/theme";
 import { RootStackParamList } from "../typing/typing";
 
-type Props = NativeStackScreenProps<RootStackParamList, "Index">;
+type Props = NativeStackScreenProps<RootStackParamList, "Settings">;
 
 export const SettingsScreen: React.FC<Props> = ({ navigation }) => {
   const dispatch = useAppDispatch();

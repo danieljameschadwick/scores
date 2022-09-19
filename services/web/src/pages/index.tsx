@@ -18,7 +18,7 @@ const Index: React.FC = () => {
             style={[styles.pageContainer]}
             dataSet={{ media: ids.pageContainer }}
           >
-            <FootballPanel />
+            {/* <FootballPanel /> */}
             <CricketPanel />
           </View>
         </FluidPageContent>
@@ -29,7 +29,7 @@ const Index: React.FC = () => {
 
 const { ids, styles } = StyleSheet.create({
   container: {
-    height: "100%",
+    minHeight: "100%",
   },
   pageContainer: {
     marginTop: 15,
@@ -49,6 +49,7 @@ const { ids, styles } = StyleSheet.create({
 
 const { styles: containerStyles } = StyleSheet.create({
   container: {
+    height: "100%",
     marginTop: 107.5,
     paddingBottom: 50,
   },

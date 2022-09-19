@@ -9,6 +9,7 @@ import IonIcon from "react-native-vector-icons/Ionicons";
 
 import { HomeScreen } from "../screens/HomeScreen";
 import { SettingsScreen } from "../screens/SettingsScreen";
+import { FixtureScreen } from "../screens/FixtureScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -41,6 +42,7 @@ export const Navigator = () => {
           })}
         />
         <Stack.Screen name="Settings" component={SettingsScreen} />
+        <Stack.Screen name="Fixture" component={FixtureScreen} />
         {/* // @TODO: implement login in app */}
         {/* <Stack.Screen name="Login" component={LoginScreen} /> */}
         {/* // @TODO: implement registration in app */}

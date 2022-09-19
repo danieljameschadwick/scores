@@ -1,6 +1,6 @@
 export type RootStackParamList = {
   Index: undefined;
-  Links: { username: string };
+  Fixture: { id: number };
   Login: undefined;
   Settings: undefined;
 };
