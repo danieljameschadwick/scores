@@ -1,5 +1,5 @@
 const STAGE = process.env.STAGE;
-const SCHEME = process.env.SCHEME ?? "com.example";
+const SCHEME = process.env.SCHEME ?? "com.group.scores";
 
 const envConfig = {
   development: {
@@ -26,7 +26,6 @@ export default {
   description: "",
   slug: "example",
   scheme: "example",
-  owner: "poolpoolpool",
   icon: config.icon,
   version: "0.0.1",
   splash: {
