@@ -4,8 +4,9 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import format from "date-fns/format";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { getTheme } from "@scores/theme/utils/theme";
-import { RootStackParamList } from "../typing/typing";
 import { getFixture } from "@scores/http/services/football";
+import { GameInterface } from "@scores/types/interfaces/GameInterface";
+import { RootStackParamList } from "../typing/typing";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Fixture">;
 
@@ -13,7 +14,7 @@ export const FixtureScreen: React.FC<Props> = ({ route }) => {
   const {
     params: { id },
   } = route;
-  const [fixture, setFixture] = useState<{}>(null);
+  const [fixture, setFixture] = useState<GameInterface | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const themeStyles = getTheme();
 

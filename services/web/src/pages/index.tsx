@@ -18,7 +18,7 @@ const Index: React.FC = () => {
             style={[styles.pageContainer]}
             dataSet={{ media: ids.pageContainer }}
           >
-            {/* <FootballPanel /> */}
+            <FootballPanel />
             <CricketPanel />
           </View>
         </FluidPageContent>

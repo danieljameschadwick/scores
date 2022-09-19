@@ -3,16 +3,17 @@ import { View, Text } from "react-native-web";
 import StyleSheet from "react-native-media-query";
 import { useRouter } from "next/router";
 import format from "date-fns/format";
-import { Header } from "@src/components/layout/header/Header";
-import { FluidPageContent } from "@src/components/layout/FluidPageContent";
 import { getTheme } from "@scores/theme/utils/theme";
 import { getFixture } from "@scores/http/services/football";
+import { GameInterface } from "@scores/types/interfaces/GameInterface";
+import { Header } from "@src/components/layout/header/Header";
+import { FluidPageContent } from "@src/components/layout/FluidPageContent";
 
 const Fixture: React.FC = () => {
   const router = useRouter();
   const { id: rawId } = router.query;
   const id = parseInt(rawId as string, 10);
-  const [fixture, setFixture] = useState<{}>(null);
+  const [fixture, setFixture] = useState<GameInterface | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const themeStyles = getTheme();
 
