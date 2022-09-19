@@ -3,12 +3,12 @@ const SCHEME = process.env.SCHEME ?? "com.group.scores";
 
 const envConfig = {
   development: {
-    scheme: `${SCHEME}.development`,
+    scheme: `${SCHEME}`,
     icon: "./assets/icon.development.png",
     backgroundColor: "#FF0000"
   },
   staging: {
-    scheme: `${SCHEME}.staging`,
+    scheme: `${SCHEME}`,
     icon: "./assets/icon.staging.png",
     backgroundColor: "#8000FF"
   },

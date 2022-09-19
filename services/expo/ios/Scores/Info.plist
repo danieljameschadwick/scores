@@ -26,7 +26,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>example</string>
-				<string>com.group.scores.development</string>
+				<string>com.group.scores</string>
 			</array>
 		</dict>
 		<dict>

@@ -13,9 +13,9 @@ const appGroupIdentifier = "com.group.scores";
 const setupWidgets = () => {
   try {
     SharedGroupPreferences.setItem(
-      "scoresWidget", // this is a key to pull from later in Swift
-      { displayText: "Test Scores Widget" },
-      appGroupIdentifier
+      "scoreWidget", // this is a key to pull from later in Swift
+      { displayText: "Test Scores Widget: React" },
+      appGroupIdentifier,
     );
   } catch (error) {
     console.log(error);
