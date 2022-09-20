@@ -64,7 +64,6 @@ const { styles, ids } = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "flex-end",
-    width: 600,
     paddingVertical: 15,
     flexGrow: 1,
   },

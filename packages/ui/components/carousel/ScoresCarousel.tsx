@@ -102,6 +102,7 @@ const { ids, styles } = StyleSheet.create({
     position: "relative",
     display: "flex",
     alignItems: "center",
+    height: 60.5,
     zIndex: Z_INDEXES.OVERLAY,
     backgroundColor: "rgb(237, 238, 240)",
     borderBottomWidth: 1,

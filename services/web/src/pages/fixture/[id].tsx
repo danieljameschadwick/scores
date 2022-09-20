@@ -42,7 +42,7 @@ const FixturePage: React.FC = () => {
     <View style={styles.container}>
       <Header />
 
-      <FluidPageContent styles={containerStyles}>
+      <FluidPageContent style={containerStyles}>
         <Fixture fixture={fixture} />
       </FluidPageContent>
     </View>
@@ -58,7 +58,7 @@ const { styles } = StyleSheet.create({
 const { styles: containerStyles } = StyleSheet.create({
   container: {
     height: "100%",
-    marginTop: 107.5,
+    marginTop: 110.5,
     paddingBottom: 50,
   },
 });

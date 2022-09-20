@@ -93,7 +93,7 @@ export const Header: React.FC = () => {
           )}
         </View>
       </View>
-      <View>
+      <View style={[styles.carouselContainer]}>
         { footballData && (
           <ScoresCarousel data={footballData} />
         ) }
@@ -115,6 +115,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     height: 50,
     padding: 12,
+    borderBottomWidth: 1,
+  },
+  carouselContainer: {
     borderBottomWidth: 1,
   },
   logoText: {

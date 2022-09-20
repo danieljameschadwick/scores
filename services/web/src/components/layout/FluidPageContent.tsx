@@ -4,11 +4,11 @@ import StyleSheet from "react-native-media-query";
 import { getTheme } from "@scores/theme/utils/theme";
 
 interface Props {
-  styles: StyleProp<ViewStyle>;
+  style: StyleProp<ViewStyle>;
   children: React.ReactNode;
 }
 
-export const FluidPageContent: React.FC<Props> = ({ styles: propStyles, children }) => {
+export const FluidPageContent: React.FC<Props> = ({ style: propStyles, children }) => {
   const themeStyles = getTheme();
 
   return (
@@ -24,8 +24,6 @@ const { ids, styles } = StyleSheet.create({
     marginLeft: "auto",
     marginRight: "auto",
     "@media (max-width: 667px)": {
-      paddingLeft: "12px",
-      paddingRight: "12px",
       width: "100%",
     },
   },

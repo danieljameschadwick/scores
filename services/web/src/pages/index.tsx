@@ -3,9 +3,9 @@ import { View } from "react-native-web";
 import StyleSheet from "react-native-media-query";
 import NoSsrWrapper from "@src/components/util/noSsrWrapper";
 import { Header } from "@src/components/layout/header/Header";
-import { FluidPageContent } from "@src/components/layout/FluidPageContent";
 import { FootballPanel } from "@scores/ui/components/layout/panel/FootballPanel";
 import { CricketPanel } from "@scores/ui/components/layout/panel/CricketPanel";
+import { FluidPageContent } from "@src/components/layout/FluidPageContent";
 
 const Index: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const Index: React.FC = () => {
       <View style={styles.container}>
         <Header />
 
-        <FluidPageContent styles={containerStyles}>
+        <FluidPageContent style={containerStyles}>
           <View
             style={[styles.pageContainer]}
             dataSet={{ media: ids.pageContainer }}

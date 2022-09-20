@@ -1,14 +1,18 @@
 import React from "react";
+import { StyleProp, View, ViewStyle } from "react-native-web";
 import StyleSheet from "react-native-media-query";
-import { View } from "react-native-web";
+import { getTheme } from "@scores/theme/utils/theme";
 
-type Props = {
+interface Props {
+  style: StyleProp<ViewStyle>;
   children: React.ReactNode;
 }
 
-export const PageContent: React.FC<Props> = ({ children }) => {
+export const PageContent: React.FC<Props> = ({ style: propStyles, children }) => {
+  const themeStyles = getTheme();
+
   return (
-    <View style={styles.container} dataSet={{ media: ids.container }}>
+    <View style={[styles.container, themeStyles.body, propStyles?.container]} dataSet={{ media: ids.container }}>
       { children }
     </View>
   );

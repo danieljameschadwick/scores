@@ -24,7 +24,6 @@ export const FixtureScreen: React.FC<Props> = ({ route }) => {
       height: "100%",
       width: "100%",
       paddingBottom: insets.bottom,
-      paddingHorizontal: 15,
     },
     heading: {
       fontSize: 18,
