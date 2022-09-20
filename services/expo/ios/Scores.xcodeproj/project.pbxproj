@@ -15,22 +15,22 @@
 		96905EF65AED1B983A6B3ABC /* libPods-Scores.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-Scores.a */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
-		D5BF903628D914FC003176A5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BF903528D914FC003176A5 /* WidgetKit.framework */; };
-		D5BF903828D914FC003176A5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BF903728D914FC003176A5 /* SwiftUI.framework */; };
-		D5BF903B28D914FC003176A5 /* scoreWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BF903A28D914FC003176A5 /* scoreWidget.swift */; };
-		D5BF903E28D914FE003176A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5BF903D28D914FE003176A5 /* Assets.xcassets */; };
-		D5BF904028D914FE003176A5 /* scoreWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D5BF903C28D914FC003176A5 /* scoreWidget.intentdefinition */; };
-		D5BF904128D914FE003176A5 /* scoreWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D5BF903C28D914FC003176A5 /* scoreWidget.intentdefinition */; };
-		D5BF904428D914FE003176A5 /* scoreWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D5BF903428D914FC003176A5 /* scoreWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D5337AA428D9BA4100A43C82 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BF903528D914FC003176A5 /* WidgetKit.framework */; };
+		D5337AA528D9BA4100A43C82 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BF903728D914FC003176A5 /* SwiftUI.framework */; };
+		D5337AA828D9BA4100A43C82 /* ScoresWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5337AA728D9BA4100A43C82 /* ScoresWidget.swift */; };
+		D5337AAB28D9BA4100A43C82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5337AAA28D9BA4100A43C82 /* Assets.xcassets */; };
+		D5337AAD28D9BA4100A43C82 /* ScoresWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D5337AA928D9BA4100A43C82 /* ScoresWidget.intentdefinition */; };
+		D5337AAE28D9BA4100A43C82 /* ScoresWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D5337AA928D9BA4100A43C82 /* ScoresWidget.intentdefinition */; };
+		D5337AB128D9BA4100A43C82 /* ScoresWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D5337AA328D9BA4100A43C82 /* ScoresWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D5BF904228D914FE003176A5 /* PBXContainerItemProxy */ = {
+		D5337AAF28D9BA4100A43C82 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D5BF903328D914FC003176A5;
-			remoteInfo = scoreWidgetExtension;
+			remoteGlobalIDString = D5337AA228D9BA4100A43C82;
+			remoteInfo = ScoresWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -41,7 +41,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				D5BF904428D914FE003176A5 /* scoreWidgetExtension.appex in Embed Foundation Extensions */,
+				D5337AB128D9BA4100A43C82 /* ScoresWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,7 +50,7 @@
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Scores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scores.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = development.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Scores/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Scores/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Scores/Images.xcassets; sourceTree = "<group>"; };
@@ -62,13 +62,13 @@
 		7CB077CB846C4DDF9727EF71 /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "Scores/noop-file.swift"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = Scores/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
-		D5BF903428D914FC003176A5 /* scoreWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = scoreWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5337AA328D9BA4100A43C82 /* ScoresWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScoresWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5337AA728D9BA4100A43C82 /* ScoresWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresWidget.swift; sourceTree = "<group>"; };
+		D5337AA928D9BA4100A43C82 /* ScoresWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ScoresWidget.intentdefinition; sourceTree = "<group>"; };
+		D5337AAA28D9BA4100A43C82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D5337AAC28D9BA4100A43C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5BF903528D914FC003176A5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		D5BF903728D914FC003176A5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		D5BF903A28D914FC003176A5 /* scoreWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreWidget.swift; sourceTree = "<group>"; };
-		D5BF903C28D914FC003176A5 /* scoreWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = scoreWidget.intentdefinition; sourceTree = "<group>"; };
-		D5BF903D28D914FE003176A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D5BF903F28D914FE003176A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-Scores/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,12 +82,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D5BF903128D914FC003176A5 /* Frameworks */ = {
+		D5337AA028D9BA4100A43C82 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5BF903828D914FC003176A5 /* SwiftUI.framework in Frameworks */,
-				D5BF903628D914FC003176A5 /* WidgetKit.framework in Frameworks */,
+				D5337AA528D9BA4100A43C82 /* SwiftUI.framework in Frameworks */,
+				D5337AA428D9BA4100A43C82 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +133,7 @@
 			children = (
 				13B07FAE1A68108700A75B9A /* Scores */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				D5BF903928D914FC003176A5 /* scoreWidget */,
+				D5337AA628D9BA4100A43C82 /* ScoresWidget */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D65327D7A22EEC0BE12398D9 /* Pods */,
@@ -147,8 +147,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* Scores.app */,
-				D5BF903428D914FC003176A5 /* scoreWidgetExtension.appex */,
+				13B07F961A680F5B00A75B9A /* development.app */,
+				D5337AA328D9BA4100A43C82 /* ScoresWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,15 +170,15 @@
 			path = Scores/Supporting;
 			sourceTree = "<group>";
 		};
-		D5BF903928D914FC003176A5 /* scoreWidget */ = {
+		D5337AA628D9BA4100A43C82 /* ScoresWidget */ = {
 			isa = PBXGroup;
 			children = (
-				D5BF903A28D914FC003176A5 /* scoreWidget.swift */,
-				D5BF903C28D914FC003176A5 /* scoreWidget.intentdefinition */,
-				D5BF903D28D914FE003176A5 /* Assets.xcassets */,
-				D5BF903F28D914FE003176A5 /* Info.plist */,
+				D5337AA728D9BA4100A43C82 /* ScoresWidget.swift */,
+				D5337AA928D9BA4100A43C82 /* ScoresWidget.intentdefinition */,
+				D5337AAA28D9BA4100A43C82 /* Assets.xcassets */,
+				D5337AAC28D9BA4100A43C82 /* Info.plist */,
 			);
-			path = scoreWidget;
+			path = ScoresWidget;
 			sourceTree = "<group>";
 		};
 		D65327D7A22EEC0BE12398D9 /* Pods */ = {
@@ -218,28 +218,28 @@
 			buildRules = (
 			);
 			dependencies = (
-				D5BF904328D914FE003176A5 /* PBXTargetDependency */,
+				D5337AB028D9BA4100A43C82 /* PBXTargetDependency */,
 			);
 			name = Scores;
 			productName = Scores;
-			productReference = 13B07F961A680F5B00A75B9A /* Scores.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* development.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D5BF903328D914FC003176A5 /* scoreWidgetExtension */ = {
+		D5337AA228D9BA4100A43C82 /* ScoresWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D5BF904828D914FE003176A5 /* Build configuration list for PBXNativeTarget "scoreWidgetExtension" */;
+			buildConfigurationList = D5337AB428D9BA4200A43C82 /* Build configuration list for PBXNativeTarget "ScoresWidgetExtension" */;
 			buildPhases = (
-				D5BF903028D914FC003176A5 /* Sources */,
-				D5BF903128D914FC003176A5 /* Frameworks */,
-				D5BF903228D914FC003176A5 /* Resources */,
+				D5337A9F28D9BA4100A43C82 /* Sources */,
+				D5337AA028D9BA4100A43C82 /* Frameworks */,
+				D5337AA128D9BA4100A43C82 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = scoreWidgetExtension;
-			productName = scoreWidgetExtension;
-			productReference = D5BF903428D914FC003176A5 /* scoreWidgetExtension.appex */;
+			name = ScoresWidgetExtension;
+			productName = ScoresWidgetExtension;
+			productReference = D5337AA328D9BA4100A43C82 /* ScoresWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -254,7 +254,7 @@
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1250;
 					};
-					D5BF903328D914FC003176A5 = {
+					D5337AA228D9BA4100A43C82 = {
 						CreatedOnToolsVersion = 14.0;
 						ProvisioningStyle = Automatic;
 					};
@@ -274,7 +274,7 @@
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* Scores */,
-				D5BF903328D914FC003176A5 /* scoreWidgetExtension */,
+				D5337AA228D9BA4100A43C82 /* ScoresWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -290,11 +290,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D5BF903228D914FC003176A5 /* Resources */ = {
+		D5337AA128D9BA4100A43C82 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5BF903E28D914FE003176A5 /* Assets.xcassets in Resources */,
+				D5337AAB28D9BA4100A43C82 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,29 +408,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
-				D5BF904128D914FE003176A5 /* scoreWidget.intentdefinition in Sources */,
+				D5337AAE28D9BA4100A43C82 /* ScoresWidget.intentdefinition in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */,
 				8E2598F5987D49BF9DF1FF0F /* noop-file.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D5BF903028D914FC003176A5 /* Sources */ = {
+		D5337A9F28D9BA4100A43C82 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5BF903B28D914FC003176A5 /* scoreWidget.swift in Sources */,
-				D5BF904028D914FE003176A5 /* scoreWidget.intentdefinition in Sources */,
+				D5337AA828D9BA4100A43C82 /* ScoresWidget.swift in Sources */,
+				D5337AAD28D9BA4100A43C82 /* ScoresWidget.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D5BF904328D914FE003176A5 /* PBXTargetDependency */ = {
+		D5337AB028D9BA4100A43C82 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D5BF903328D914FC003176A5 /* scoreWidgetExtension */;
-			targetProxy = D5BF904228D914FE003176A5 /* PBXContainerItemProxy */;
+			target = D5337AA228D9BA4100A43C82 /* ScoresWidgetExtension */;
+			targetProxy = D5337AAF28D9BA4100A43C82 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -458,7 +458,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.group.scores";
+				PRODUCT_BUNDLE_IDENTIFIER = com.group.scores;
 				PRODUCT_NAME = development;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -485,7 +485,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.group.scores";
+				PRODUCT_BUNDLE_IDENTIFIER = com.group.scores;
 				PRODUCT_NAME = development;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -600,7 +600,7 @@
 			};
 			name = Release;
 		};
-		D5BF904628D914FE003176A5 /* Debug */ = {
+		D5337AB228D9BA4200A43C82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -617,15 +617,15 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = scoreWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = scoreWidget;
+				INFOPLIST_FILE = ScoresWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ScoresWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.group.scores.scoreWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.group.scores.ScoresWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -636,7 +636,7 @@
 			};
 			name = Debug;
 		};
-		D5BF904728D914FE003176A5 /* Release */ = {
+		D5337AB328D9BA4200A43C82 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -654,14 +654,14 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = scoreWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = scoreWidget;
+				INFOPLIST_FILE = ScoresWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ScoresWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.group.scores.scoreWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.group.scores.ScoresWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -692,11 +692,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D5BF904828D914FE003176A5 /* Build configuration list for PBXNativeTarget "scoreWidgetExtension" */ = {
+		D5337AB428D9BA4200A43C82 /* Build configuration list for PBXNativeTarget "ScoresWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D5BF904628D914FE003176A5 /* Debug */,
-				D5BF904728D914FE003176A5 /* Release */,
+				D5337AB228D9BA4200A43C82 /* Debug */,
+				D5337AB328D9BA4200A43C82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
