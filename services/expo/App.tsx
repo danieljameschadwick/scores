@@ -10,17 +10,30 @@ import { Navigator } from "./src/navigation/Navigator";
 
 const appGroupIdentifier = "com.group.scores";
 
+const widgetData = {
+  date: Date.parse("2022-09-04T15:30:00+00:00"),
+  home: {
+    abbreviation: "MUN",
+    score: 3,
+  },
+  away: {
+    abbreviation: "ARS",
+    score: 1,
+  },
+  result: "FT",
+};
+
 const setupWidgets = () => {
   try {
     SharedGroupPreferences.setItem(
       "ScoresWidget", // this is a key to pull from later in Swift
-      { displayText: "Test Scores Widget: React" },
+      widgetData,
       appGroupIdentifier,
     );
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 const App: React.FC = () => {
   setupWidgets();

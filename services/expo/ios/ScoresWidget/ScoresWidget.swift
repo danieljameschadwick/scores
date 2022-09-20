@@ -15,13 +15,19 @@ import Intents
 // refactoring but need to read more into Swift!
 //
 
+struct WidgetData {
+  let home: Team;
+  let away: Team;
+  let data: Date;
+}
+
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent(), displayText: "Scores Widget: Swift")
+        SimpleEntry(date: Date(), configuration: ConfigurationIntent(), widgetData: nil)
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration, displayText: "Scores Widget: Swift")
+        let entry = SimpleEntry(date: Date(), configuration: configuration, widgetData: nil)
         completion(entry)
     }
 
@@ -29,11 +35,26 @@ struct Provider: IntentTimelineProvider {
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
+        let widgetData: WidgetData? = nil;
+      
+        let userDefaults = UserDefaults.init(suiteName: "com.group.scores")
+        if userDefaults != nil {
+          if let savedData = userDefaults!.value(forKey: "widgetData") as? String {
+            let decoder = JSONDecoder()
+            let data = savedData.data(using: .utf8)
+            
+            print(data);
+            
+//            if let parsedData = try? decoder.decode(WidgetData.self, from: data!) {
+//              print(parsedData)
+//            }
+          }
+        }
+      
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration, displayText: "Scores Widget: Swift")
+          let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
+          let entry = SimpleEntry(date: entryDate, configuration: configuration, widgetData: nil)
             entries.append(entry)
         }
 
@@ -43,9 +64,9 @@ struct Provider: IntentTimelineProvider {
 }
 
 struct SimpleEntry: TimelineEntry {
-    let date: Date
-    let configuration: ConfigurationIntent
-    let displayText: String
+  let date: Date;
+  let configuration: ConfigurationIntent;
+  let widgetData: WidgetData?;
 }
 
 struct Team {
@@ -112,6 +133,10 @@ struct ScoresWidgetRowView : View {
         ScoresWidgetStatus(status: status)
       })
     })
+    .frame(
+      minHeight: 0,
+      maxHeight: .infinity
+    )
 
     // @TODO: investigate `date!` and binding dates
     Section(content: {
@@ -178,7 +203,7 @@ struct ScoresWidget: Widget {
 
 struct ScoresWidget_Previews: PreviewProvider {
     static var previews: some View {
-        ScoresWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), displayText: "Scores Widget: Swift"))
+        ScoresWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), widgetData: nil))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

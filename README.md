@@ -16,6 +16,14 @@ Mobile                     |  Mobile (Dark)
 :-------------------------:|:-------------------------:
 ![Score page on desktop.](./docs/images/scores-page--light-app.png) | ![Scores page on mobile.](./docs/images/scores-page--dark-app.png)
 
+#### iOS
+
+As part of the Native process, we also have custom widgets (heavily WIP): 
+
+Widget                     |  Widget (Dark)
+:-------------------------:|:-------------------------:
+![Single score widget.](./docs/images/ios-widget--light-mode.png) | ![Single score widget (dark).](./docs/images/ios-widget--dark-mode.png)
+
 ## Setup:
 
 ```
