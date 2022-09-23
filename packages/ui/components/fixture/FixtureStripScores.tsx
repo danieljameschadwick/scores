@@ -11,14 +11,14 @@ export const FixtureStripScores = () => {
   const themeStyles = getTheme();
 
   const {
-    fixture: { date },
-    teams: { home, away },
-    goals: { home: homeGoals, away: awayGoals },
+    date,
+    home,
+    away,
   } = fixture;
 
   return (
     <View style={[styles.container, themeStyles.lightContainer]}>
-      <FixtureStripScore team={away} score={awayGoals} />
+      <FixtureStripScore team={away} />
 
       <View
         style={[styles.statusContainer]}
@@ -33,7 +33,7 @@ export const FixtureStripScores = () => {
         </Text>
       </View>
 
-      <FixtureStripScore team={home} score={homeGoals} isHome={true} />
+      <FixtureStripScore team={home} isHome={true} />
     </View>
   );
 };

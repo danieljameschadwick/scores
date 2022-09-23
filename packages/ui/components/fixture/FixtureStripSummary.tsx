@@ -6,7 +6,7 @@ import { useFixture } from "@scores/ui/components/fixture/FixtureContext";
 
 enum EVENT_TYPE {
   GOAL = "goal",
-};
+}
 
 // @TODO: hook into summary
 const getEventIcon = (type: EVENT_TYPE) => {
@@ -15,22 +15,18 @@ const getEventIcon = (type: EVENT_TYPE) => {
   }
 
   return null;
-}
+};
 
 export const FixtureStripSummary = () => {
   const fixture = useFixture();
   const themeStyles = getTheme();
 
   const {
-    statistics: { home: homeStatistics = [], away: awayStatistics = [] } = {
-      home: [],
-      away: [],
+    statistics: { homeStatistics = [], awayStatistics = [] } = {
+      homeStatistics: [],
+      awayStatistics: [],
     },
   } = fixture;
-
-  console.log(fixture);
-  console.log(homeStatistics);
-  console.log(awayStatistics);
 
   if (homeStatistics.length === 0 && awayStatistics.length === 0) {
     return null;
@@ -39,7 +35,15 @@ export const FixtureStripSummary = () => {
   return (
     <View style={[styles.container, themeStyles.darkContainer]}>
       <View>
-        {/* // @TODO: implement away statistics */}
+        {awayStatistics
+          .filter(({ type }) => type === "Goal")
+          .map(({ time, player, type }) => {
+            return (
+              <Text style={[themeStyles.text]}>
+                {`${player.name} (${time.elapsed}")`}
+              </Text>
+            );
+          })}
       </View>
 
       <View
@@ -48,13 +52,15 @@ export const FixtureStripSummary = () => {
       />
 
       <View>
-        {homeStatistics.map(({ time, player, type }) => {
-          return (
-            <Text style={[themeStyles.text]}>
-              {`${player.name} (${time.elapsed}")`}
-            </Text>
-          );
-        })}
+        {homeStatistics
+          .filter(({ type }) => type === "Goal")
+          .map(({ time, player, type }) => {
+            return (
+              <Text style={[themeStyles.text]}>
+                {`${player.name} (${time.elapsed}")`}
+              </Text>
+            );
+          })}
       </View>
     </View>
   );

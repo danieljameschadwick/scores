@@ -7,13 +7,11 @@ interface Props {
   // @TODO: add interface
   // team: TeamInterface;
   team: { name: string };
-  score: number;
   isHome: boolean;
 }
 
 export const FixtureStripScore: React.FC<Props> = ({
   team,
-  score,
   isHome = false,
 }) => {
   const themeStyles = getTheme();
@@ -32,7 +30,7 @@ export const FixtureStripScore: React.FC<Props> = ({
     scoreContainer.push(homeStyles.scoreContainer);
   }
 
-  const { name, logo, abbreviation } = team;
+  const { name, logo, abbreviation, score } = team;
 
   return (
     <View style={containerStyles}>

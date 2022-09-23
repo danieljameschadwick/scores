@@ -22,7 +22,7 @@ interface TeamInterface {
 export const normaliseScores = (data: any, gameType: GAME_TYPE): {} => {
   switch (gameType) {
     case GAME_TYPE.FOOTBALL:
-      return normaliseFootball(data);
+      return normaliseFootballByDate(data);
 
     case GAME_TYPE.NBA:
       return normaliseNba(data);
@@ -31,29 +31,36 @@ export const normaliseScores = (data: any, gameType: GAME_TYPE): {} => {
   throw new Error(`Invalid gameType passed: ${gameType}`);
 };
 
-const normaliseFootball = (data): {} => {
+const normaliseFootballByDate = (data): {} => {
   const { response } = data;
   const scoresByDate = {};
 
   for (const game of response) {
-    const { fixture: { id, date }, goals, teams: { home, away } } = game;
+    const { fixture: { date } } = game;
     const startOfDay = parseISO(date).setUTCHours(0, 0, 0, 0);
 
     if (!scoresByDate[startOfDay]) {
       scoresByDate[startOfDay] = [];
     }
 
-    scoresByDate[startOfDay].push({
-      id: id,
-      home: createScoreDTO(home, goals.home),
-      away: createScoreDTO(away, goals.away),
-      date: date,
-      status: GAME_STATUS.FULL_TIME,
-    });
+    scoresByDate[startOfDay].push(normaliseFootball(game));
   }
 
   return scoresByDate;
 };
+
+export const normaliseFootball = (game) => {
+  const { fixture: { id, date }, goals, teams: { home, away }, statistics } = game;
+
+  return {
+    id: id,
+    home: createScoreDTO(home, goals.home),
+    away: createScoreDTO(away, goals.away),
+    date: date,
+    status: GAME_STATUS.FULL_TIME,
+    statistics: normaliseStatistics(home.id, away.id, statistics),
+  };
+}
 
 const normaliseNba = (data) => {
   // @TODO: implement
@@ -81,4 +88,26 @@ const normaliseWinner = (result: boolean | null) => {
   return result
     ? GAME_RESULT.WIN
     : GAME_RESULT.LOSS;
+};
+
+const normaliseStatistics = (homeId, awayId, statistics = []) => {
+  const homeStatistics = [];
+  const awayStatistics = [];
+
+  for (const statistic of statistics) {
+    const { team: { id } } = statistic;
+
+    if (id === homeId) {
+      homeStatistics.push(statistic);
+    }
+
+    if (id === awayId) {
+      awayStatistics.push(statistic);
+    }
+  }
+
+  return {
+    homeStatistics,
+    awayStatistics,
+  };
 };
