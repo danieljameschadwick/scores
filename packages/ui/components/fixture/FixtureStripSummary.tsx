@@ -39,7 +39,10 @@ export const FixtureStripSummary = () => {
           .filter(({ type }) => type === "Goal")
           .map(({ time, player, type }) => {
             return (
-              <Text style={[themeStyles.text]}>
+              <Text
+                key={`${player.id}-${time.elapsed}-${type}`}
+                style={[themeStyles.text]}
+              >
                 {`${player.name} (${time.elapsed}")`}
               </Text>
             );
@@ -56,7 +59,10 @@ export const FixtureStripSummary = () => {
           .filter(({ type }) => type === "Goal")
           .map(({ time, player, type }) => {
             return (
-              <Text style={[themeStyles.text]}>
+              <Text
+                key={`${player.id}-${time.elapsed}-${type}`}
+                style={[themeStyles.text]}
+              >
                 {`${player.name} (${time.elapsed}")`}
               </Text>
             );
