@@ -1131,7 +1131,23 @@ export default {
           "home": null,
           "away": null
         }
-      }
+      },
+      "statistics": { // @TODO: backend serializes stats to one req
+        "home": [
+          {
+            "time": {
+              "elapsed": 35,
+              "extra": null,
+            },
+            "player": {
+              "id": 6126,
+              "name": "Antony"
+            },
+            "type": "Goal",
+          }
+        ],
+        "away": []
+,      },
     },
     {
       "fixture": {

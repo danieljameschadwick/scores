@@ -93,7 +93,7 @@ export const Header: React.FC = () => {
           )}
         </View>
       </View>
-      <View style={[styles.carouselContainer]}>
+      <View style={[styles.carouselContainer, themeStyles.lightContainer]}>
         { footballData && (
           <ScoresCarousel data={footballData} />
         ) }
