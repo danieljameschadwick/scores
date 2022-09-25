@@ -3,6 +3,7 @@ import { View, Text } from "react-native";
 import StyleSheet from "react-native-media-query";
 import { getTheme } from "@scores/theme/utils/theme";
 import { useFixture } from "@scores/ui/components/fixture/FixtureContext";
+import { FixtureStripSummaryEvent } from "@scores/ui/components/fixture/FixtureStripSummaryEvent";
 
 enum EVENT_TYPE {
   GOAL = "goal",
@@ -37,16 +38,14 @@ export const FixtureStripSummary = () => {
       <View>
         {awayStatistics
           .filter(({ type }) => type === "Goal")
-          .map(({ time, player, type }) => {
-            return (
-              <Text
-                key={`${player.id}-${time.elapsed}-${type}`}
-                style={[themeStyles.text]}
-              >
-                {`${player.name} (${time.elapsed}")`}
-              </Text>
-            );
-          })}
+          .map(({ time, player, type }) => (
+            <FixtureStripSummaryEvent
+              key={`${player.id}-${time.elapsed}-${type}`}
+              player={player}
+              time={time}
+              type={type}
+            />
+          ))}
       </View>
 
       <View
@@ -57,16 +56,14 @@ export const FixtureStripSummary = () => {
       <View>
         {homeStatistics
           .filter(({ type }) => type === "Goal")
-          .map(({ time, player, type }) => {
-            return (
-              <Text
-                key={`${player.id}-${time.elapsed}-${type}`}
-                style={[themeStyles.text]}
-              >
-                {`${player.name} (${time.elapsed}")`}
-              </Text>
-            );
-          })}
+          .map(({ time, player, type }) => (
+            <FixtureStripSummaryEvent
+              key={`${player.id}-${time.elapsed}-${type}`}
+              player={player}
+              time={time}
+              type={type}
+            />
+          ))}
       </View>
     </View>
   );
@@ -84,5 +81,14 @@ const { styles, ids } = StyleSheet.create({
     "@media (max-width: 667px)": {
       width: 25,
     },
+  },
+  eventContainer: {
+    display: "flex",
+    flexDirection: "row",
+  },
+  playerNameText: {
+    marginRight: 3,
+    color: "white",
+    fontWeight: 700,
   },
 });
