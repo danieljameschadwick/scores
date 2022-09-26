@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { getTheme } from "@scores/theme/utils/theme";
@@ -61,7 +61,9 @@ export const FixtureScreen: React.FC<Props> = ({ route }) => {
 
   return (
     <View style={[styles.container, themeStyles.container]}>
-      <Fixture fixture={fixture} />
+      <ScrollView>
+        <Fixture fixture={fixture} />
+      </ScrollView>
     </View>
   );
 };

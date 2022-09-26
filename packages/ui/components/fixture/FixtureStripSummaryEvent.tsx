@@ -26,6 +26,6 @@ const styles = StyleSheet.create({
   playerNameText: {
     marginRight: 3,
     color: "white",
-    fontWeight: 700,
+    fontWeight: "700",
   },
 });
