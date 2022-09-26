@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import StyleSheet from "react-native-media-query";
 import { getTheme } from "@scores/theme/utils/theme";
 import { useFixture } from "@scores/ui/components/fixture/FixtureContext";
@@ -23,20 +23,20 @@ export const FixtureStripSummary = () => {
   const themeStyles = getTheme();
 
   const {
-    statistics: { homeStatistics = [], awayStatistics = [] } = {
-      homeStatistics: [],
-      awayStatistics: [],
+    events: { homeEvents = [], awayEvents = [] } = {
+      homeEvents: [],
+      awayEvents: [],
     },
   } = fixture;
 
-  if (homeStatistics.length === 0 && awayStatistics.length === 0) {
+  if (homeEvents.length === 0 && awayEvents.length === 0) {
     return null;
   }
 
   return (
     <View style={[styles.container, themeStyles.darkContainer]}>
       <View>
-        {awayStatistics
+        {awayEvents
           .filter(({ type }) => type === "Goal")
           .map(({ time, player, type }) => (
             <FixtureStripSummaryEvent
@@ -54,7 +54,7 @@ export const FixtureStripSummary = () => {
       />
 
       <View>
-        {homeStatistics
+        {homeEvents
           .filter(({ type }) => type === "Goal")
           .map(({ time, player, type }) => (
             <FixtureStripSummaryEvent

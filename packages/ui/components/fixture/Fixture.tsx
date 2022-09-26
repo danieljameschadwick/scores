@@ -5,7 +5,7 @@ import { GameInterface } from "@scores/types/interfaces/GameInterface";
 import { normaliseFootball } from "@scores/http/utils/normaliseScores";
 import { FixtureStrip } from "@scores/ui/components/fixture/FixtureStrip";
 import { FixtureContext } from "@scores/ui/components/fixture/FixtureContext";
-import { FixtureStatisticsPanel } from "@scores/ui/components/fixture/FixtureStatisticsPanel";
+import { FixtureStatisticsPanel } from "@scores/ui/components/fixture/statisticsPanel/FixtureStatisticsPanel";
 
 interface Props {
   fixture: GameInterface;

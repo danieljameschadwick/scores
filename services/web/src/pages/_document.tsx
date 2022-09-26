@@ -1,5 +1,5 @@
 import React from "react";
-import { AppRegistry, StyleSheet } from "react-native-web";
+import { AppRegistry } from "react-native-web";
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
 import { flush } from "react-native-media-query";
 

@@ -50,7 +50,7 @@ const normaliseFootballByDate = (data): {} => {
 };
 
 export const normaliseFootball = (game) => {
-  const { fixture: { id, date }, goals, teams: { home, away }, statistics } = game;
+  const { fixture: { id, date }, goals, teams: { home, away }, events, statistics } = game;
 
   return {
     id: id,
@@ -58,6 +58,7 @@ export const normaliseFootball = (game) => {
     away: createScoreDTO(away, goals.away),
     date: date,
     status: GAME_STATUS.FULL_TIME,
+    events: normaliseEvents(home.id, away.id, events),
     statistics: normaliseStatistics(home.id, away.id, statistics),
   };
 }
@@ -90,24 +91,98 @@ const normaliseWinner = (result: boolean | null) => {
     : GAME_RESULT.LOSS;
 };
 
-const normaliseStatistics = (homeId, awayId, statistics = []) => {
-  const homeStatistics = [];
-  const awayStatistics = [];
+const normaliseEvents = (homeId, awayId, events = []) => {
+  const homeEvents = [];
+  const awayEvents = [];
 
-  for (const statistic of statistics) {
-    const { team: { id } } = statistic;
+  for (const event of events) {
+    const { team: { id } } = event;
 
     if (id === homeId) {
-      homeStatistics.push(statistic);
+      homeEvents.push(event);
     }
 
     if (id === awayId) {
-      awayStatistics.push(statistic);
+      awayEvents.push(event);
     }
   }
 
   return {
-    homeStatistics,
-    awayStatistics,
+    homeEvents,
+    awayEvents,
   };
 };
+
+const normaliseStatistics = (homeId, awayId, statistics = []) => {
+  let homeStatistics = null;
+  let awayStatistics = null;
+
+  for (const statistic of statistics) {
+    const normalisedStatistic = normaliseStatistic(statistic);
+
+    if (homeId === normalisedStatistic.teamId) {
+      homeStatistics = normalisedStatistic;
+    }
+
+    if (awayId === normalisedStatistic.teamId) {
+      awayStatistics = normalisedStatistic;
+    }
+  }
+
+  if (!homeStatistics || !awayStatistics) {
+    return {};
+  }
+
+  return combineNormalisedStatistics(homeStatistics, awayStatistics);
+};
+
+const normaliseStatistic = (statistic) => {
+  const { team, statistics } = statistic;
+  const formattedStatistics = [];
+
+  for (const stat of statistics) {
+    const { type, value } = stat;
+
+    const keyedType = keyifyType(type);
+    formattedStatistics.push({
+      id: keyedType,
+      name: type,
+      value: value ?? 0,
+    });
+  }
+
+  return {
+    teamId: team.id,
+    statistics: formattedStatistics,
+  };
+}
+
+const keyifyType = (type) => {
+  return lowercaseFirstLetter(type.replace(/ /g, ''));
+}
+
+const lowercaseFirstLetter = (string: string) => {
+  return string.charAt(0).toLocaleLowerCase() + string.slice(1);
+}
+
+const combineNormalisedStatistics = (homeStatistics, awayStatistics) => {
+  const combinedStatistics = {};
+
+  for (const homeStatistic of homeStatistics.statistics) {
+    const { id, name, value } = homeStatistic;
+
+    combinedStatistics[id] = {
+      id,
+      name,
+      homeValue: value,
+    }
+  }
+
+  for (const awayStatistic of awayStatistics.statistics) {
+    const { id, value } = awayStatistic;
+
+    combinedStatistics[id].awayValue = value;
+  }
+
+  return combinedStatistics;
+}
