@@ -47,6 +47,7 @@ export const FixtureStatisticsPanel = () => {
           </View>
         </View>
 
+        {/* @TODO: ordering statistics based on displayOrder */}
         {Object.keys(statistics).map((key, index) => {
           const { homeValue, awayValue, name } = statistics[key];
 
