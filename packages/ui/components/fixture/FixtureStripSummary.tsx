@@ -44,6 +44,7 @@ export const FixtureStripSummary = () => {
               player={player}
               time={time}
               type={type}
+              isAway={true}
             />
           ))}
       </View>
