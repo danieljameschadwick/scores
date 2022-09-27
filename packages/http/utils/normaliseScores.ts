@@ -2,6 +2,8 @@ import parseISO from "date-fns/parseISO";
 import { GAME_RESULT } from "@scores/types/enum/GameResult";
 import { GAME_STATUS } from "@scores/types/enum/GameStatus";
 import { GAME_TYPE } from "@scores/types/enum/GameType";
+import { Statistic } from "@scores/types/enum/Statistic";
+import { StatisticDisplayOrder } from "@scores/types/maps/StatisticDisplayOrder";
 
 interface TeamInterface {
   name: string;
@@ -142,8 +144,12 @@ const normaliseStatistic = (statistic) => {
 
   for (const stat of statistics) {
     const { type, value } = stat;
-
     const keyedType = keyifyType(type);
+
+    if (!Object.values(Statistic).includes(keyedType)) {
+      continue;
+    }
+
     formattedStatistics.push({
       id: keyedType,
       name: type,
@@ -157,11 +163,11 @@ const normaliseStatistic = (statistic) => {
   };
 }
 
-const keyifyType = (type) => {
+const keyifyType = (type: string): string => {
   return lowercaseFirstLetter(type.replace(/ /g, ''));
 }
 
-const lowercaseFirstLetter = (string: string) => {
+const lowercaseFirstLetter = (string: string): string => {
   return string.charAt(0).toLocaleLowerCase() + string.slice(1);
 }
 
@@ -170,8 +176,9 @@ const combineNormalisedStatistics = (homeStatistics, awayStatistics) => {
 
   for (const homeStatistic of homeStatistics.statistics) {
     const { id, name, value } = homeStatistic;
+    const displayOrder = StatisticDisplayOrder[id];
 
-    combinedStatistics[id] = {
+    combinedStatistics[displayOrder] = {
       id,
       name,
       homeValue: value,
@@ -181,7 +188,7 @@ const combineNormalisedStatistics = (homeStatistics, awayStatistics) => {
   for (const awayStatistic of awayStatistics.statistics) {
     const { id, value } = awayStatistic;
 
-    combinedStatistics[id].awayValue = value;
+    combinedStatistics[StatisticDisplayOrder[id]].awayValue = value;
   }
 
   return combinedStatistics;
