@@ -34,37 +34,34 @@ export const FixtureStripSummary = () => {
   }
 
   return (
-    <View style={[styles.container, themeStyles.darkContainer]}>
-      <View>
-        {awayEvents
-          .filter(({ type }) => type === "Goal")
-          .map(({ time, player, type }) => (
-            <FixtureStripSummaryEvent
-              key={`${player.id}-${time.elapsed}-${type}`}
-              player={player}
-              time={time}
-              type={type}
-              isAway={true}
-            />
-          ))}
-      </View>
-
-      <View
-        style={[styles.splitContainer]}
-        dataSet={{ media: ids.splitContainer }}
-      />
-
-      <View>
-        {homeEvents
-          .filter(({ type }) => type === "Goal")
-          .map(({ time, player, type }) => (
-            <FixtureStripSummaryEvent
-              key={`${player.id}-${time.elapsed}-${type}`}
-              player={player}
-              time={time}
-              type={type}
-            />
-          ))}
+    <View style={[themeStyles.darkContainer]}>
+      <View style={[styles.container]} dataSet={{ media: ids.container }}>
+        <View>
+          {awayEvents
+            .filter(({ type }) => type === "Goal")
+            .map(({ time, player, type }) => (
+              <FixtureStripSummaryEvent
+                key={`${player.id}-${time.elapsed}-${type}`}
+                player={player}
+                time={time}
+                type={type}
+                isAway={true}
+              />
+            ))}
+        </View>
+  
+        <View>
+          {homeEvents
+            .filter(({ type }) => type === "Goal")
+            .map(({ time, player, type }) => (
+              <FixtureStripSummaryEvent
+                key={`${player.id}-${time.elapsed}-${type}`}
+                player={player}
+                time={time}
+                type={type}
+              />
+            ))}
+        </View>
       </View>
     </View>
   );
@@ -74,13 +71,13 @@ const { styles, ids } = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-evenly",
-    paddingVertical: 15,
-  },
-  splitContainer: {
-    width: 50,
-    "@media (max-width: 667px)": {
-      width: 25,
+    justifyContent: "space-between",
+    padding: 15,
+    marginHorizontal: "auto",
+    width: "100%",
+    "@media (min-width: 660px)": {
+      width: 660,
+      paddingHorizontal: 0,
     },
   },
   eventContainer: {
