@@ -1,9 +1,11 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity, Platform } from "react-native";
 import StyleSheet from "react-native-media-query";
 import { GAME_RESULT } from "@scores/types/enum/GameResult";
 import { FixtureRow } from "@scores/ui/components/layout/panel/fixture/FixtureRow";
 import { getTheme } from "@scores/theme/utils/theme";
+import { System } from "@scores/types/enum/System";
+import { useRouter } from "@scores/ui/util/router";
 
 interface ScoreInterface {
   name: string;
@@ -14,15 +16,36 @@ interface ScoreInterface {
 }
 
 interface Props {
+  id: string;
   home: ScoreInterface;
   away: ScoreInterface;
 }
 
-export const PanelFixture: React.FC<Props> = ({ home, away }) => {
+export const PanelFixture: React.FC<Props> = ({ id, home, away }) => {
   const themeStyles = getTheme();
+  const router = useRouter();
+
+  const viewPage = () => {
+    // @TODO: write own proxy router implementation
+    if (Platform.OS === System.WEB) {
+      router.push(`/fixture/${id}`);
+
+      return;
+    }
+
+    router.navigate("Fixture", {
+      id,
+    });
+
+    return;
+  };
 
   return (
-    <View style={[styles.container]} dataSet={{ media: ids.container }}>
+    <TouchableOpacity
+      style={[styles.container]}
+      dataSet={{ media: ids.container }}
+      onPress={viewPage}
+    >
       <View style={[styles.fixtureContainer]}>
         <FixtureRow {...home} />
         <FixtureRow {...away} />
@@ -31,7 +54,7 @@ export const PanelFixture: React.FC<Props> = ({ home, away }) => {
       <View style={[styles.statusContainer]}>
         <Text style={[themeStyles.text]}>FT</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
