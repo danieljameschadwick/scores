@@ -44,9 +44,14 @@ export const Header: React.FC = () => {
   return (
     <View style={[styles.container]}>
       <View style={[styles.headerContainer, themeStyles.lightContainer]}>
-        <Link href={"/"}>
-          <Text style={styles.logoText}>scores</Text>
-        </Link>
+        <TouchableOpacity 
+          accessible={true}
+          accessibilityRole={"link"}
+        >
+          <Link href={"/"}>
+            <Text style={styles.logoText}>scores</Text>
+          </Link>
+        </TouchableOpacity>
 
         <View style={styles.themeContainer}>
           {theme === Theme.LIGHT_MODE && (
@@ -94,9 +99,7 @@ export const Header: React.FC = () => {
         </View>
       </View>
       <View style={[styles.carouselContainer, themeStyles.lightContainer]}>
-        { footballData && (
-          <ScoresCarousel data={footballData} />
-        ) }
+        {footballData && <ScoresCarousel data={footballData} />}
       </View>
     </View>
   );

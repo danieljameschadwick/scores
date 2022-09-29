@@ -18,6 +18,7 @@ export const CarouselText: React.FC<Props> = ({ text }) => {
 
 const styles = StyleSheet.create({
   container: {
+    height: "100%",
     minWidth: 55,
     display: "flex",
     justifyContent: "center",

@@ -40,10 +40,9 @@ const nextConfig = {
         },
       },
       {
-        test: /\.ttf$/,
+        test: /\.(jpe?g|png|gif|svg)(\?[a-z0-9=.]+)?$/,
         // loader: "url-loader", // or directly file-loader
-        use: ["url-loader?limit=10000", "img-loader"],
-        include: path.resolve(__dirname, "node_modules/react-native-vector-icons"),
+        use: ["url-loader?limit=10000"],
       },
       {
         test: /\.css$/,

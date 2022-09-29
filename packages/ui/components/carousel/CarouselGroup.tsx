@@ -1,23 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import { StyleSheet, View } from "react-native";
 import format from "date-fns/format";
 import { CarouselScoreBox } from "@scores/ui/components/carousel/CarouselScoreBox";
 import { CarouselText } from "@scores/ui/components/carousel/CarouselText";
-import { StyleSheet, View } from "react-native";
 
 interface Props {
-  groupName: string;
   leagueName: string;
   scores: any; // @TODO: type mocks/API data
 }
 
 export const CarouselGroup: React.FC<Props> = ({
-  groupName,
   leagueName,
   scores: scoresByDate,
 }) => {
   return (
     <>
-      <CarouselText text={groupName} />
       <CarouselText text={leagueName} />
       {Object.keys(scoresByDate).sort().map((key) => {
         const date = new Date(Number.parseInt(key));
