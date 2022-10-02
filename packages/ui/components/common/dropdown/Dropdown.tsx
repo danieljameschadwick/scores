@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 10,
     borderRadius: 5,
-    minWidth: 110,
+    minWidth: 130, // @TODO: pass as prop
   },
   dropdownText: {
     fontWeight: "600",

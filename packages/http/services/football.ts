@@ -13,8 +13,6 @@ interface FixturesResponse {
 };
 
 export const getFixtures = async (month = Month.AUGUST): Promise<FixturesResponse> => {
-  console.log(month);
-
   if (month === Month.SEPTEMBER) {
     return footballFixtures20220905;
   }

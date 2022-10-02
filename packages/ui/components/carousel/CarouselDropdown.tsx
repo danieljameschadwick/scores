@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   container: {
     position: "relative",
     height: "100%",
-    width: 140,
+    width: 150,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
