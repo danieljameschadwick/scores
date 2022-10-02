@@ -83,9 +83,8 @@ export const Header: React.FC = () => {
           )}
         </View>
       </View>
-      <View style={[styles.carouselContainer, themeStyles.lightContainer]}>
-        <ScoresCarousel />
-      </View>
+
+      <ScoresCarousel />
     </View>
   );
 };

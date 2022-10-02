@@ -54,7 +54,7 @@ export const ScoresCarousel: React.FC = () => {
 
   return (
     <View
-      style={[styles.container, themeStyles.darkContainer]}
+      style={[styles.container, themeStyles.lightContainer]}
       dataSet={{ media: ids.container }}
     >
       <View
@@ -129,11 +129,11 @@ const { ids, styles } = StyleSheet.create({
   scoresContainer: {
     display: "flex",
     flexDirection: "row",
-    // flexDirection: "row-reverse",
     width: "100%",
-    // "@media (min-width: 1400px)": {
-    //   width: 1400,
-    // },
+    overflow: "hidden",
+    "@media (min-width: 1400px)": {
+      width: 1400,
+    },
   },
   arrowContainer: {
     position: "absolute",
