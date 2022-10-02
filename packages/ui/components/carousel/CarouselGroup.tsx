@@ -32,10 +32,8 @@ export const CarouselGroup: React.FC<Props> = ({
               {scoresByDate[key].map((fixture) => {
                 const { id } = fixture;
 
-                console.log(fixture);
-
                 return (
-                  <FixtureContext.Provider value={fixture}>
+                  <FixtureContext.Provider key={id} value={fixture}>
                     <CarouselScoreBox key={id} fixture={fixture} />
                   </FixtureContext.Provider>
                 );

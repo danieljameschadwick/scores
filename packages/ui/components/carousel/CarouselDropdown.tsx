@@ -13,12 +13,7 @@ interface Props {
 
 export const CarouselDateDropdown: React.FC<Props> = ({ month, setMonth }) => {
   const themeStyles = getTheme();
-  const [open, setOpen] = useState<boolean>(false);
-  const [items, setItems] = useState([
-    { label: "August", value: Month.AUGUST },
-    { label: "September", value: Month.SEPTEMBER },
-  ]);
-
+ 
   return (
     <View style={[styles.container, themeStyles.lightContainer]}>
       <Dropdown month={month} setMonth={setMonth} />
@@ -30,12 +25,11 @@ const styles = StyleSheet.create({
   container: {
     position: "relative",
     height: "100%",
-    width: 110,
+    width: 140,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "rgb(232 234 237)",
     borderRightWidth: 1,
-    paddingHorizontal: 20,
   },
 });
