@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgb(232 234 237)",
     borderRightWidth: 1,
   },
 });
