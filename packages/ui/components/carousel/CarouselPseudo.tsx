@@ -19,7 +19,7 @@ export const CarouselPseudo: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    width: 245,
+    width: 295,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
