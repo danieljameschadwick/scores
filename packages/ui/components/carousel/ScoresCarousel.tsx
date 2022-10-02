@@ -64,7 +64,7 @@ export const ScoresCarousel: React.FC = () => {
         <CarouselDateDropdown month={month} setMonth={setMonth} />
         <CarouselText text={"Football"} />
 
-        <View style={{ width: "100%" }}>
+        <View style={styles.scrollWrapper}>
           <View
             style={[
               styles.arrowContainer,
@@ -126,6 +126,9 @@ const { ids, styles } = StyleSheet.create({
     zIndex: Z_INDEXES.OVERLAY,
     backgroundColor: "rgb(237, 238, 240)",
     borderBottomWidth: 1,
+  },
+  scrollWrapper: {
+    width: "100%",
   },
   scoresContainer: {
     display: "flex",
