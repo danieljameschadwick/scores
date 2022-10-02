@@ -52,14 +52,25 @@ const normaliseFootballByDate = (data): {} => {
 };
 
 export const normaliseFootball = (game) => {
-  const { fixture: { id, date }, goals, teams: { home, away }, events, statistics } = game;
+  const {
+    fixture: { 
+      id,
+      date,
+      status: {
+        short: shortStatus
+      } },
+    goals,
+    teams: { home, away },
+    events,
+    statistics,
+  } = game;
 
   return {
     id: id,
     home: createScoreDTO(home, goals.home),
     away: createScoreDTO(away, goals.away),
     date: date,
-    status: GAME_STATUS.FULL_TIME,
+    status: shortStatus,
     events: normaliseEvents(home.id, away.id, events),
     statistics: normaliseStatistics(home.id, away.id, statistics),
   };
