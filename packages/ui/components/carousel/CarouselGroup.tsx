@@ -1,8 +1,10 @@
 import React from "react";
+import { StyleSheet, View } from "react-native";
 import format from "date-fns/format";
 import { CarouselScoreBox } from "@scores/ui/components/carousel/CarouselScoreBox";
 import { CarouselText } from "@scores/ui/components/carousel/CarouselText";
-import { StyleSheet, View } from "react-native";
+import { CarouselPseudo } from "@scores/ui/components/carousel/CarouselPseudo";
+import { FixtureContext } from "../../state/FixtureContext";
 
 interface Props {
   groupName: string;
@@ -11,28 +13,39 @@ interface Props {
 }
 
 export const CarouselGroup: React.FC<Props> = ({
-  groupName,
   leagueName,
   scores: scoresByDate,
 }) => {
   return (
     <>
-      <CarouselText text={groupName} />
       <CarouselText text={leagueName} />
-      {Object.keys(scoresByDate).sort().map((key) => {
-        const date = new Date(Number.parseInt(key));
 
-        return (
-          <View key={date.toString()} style={[styles.container]}>
-            <CarouselText key={key} text={format(date, "d/M")} />
-            {scoresByDate[key].map((score) => {
-              const { id } = score;
+      {Object.keys(scoresByDate)
+        .sort()
+        .map((key) => {
+          const date = new Date(Number.parseInt(key));
 
-              return <CarouselScoreBox key={id} {...score} />;
-            })}
-          </View>
-        );
-      })}
+          return (
+            <View key={date.toString()} style={[styles.container]}>
+              <CarouselText key={key} text={format(date, "d/M")} />
+
+              {scoresByDate[key].map((fixture) => {
+                const { id } = fixture;
+
+                console.log(fixture);
+
+                return (
+                  <FixtureContext.Provider value={fixture}>
+                    <CarouselScoreBox key={id} fixture={fixture} />
+                  </FixtureContext.Provider>
+                );
+              })}
+            </View>
+          );
+        })}
+
+      {/* @TODO: do we need a pseudo element */}
+      <CarouselPseudo />
     </>
   );
 };

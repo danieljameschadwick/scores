@@ -1,22 +1,34 @@
-import React, { useRef, useState } from "react";
-import { ScrollView, View, TouchableOpacity } from "react-native";
+import React, { useRef, useEffect, useState } from "react";
+import { ScrollView, View, TouchableOpacity, Text } from "react-native";
 import StyleSheet from "react-native-media-query";
 import Icon from "react-native-vector-icons/Entypo";
 import { CarouselGroup } from "@scores/ui/components/carousel/CarouselGroup";
 import { Z_INDEXES } from "@scores/types/enum/zIndex";
-import { getTheme } from "@scores/theme/utils/theme";
+import { getTheme, getThemes } from "@scores/theme/utils/theme";
 import { getPrimaryText } from "@scores/theme/utils/variables";
+import { CarouselText } from "@scores/ui/components/carousel/CarouselText";
+import { CarouselDateDropdown } from "@scores/ui/components/carousel/CarouselDropdown";
+import { normaliseScores } from "@scores/http/utils/normaliseScores";
+import { GAME_TYPE } from "@scores/types/enum/GameType";
+import { getFixtures } from "@scores/http/services/football";
+import { Month } from "@scores/types/enum/Month";
 
 const SCROLL_DISTANCE = 500;
 
-interface Props {
-  data: {};
-}
-
-export const ScoresCarousel: React.FC<Props> = ({ data }) => {
-  const themeStyles = getTheme();
+export const ScoresCarousel: React.FC = () => {
+  const { themeStyles, primaryText } = getThemes();
   const scrollRef = useRef(null);
+  const [month, setMonth] = useState<Month>(Month.AUGUST);
   const [position, setPosition] = useState<number>(0);
+  const [data, setData] = useState<{} | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setData(normaliseScores(await getFixtures(month), GAME_TYPE.FOOTBALL));
+    };
+
+    fetchData();
+  }, [ month ]);
 
   const scrollLeft = () => {
     scrollRef.current.scrollTo({
@@ -32,51 +44,63 @@ export const ScoresCarousel: React.FC<Props> = ({ data }) => {
     });
   };
 
+  if (data === null) {
+    // @TODO: loading container
+    return (
+      <View>
+        <Text>Loading...</Text>
+      </View>
+    );
+  }
+
   return (
-    <View style={[styles.container, themeStyles.darkContainer]} dataSet={{ media: ids.container }}>
+    <View
+      style={[styles.container, themeStyles.darkContainer]}
+      dataSet={{ media: ids.container }}
+    >
       <View
         style={styles.scoresContainer}
         dataSet={{ media: ids.scoresContainer }}
       >
-        <View
-          style={[
-            styles.arrowContainer,
-            styles.arrowLeft,
-            position < 150 && styles.hiddenContainer,
-            themeStyles.lightContainer,
-          ]}
-        >
-          <TouchableOpacity
-            style={[styles.scrollContainer]}
-            onPress={scrollLeft}
+        <CarouselDateDropdown month={month} setMonth={setMonth} />
+        <CarouselText text={"Football"} />
+
+        <View style={{ width: "100%" }}>
+          <View
+            style={[
+              styles.arrowContainer,
+              styles.arrowLeft,
+              position < 150 && styles.hiddenContainer,
+              themeStyles.lightContainer,
+            ]}
           >
-            <Icon
-              name={"chevron-thin-left"}
-              size={30}
-              color={getPrimaryText()}
+            <TouchableOpacity
+              style={[styles.scrollContainer]}
+              onPress={scrollLeft}
+            >
+              <Icon name={"chevron-thin-left"} size={30} color={primaryText} />
+            </TouchableOpacity>
+          </View>
+
+          <ScrollView
+            ref={scrollRef}
+            showsHorizontalScrollIndicator={false}
+            horizontal={true}
+            onScroll={(e) => setPosition(e.nativeEvent.contentOffset.x)}
+            scrollEventThrottle={0}
+          >
+            <CarouselGroup
+              groupName={"Football"}
+              leagueName={"PL"}
+              scores={data}
             />
-          </TouchableOpacity>
+            {/* <CarouselGroup groupName={"NBA"} scores={basketballFixtures} /> */}
+          </ScrollView>
         </View>
 
-        <ScrollView
-          ref={scrollRef}
-          showsHorizontalScrollIndicator={false}
-          horizontal={true}
-          onScroll={(e) => setPosition(e.nativeEvent.contentOffset.x)}
-          scrollEventThrottle={0}
-        >
-          <CarouselGroup
-            groupName={"Football"}
-            leagueName={"PL"}
-            scores={data}
-          />
-          {/* <CarouselGroup groupName={"NBA"} scores={basketballFixtures} /> */}
-        </ScrollView>
-
         <View
           style={[
             styles.arrowContainer,
-            styles.relativeArrowContainer,
             styles.arrowRight,
             themeStyles.lightContainer,
           ]}
@@ -85,11 +109,7 @@ export const ScoresCarousel: React.FC<Props> = ({ data }) => {
             style={[styles.scrollContainer]}
             onPress={scrollRight}
           >
-            <Icon
-              name={"chevron-thin-right"}
-              size={30}
-              color={getPrimaryText()}
-            />
+            <Icon name={"chevron-thin-right"} size={30} color={primaryText} />
           </TouchableOpacity>
         </View>
       </View>
@@ -110,10 +130,11 @@ const { ids, styles } = StyleSheet.create({
   scoresContainer: {
     display: "flex",
     flexDirection: "row",
+    // flexDirection: "row-reverse",
     width: "100%",
-    "@media (min-width: 1400px)": {
-      width: 1400,
-    },
+    // "@media (min-width: 1400px)": {
+    //   width: 1400,
+    // },
   },
   arrowContainer: {
     position: "absolute",

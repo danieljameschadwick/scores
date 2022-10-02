@@ -52,7 +52,7 @@ export const ScoreBoxRow: React.FC<Props> = ({
   
         <Text style={[teamNameText, themeStyles.text]}>{abbreviation}</Text>
       </View>
-      <Text style={[goalsText, themeStyles.text]}>{score}</Text>
+      <Text style={[goalsText, themeStyles.text]}>{score ?? "-"}</Text>
     </View>
   );
 };

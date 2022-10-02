@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native-web";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -9,15 +9,11 @@ import { useAppDispatch, useAppSelector } from "@scores/state/hooks";
 import { Theme } from "@scores/types/enum/Theme";
 import { selectTheme, setTheme } from "@scores/state/reducer/ThemeReducer";
 import { getTheme } from "@scores/theme/utils/theme";
-import { normaliseScores } from "@scores/http/utils/normaliseScores";
-import { GAME_TYPE } from "@scores/types/enum/GameType";
-import { getFixtures } from "@scores/http/services/football";
 
 export const Header: React.FC = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const theme = useAppSelector(selectTheme);
-  const [footballData, setFootballData] = useState<{}>(null);
   const themeStyles = getTheme();
   const user = null;
 
@@ -33,20 +29,14 @@ export const Header: React.FC = () => {
     return;
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setFootballData(normaliseScores(await getFixtures(), GAME_TYPE.FOOTBALL));
-    };
-
-    fetchData();
-  }, []);
-
   return (
     <View style={[styles.container]}>
       <View style={[styles.headerContainer, themeStyles.lightContainer]}>
-        <Link href={"/"}>
-          <Text style={styles.logoText}>scores</Text>
-        </Link>
+        <TouchableOpacity accessible={true} accessibilityRole={"link"}>
+          <Link href={"/"}>
+            <Text style={styles.logoText}>scores</Text>
+          </Link>
+        </TouchableOpacity>
 
         <View style={styles.themeContainer}>
           {theme === Theme.LIGHT_MODE && (
@@ -94,9 +84,7 @@ export const Header: React.FC = () => {
         </View>
       </View>
       <View style={[styles.carouselContainer, themeStyles.lightContainer]}>
-        { footballData && (
-          <ScoresCarousel data={footballData} />
-        ) }
+        <ScoresCarousel />
       </View>
     </View>
   );

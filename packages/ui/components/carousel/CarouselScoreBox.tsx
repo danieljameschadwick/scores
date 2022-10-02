@@ -11,6 +11,8 @@ import { ScoreBoxRow } from "@scores/ui/components/carousel/scoreBox/ScoreBoxRow
 import { GAME_RESULT } from "@scores/types/enum/GameResult";
 import { useRouter } from "@scores/ui/util/router";
 import { System } from "@scores/types/enum/System";
+import { ScoreBoxStatus } from "./scoreBox/ScoreBoxStatus";
+import { useFixture } from "@scores/ui/state/FixtureContext";
 
 interface ScoreInterface {
   abbreviation: string;
@@ -25,9 +27,10 @@ interface Props {
   away: ScoreInterface;
 }
 
-export const CarouselScoreBox: React.FC<Props> = ({ id, home, away }) => {
-  const router = useRouter();
+export const CarouselScoreBox: React.FC<Props> = () => {
+  const { id, home, away } = useFixture();
   const themeStyles = getTheme();
+  const router = useRouter();
 
   const viewPage = () => {
     // @TODO: write own proxy router implementation
@@ -47,7 +50,7 @@ export const CarouselScoreBox: React.FC<Props> = ({ id, home, away }) => {
   return (
     <TouchableOpacity onPress={viewPage}>
       <View style={[styles.container, themeStyles.darkContainer]}>
-        <Text style={[styles.status, themeStyles.text]}>FT</Text>
+        <ScoreBoxStatus />
         <ScoreBoxRow {...home} />
         <ScoreBoxRow {...away} />
       </View>
@@ -66,10 +69,5 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     borderRightWidth: 1,
     backgroundColor: "#FFFFFF",
-  },
-  status: {
-    fontSize: 10,
-    fontWeight: "600",
-    marginBottom: 5,
   },
 });
