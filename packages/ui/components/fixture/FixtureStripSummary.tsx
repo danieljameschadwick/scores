@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import StyleSheet from "react-native-media-query";
 import { getTheme } from "@scores/theme/utils/theme";
-import { useFixture } from "@scores/ui/components/fixture/FixtureContext";
+import { useFixture } from "@scores/ui/state/FixtureContext";
 import { FixtureStripSummaryEvent } from "@scores/ui/components/fixture/FixtureStripSummaryEvent";
 
 enum EVENT_TYPE {

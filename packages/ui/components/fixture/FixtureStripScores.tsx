@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 import StyleSheet from "react-native-media-query";
 import format from "date-fns/format";
 import { getTheme } from "@scores/theme/utils/theme";
-import { useFixture } from "@scores/ui/components/fixture/FixtureContext";
+import { useFixture } from "@scores/ui/state/FixtureContext";
 import { FixtureStripScore } from "@scores/ui/components/fixture/FixtureStripScore";
 
 export const FixtureStripScores = () => {

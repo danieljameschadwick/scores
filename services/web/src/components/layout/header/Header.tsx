@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native-web";
+import { View, Text, TouchableOpacity } from "react-native-web";
+import StyleSheet from "react-native-media-query";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import IonIcon from "react-native-vector-icons/Ionicons";
@@ -30,8 +31,11 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <View style={[styles.container]}>
-      <View style={[styles.headerContainer, themeStyles.lightContainer]}>
+    <View style={[styles.container, themeStyles.lightContainer]}>
+      <View
+        style={[styles.headerContainer, styles.responsiveContainer]}
+        dataSet={{ media: ids.responsiveContainer }}
+      >
         <TouchableOpacity accessible={true} accessibilityRole={"link"}>
           <Link href={"/"}>
             <Text style={styles.logoText}>scores</Text>
@@ -83,18 +87,23 @@ export const Header: React.FC = () => {
           )}
         </View>
       </View>
-
-      <ScoresCarousel />
+      <View
+        style={[styles.carouselContainer, styles.responsiveContainer]}
+        dataSet={{ media: ids.responsiveContainer }}
+      >
+        <ScoresCarousel />
+      </View>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
+const { ids, styles } = StyleSheet.create({
   container: {
     position: "fixed",
     zIndex: Z_INDEXES.OVERLAY,
     display: "flex",
     flexDirection: "col",
+    alignItems: "center",
     width: "100%",
   },
   headerContainer: {
@@ -103,6 +112,15 @@ const styles = StyleSheet.create({
     height: 50,
     padding: 12,
     borderBottomWidth: 1,
+  },
+  responsiveContainer: {
+    display: "flex",
+    flexDirection: "row",
+    width: "100%",
+    overflow: "hidden",
+    "@media (min-width: 1400px)": {
+      width: 1400,
+    },
   },
   carouselContainer: {
     borderBottomWidth: 1,
