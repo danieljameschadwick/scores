@@ -10,11 +10,7 @@ export const FixtureStripScores = () => {
   const fixture = useFixture();
   const themeStyles = getTheme();
 
-  const {
-    date,
-    home,
-    away,
-  } = fixture;
+  const { date, home, away } = fixture;
 
   return (
     <View style={[styles.container, themeStyles.lightContainer]}>
@@ -41,7 +37,7 @@ export const FixtureStripScores = () => {
 const { styles, ids } = StyleSheet.create({
   container: {
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "row-reverse",
     justifyContent: "space-evenly",
     paddingVertical: 15,
   },

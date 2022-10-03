@@ -33,7 +33,7 @@ export const FixtureStripScore: React.FC<Props> = ({
   const { name, logo, abbreviation, score } = team;
 
   return (
-    <View style={containerStyles}>
+    <View style={[containerStyles]}>
       <Text
         style={[nameContainer, themeStyles.text]}
         dataSet={{ media: ids.nameContainer }}
@@ -59,7 +59,7 @@ export const FixtureStripScore: React.FC<Props> = ({
 const { styles, ids } = StyleSheet.create({
   container: {
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "row-reverse",
     alignItems: "center",
     justifyContent: "flex-end",
     paddingVertical: 15,
@@ -100,7 +100,7 @@ const { styles, ids } = StyleSheet.create({
 // @TODO: make one common container for margins
 const { styles: homeStyles } = StyleSheet.create({
   container: {
-    flexDirection: "row-reverse",
+    flexDirection: "row",
     justifyContent: "flex-end",
   },
   nameContainer: {
