@@ -32,66 +32,70 @@ export const Header: React.FC = () => {
 
   return (
     <View style={[styles.container, themeStyles.lightContainer]}>
-      <View
-        style={[styles.headerContainer, styles.responsiveContainer]}
-        dataSet={{ media: ids.responsiveContainer }}
-      >
-        <TouchableOpacity accessible={true} accessibilityRole={"link"}>
-          <Link href={"/"}>
-            <Text style={styles.logoText}>scores</Text>
-          </Link>
-        </TouchableOpacity>
+      <View style={[styles.borderedContainer]}>
+        <View
+          style={[styles.headerContainer, styles.responsiveContainer]}
+          dataSet={{ media: ids.responsiveContainer }}
+        >
+          <TouchableOpacity accessible={true} accessibilityRole={"link"}>
+            <Link href={"/"}>
+              <Text style={styles.logoText}>scores</Text>
+            </Link>
+          </TouchableOpacity>
 
-        <View style={styles.themeContainer}>
-          {theme === Theme.LIGHT_MODE && (
-            <TouchableOpacity onPress={() => dispatchTheme(Theme.DARK_MODE)}>
-              <IonIcon style={[themeStyles.text]} name={"sunny"} />
-            </TouchableOpacity>
-          )}
-          {theme === Theme.DARK_MODE && (
-            <TouchableOpacity onPress={() => dispatchTheme(Theme.LIGHT_MODE)}>
-              <IonIcon style={[themeStyles.text]} name={"moon"} />
-            </TouchableOpacity>
-          )}
-        </View>
+          <View style={styles.themeContainer}>
+            {theme === Theme.LIGHT_MODE && (
+              <TouchableOpacity onPress={() => dispatchTheme(Theme.DARK_MODE)}>
+                <IonIcon style={[themeStyles.text]} name={"sunny"} />
+              </TouchableOpacity>
+            )}
+            {theme === Theme.DARK_MODE && (
+              <TouchableOpacity onPress={() => dispatchTheme(Theme.LIGHT_MODE)}>
+                <IonIcon style={[themeStyles.text]} name={"moon"} />
+              </TouchableOpacity>
+            )}
+          </View>
 
-        <View style={styles.linksContainer}>
-          {user ? (
-            <>
-              <Text
-                accessibilityRole="link"
-                style={[styles.link, themeStyles.text]}
-                onPress={() => logout()}
-              >
-                Logout
-              </Text>
-            </>
-          ) : (
-            <>
-              <Text
-                accessibilityRole="link"
-                style={[styles.link, themeStyles.text]}
-                onPress={() => router.push("/login")}
-              >
-                Login
-              </Text>
+          <View style={styles.linksContainer}>
+            {user ? (
+              <>
+                <Text
+                  accessibilityRole="link"
+                  style={[styles.link, themeStyles.text]}
+                  onPress={() => logout()}
+                >
+                  Logout
+                </Text>
+              </>
+            ) : (
+              <>
+                <Text
+                  accessibilityRole="link"
+                  style={[styles.link, themeStyles.text]}
+                  onPress={() => router.push("/login")}
+                >
+                  Login
+                </Text>
 
-              <Text
-                accessibilityRole="link"
-                style={[styles.link, themeStyles.text]}
-                onPress={() => router.push("/register")}
-              >
-                Register
-              </Text>
-            </>
-          )}
+                <Text
+                  accessibilityRole="link"
+                  style={[styles.link, themeStyles.text]}
+                  onPress={() => router.push("/register")}
+                >
+                  Register
+                </Text>
+              </>
+            )}
+          </View>
         </View>
       </View>
-      <View
-        style={[styles.carouselContainer, styles.responsiveContainer]}
-        dataSet={{ media: ids.responsiveContainer }}
-      >
-        <ScoresCarousel />
+      <View style={[styles.borderedContainer]}>
+        <View
+          style={[styles.responsiveContainer]}
+          dataSet={{ media: ids.responsiveContainer }}
+        >
+          <ScoresCarousel />
+        </View>
       </View>
     </View>
   );
@@ -106,12 +110,15 @@ const { ids, styles } = StyleSheet.create({
     alignItems: "center",
     width: "100%",
   },
+  borderedContainer: {
+    width: "100%",
+    borderBottomWidth: 1,
+  },
   headerContainer: {
     display: "flex",
     flexDirection: "row",
     height: 50,
     padding: 12,
-    borderBottomWidth: 1,
   },
   responsiveContainer: {
     display: "flex",
@@ -119,10 +126,8 @@ const { ids, styles } = StyleSheet.create({
     width: "100%",
     "@media (min-width: 1400px)": {
       width: 1400,
+      marginHorizontal: "auto",
     },
-  },
-  carouselContainer: {
-    borderBottomWidth: 1,
   },
   logoText: {
     alignSelf: "center",

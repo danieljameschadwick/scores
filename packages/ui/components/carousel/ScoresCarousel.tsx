@@ -125,6 +125,7 @@ const { ids, styles } = StyleSheet.create({
     width: "100%",
     zIndex: Z_INDEXES.OVERLAY,
     backgroundColor: "rgb(237, 238, 240)",
+    borderLeftWidth: 1,
     borderBottomWidth: 1,
   },
   scoresContainer: {
@@ -149,10 +150,6 @@ const { ids, styles } = StyleSheet.create({
     backgroundColor: "rgb(237, 238, 240)",
     zIndex: Z_INDEXES.OVERLAY_COVER,
   },
-  relativeArrowContainer: {
-    position: "relative",
-    height: "auto",
-  },
   hiddenContainer: {
     opacity: 0,
   },
@@ -170,5 +167,6 @@ const { ids, styles } = StyleSheet.create({
   arrowRight: {
     right: 0,
     borderLeftWidth: 1,
+    borderRightWidth: 1,
   },
 });
