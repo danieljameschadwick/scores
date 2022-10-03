@@ -32,7 +32,7 @@ export const Header: React.FC = () => {
 
   return (
     <View style={[styles.container, themeStyles.lightContainer]}>
-      <View style={[styles.borderedContainer]}>
+      <View style={[styles.borderedContainer, themeStyles.lightContainer]}>
         <View
           style={[styles.headerContainer, styles.responsiveContainer]}
           dataSet={{ media: ids.responsiveContainer }}
@@ -89,7 +89,7 @@ export const Header: React.FC = () => {
           </View>
         </View>
       </View>
-      <View style={[styles.borderedContainer]}>
+      <View style={[styles.borderedContainer, themeStyles.lightContainer]}>
         <View
           style={[styles.responsiveContainer]}
           dataSet={{ media: ids.responsiveContainer }}
