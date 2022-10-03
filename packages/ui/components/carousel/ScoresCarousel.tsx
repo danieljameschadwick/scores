@@ -27,7 +27,7 @@ export const ScoresCarousel: React.FC = () => {
     };
 
     fetchData();
-  }, [ month ]);
+  }, [month]);
 
   const scrollLeft = () => {
     scrollRef.current.scrollTo({
@@ -127,17 +127,20 @@ const { ids, styles } = StyleSheet.create({
     backgroundColor: "rgb(237, 238, 240)",
     borderBottomWidth: 1,
   },
-  scrollWrapper: {
-    width: "100%",
-  },
   scoresContainer: {
     display: "flex",
     flexDirection: "row",
     width: "100%",
     overflow: "hidden",
+    // overflowX: "visible",
+    // overflowY: "hidden",
     "@media (min-width: 1400px)": {
       width: 1400,
     },
+  },
+  scrollWrapper: {
+    width: "100%",
+    overflow: "hidden",
   },
   arrowContainer: {
     position: "absolute",

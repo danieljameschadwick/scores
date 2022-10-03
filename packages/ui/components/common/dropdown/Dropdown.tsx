@@ -52,15 +52,17 @@ export const Dropdown: React.FC<Props> = ({ month, setMonth }) => {
       </TouchableOpacity>
 
       <View style={[menuContainerStyles, themeStyles.darkContainer]}>
-        {items.map(({ label, value }) => {
-          return (
-            <TouchableOpacity key={value} onPress={() => setMonth(value)}>
-              <View style={[styles.dropdownItem]}>
-                <Text style={[themeStyles.text]}>{label}</Text>
-              </View>
-            </TouchableOpacity>
-          );
-        })}
+        <View style={[styles.fixedContainer, themeStyles.darkContainer]}>
+          {items.map(({ label, value }) => {
+            return (
+              <TouchableOpacity key={value} onPress={() => setMonth(value)}>
+                <View style={[styles.dropdownItem]}>
+                  <Text style={[themeStyles.text]}>{label}</Text>
+                </View>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
       </View>
     </View>
   );
@@ -92,6 +94,9 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 45,
     zIndex: Z_INDEXES.OVERLAY,
+  },
+  fixedContainer: {
+    position: "fixed",
     paddingVertical: 5,
     paddingHorizontal: 5,
     borderRadius: 5,
@@ -101,7 +106,6 @@ const styles = StyleSheet.create({
   },
   dropdownItem: {
     paddingVertical: 5,
-    paddingLeft: 15,
-    paddingRight: 10,
+    paddingHorizontal: 10,
   },
 });

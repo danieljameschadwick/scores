@@ -117,7 +117,6 @@ const { ids, styles } = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     width: "100%",
-    overflow: "hidden",
     "@media (min-width: 1400px)": {
       width: 1400,
     },
