@@ -13,10 +13,11 @@ export const useClickOutside = (callback) => {
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
+    // @TODO: need a cross platform solution
+    // document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      // document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [ref]);
 

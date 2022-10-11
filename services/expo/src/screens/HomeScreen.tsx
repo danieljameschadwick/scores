@@ -27,7 +27,6 @@ export const HomeScreen: React.FC = () => {
     },
     carouselContainer: {
       flexGrow: 0,
-      height: 56.5,
     },
     contentContainer: {
       paddingBottom: insets.bottom,

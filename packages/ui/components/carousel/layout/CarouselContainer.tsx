@@ -30,9 +30,9 @@ export const CarouselContainer: React.FC<Props> = ({
         dataSet={{ media: ids.scoresContainer }}
       >
         <CarouselDateDropdown month={month} setMonth={setMonth} />
-        <CarouselText text={"Football"} />
+        <CarouselText text={"Football"} hideable={true} />
 
-        {children}
+        { children }
       </View>
     </View>
   );

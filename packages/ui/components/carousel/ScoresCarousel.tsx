@@ -82,7 +82,6 @@ export const ScoresCarousel: React.FC = () => {
           scrollEventThrottle={0}
         >
           <CarouselGroup
-            groupName={"Football"}
             leagueName={"PL"}
             scores={data}
           />

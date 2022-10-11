@@ -7,7 +7,7 @@ import { FixtureStripSummaryEvent } from "@scores/ui/components/fixture/FixtureS
 
 enum EVENT_TYPE {
   GOAL = "goal",
-}
+};
 
 // @TODO: hook into summary
 const getEventIcon = (type: EVENT_TYPE) => {
@@ -70,7 +70,7 @@ export const FixtureStripSummary = () => {
 const { styles, ids } = StyleSheet.create({
   container: {
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "row-reverse",
     justifyContent: "space-between",
     padding: 15,
     marginHorizontal: "auto",

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import EntypoIcon from "react-native-vector-icons/Entypo";
-import { Month } from "@scores/types/enum/Month";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Month } from "@scores/types/enum/Month";
 import { getTheme } from "@scores/theme/utils/theme";
 import { useClickOutside } from "@scores/ui/util/useClickOutside";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 import { Z_INDEXES } from "@scores/types/enum/zIndex";
 
-// @TODO: implement react-i18next / translations
+// @TODO: implement react-i18next / translations with displayable strings
 const formattedMonthKeys = {
   [Month.AUGUST]: "August",
   [Month.SEPTEMBER]: "September",

@@ -32,6 +32,7 @@ export const FixtureStripSummaryEvent: React.FC<Props> = ({
         style={iconStyles}
         name={"football"}
         color={getPrimaryText()}
+        size={12}
       />
 
       <View
@@ -41,7 +42,7 @@ export const FixtureStripSummaryEvent: React.FC<Props> = ({
         <Text style={[styles.playerNameText, themeStyles.text]}>
           {player.name}
         </Text>
-        <Text style={[themeStyles.text]}>{`(${time.elapsed}")`}</Text>
+        <Text style={[styles.elapsedText, themeStyles.text]}>{`(${time.elapsed}")`}</Text>
       </View>
     </View>
   );
@@ -67,10 +68,15 @@ const styles = StyleSheet.create({
   eventContainer: {
     display: "flex",
     flexDirection: "row",
+    alignItems: "center",
   },
   playerNameText: {
     marginRight: 3,
     color: "white",
+    fontSize: 12,
     fontWeight: "700",
+  },
+  elapsedText: {
+    fontSize: 12,
   },
 });
