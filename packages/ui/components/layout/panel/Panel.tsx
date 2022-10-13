@@ -4,11 +4,17 @@ import { getTheme } from "@scores/theme/utils/theme";
 
 interface Props {
   title: string;
-  icon?: any | null;
+  icon?: any | null; // @TODO: typing
+  testID?: string | null;
   children: React.ReactNode;
 }
 
-export const Panel: React.FC<Props> = ({ title, icon = null, children }) => {
+export const Panel: React.FC<Props> = ({
+  title,
+  icon = null,
+  testID = "panel",
+  children,
+}) => {
   const themeStyles = getTheme();
   const containerStyles = [styles.container];
   const headingStyles = [styles.headingContainer];
@@ -19,9 +25,14 @@ export const Panel: React.FC<Props> = ({ title, icon = null, children }) => {
   }
 
   return (
-    <View style={[containerStyles, themeStyles.mediumContainer]}>
+    <View
+      style={[containerStyles, themeStyles.mediumContainer]}
+      testID={testID}
+    >
       <View style={[headingStyles]}>
-        {icon && <View style={[styles.headingIcon, themeStyles.text]}>{icon}</View>}
+        {icon && (
+          <View style={[styles.headingIcon, themeStyles.text]}>{icon}</View>
+        )}
 
         <Text style={[styles.headingText, themeStyles.text]}>{title}</Text>
       </View>

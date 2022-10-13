@@ -23,6 +23,7 @@ export const FootballPanel = () => {
     <Panel
       title={"Football"}
       icon={<IonIcon name={"football"} size={24} color={getPrimaryText()} />}
+      testID={"football-panel"}
     >
       <View style={[styles.container]}>
         {fixtures &&

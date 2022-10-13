@@ -7,8 +7,11 @@ module.exports = {
     "**/**.spec.(ts|tsx)",
   ],
   transform: {
-    "^.+\\.(ts|tsx)?$": "ts-jest",
+    "^.+\\.[jt]sx?$": "babel-jest",
   },
+  transformIgnorePatterns: [
+    "/node_modules/(?!(@react-native|react-native)).*/"
+  ],
   moduleNameMapper: {
     "@src/(.*)$": "<rootDir>/../src/$1",
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
@@ -17,5 +20,5 @@ module.exports = {
   },
   coverageDirectory: ".jest-coverage",
   testPathIgnorePatterns: ["/node_modules/", "/.next/"],
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"]
+  setupFilesAfterEnv: ["../test/jest.setup.js"],
 };

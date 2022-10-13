@@ -18,6 +18,7 @@ export const CricketPanel = () => {
           color={getPrimaryText()}
         />
       }
+      testID={"cricket-panel"}
     >
       <View style={[styles.container]}>
         <Text style={[themeStyles.text]}>No games available.</Text>

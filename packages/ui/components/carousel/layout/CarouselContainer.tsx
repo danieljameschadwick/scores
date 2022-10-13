@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { View } from "react-native";
 import StyleSheet from "react-native-media-query";
 import { getThemes } from "@scores/theme/utils/theme";
@@ -9,7 +9,7 @@ import { Month } from "@scores/types/enum/Month";
 
 interface Props {
   month: Month;
-  setMonth: (month: Month) => {};
+  setMonth: Dispatch<SetStateAction<Month>>;
   children: any;
 }
 

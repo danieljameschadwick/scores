@@ -103,10 +103,11 @@ export const Header: React.FC = () => {
 
 const { ids, styles } = StyleSheet.create({
   container: {
+    // @ts-ignore
     position: "fixed",
     zIndex: Z_INDEXES.OVERLAY,
     display: "flex",
-    flexDirection: "col",
+    flexDirection: "column",
     alignItems: "center",
     width: "100%",
   },
@@ -124,6 +125,7 @@ const { ids, styles } = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     width: "100%",
+    // @ts-ignore
     "@media (min-width: 1400px)": {
       width: 1400,
       marginHorizontal: "auto",
