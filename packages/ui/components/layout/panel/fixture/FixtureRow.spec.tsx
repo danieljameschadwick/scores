@@ -46,4 +46,31 @@ describe("FixtureRow component", () => {
 
     expect(screen.toJSON()).toMatchSnapshot();
   });
+
+  /**
+   * @TODO: conditional render for logo
+   */
+
+  // it("renders image component", async () => {
+  //   const team = {
+  //     name: "Manchester United",
+  //     score: 3,
+  //     result: GAME_RESULT.WIN,
+  //     logo: "http://logo.net/logo.png",
+  //   };
+  //   const { queryByTestId } = customRender(team);
+
+  //   expect(screen.toJSON()).toMatchSnapshot();
+  // });
+
+  // it("renders fallback icon component", async () => {
+  //   const team = {
+  //     name: "Manchester United",
+  //     score: 3,
+  //     result: GAME_RESULT.WIN,
+  //   };
+  //   const { queryByTestId } = customRender(team);
+
+  //   expect(screen.toJSON()).toMatchSnapshot();
+  // });
 });

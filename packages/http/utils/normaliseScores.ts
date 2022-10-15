@@ -1,6 +1,5 @@
 import parseISO from "date-fns/parseISO";
 import { GAME_RESULT } from "@scores/types/enum/GameResult";
-import { GAME_STATUS } from "@scores/types/enum/GameStatus";
 import { GAME_TYPE } from "@scores/types/enum/GameType";
 import { Statistic } from "@scores/types/enum/Statistic";
 import { StatisticDisplayOrder } from "@scores/types/maps/StatisticDisplayOrder";

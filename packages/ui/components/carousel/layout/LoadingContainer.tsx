@@ -5,7 +5,7 @@ import { View, StyleSheet, Text, ActivityIndicator } from "react-native";
 export const LoadingContainer = () => {
   const { themeStyles, primaryText } = getThemes();
   return (
-    <View style={[styles.loadingWrapper]}>
+    <View style={[styles.loadingWrapper]} testID={"carousel-loader"}>
       <ActivityIndicator color={primaryText} />
       <Text style={[themeStyles.text]}>Loading...</Text>
     </View>

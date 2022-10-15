@@ -62,7 +62,7 @@ exports[`FootballPanel component renders base loading component 1`] = `
             },
             undefined,
             Object {
-              "fontFamily": "Ionicons",
+              "fontFamily": null,
               "fontStyle": "normal",
               "fontWeight": "normal",
             },
@@ -119,7 +119,7 @@ exports[`FootballPanel component renders base loading component 1`] = `
 </View>
 `;
 
-exports[`FootballPanel component renders loaded component 1`] = `
+exports[`FootballPanel component renders base loading component 2`] = `
 <View
   style={
     Array [
@@ -181,7 +181,7 @@ exports[`FootballPanel component renders loaded component 1`] = `
             },
             undefined,
             Object {
-              "fontFamily": "Ionicons",
+              "fontFamily": null,
               "fontStyle": "normal",
               "fontWeight": "normal",
             },
@@ -220,19 +220,5328 @@ exports[`FootballPanel component renders loaded component 1`] = `
           },
         ]
       }
+      testID="fixtures"
     >
-      <Text
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
-          Array [
-            Object {
-              "color": "#000",
-            },
-          ]
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
         }
-        testID="loading"
+        testID="panel-fixture"
       >
-        Loading
-      </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/36.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Fulham
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                2
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/51.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Brighton
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                1
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/63.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Leeds
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                1
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/45.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Everton
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                1
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/52.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Crystal Palace
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                1
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/55.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Brentford
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                1
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/41.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Southampton
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                2
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/49.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Chelsea
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                1
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/35.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Bournemouth
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                0
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/39.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Wolves
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                0
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/42.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Arsenal
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                2
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/66.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Aston Villa
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                1
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/48.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                West Ham
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                1
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/47.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Tottenham
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                1
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/40.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Liverpool
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                2
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/34.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Newcastle
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                1
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/50.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Manchester City
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                6
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/65.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Nottingham Forest
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                0
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/46.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Leicester
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                0
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/33.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Manchester United
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                1
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/66.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Aston Villa
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                1
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/50.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Manchester City
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                1
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/55.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Brentford
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                5
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/63.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Leeds
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                2
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/49.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Chelsea
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                2
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/48.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                West Ham
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                1
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/45.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Everton
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                0
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/40.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Liverpool
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                0
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/34.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Newcastle
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                0
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/52.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Crystal Palace
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                0
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/65.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Nottingham Forest
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                2
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/35.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Bournemouth
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                3
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/47.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Tottenham
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                2
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/36.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Fulham
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                1
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/39.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Wolves
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                1
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/41.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Southampton
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                0
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/51.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Brighton
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                5
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/46.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Leicester
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                2
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "opacity": 1,
+            "paddingVertical": 12,
+            "width": "50%",
+          }
+        }
+        testID="panel-fixture"
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "display": "flex",
+                "flexDirection": "column",
+                "paddingRight": "5%",
+                "width": "70%",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-home"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/33.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Manchester United
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                3
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "margin": 2.5,
+                },
+              ]
+            }
+            testID="fixture-row-away"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "marginRight": 5,
+                    },
+                  ]
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https://media.api-sports.io/football/teams/42.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "height": 20,
+                        "width": 20,
+                      },
+                    ]
+                  }
+                />
+              </View>
+              <Text
+                dataSet={
+                  Object {
+                    "media": undefined,
+                  }
+                }
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="name"
+              >
+                Arsenal
+              </Text>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "width": 25,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Array [
+                      Object {
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                        "textAlign": "center",
+                      },
+                    ],
+                    Object {
+                      "color": "#000",
+                    },
+                  ]
+                }
+                testID="score"
+              >
+                1
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "30%",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                },
+              ]
+            }
+          >
+            FT
+          </Text>
+        </View>
+      </View>
     </View>
   </View>
 </View>

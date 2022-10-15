@@ -43,9 +43,9 @@ export const FootballPanel = () => {
       icon={<IonIcon name={"football"} size={24} color={getPrimaryText()} />}
       testID={"football-panel"}
     >
-      <View style={[styles.container]}>
-        {fixtures &&
-          Object.keys(fixtures)
+      {fixtures && (
+        <View style={[styles.container]} testID={"fixtures"}>
+          {Object.keys(fixtures)
             .sort()
             .map((key) => {
               return fixtures[key].map((score) => {
@@ -54,7 +54,8 @@ export const FootballPanel = () => {
                 return <PanelFixture key={id} {...score} />;
               });
             })}
-      </View>
+        </View>
+      )}
     </Panel>
   );
 };

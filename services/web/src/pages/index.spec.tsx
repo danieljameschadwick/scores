@@ -16,25 +16,15 @@ const customRender = () => {
 };
 
 describe("Index page", () => {
-  it("renders base Index", async () => {
+  it("Index renders base", async () => {
     const { queryByTestId } = customRender();
 
-    const carouselScrollWrapper = queryByTestId("carousel-scroll-wrapper");
+    expect(queryByTestId("carousel-loader")).not.toBeNull();
 
-    // await waitFor(() => expect(carouselScrollWrapper).toBeTruthy());
-
-    expect(screen.toJSON()).toMatchSnapshot();
-  });
-
-  it("Index renders expected panels", async () => {
-    const { getByText } = customRender();
-
-    waitFor(() => expect(getByText("Football Panel")).toBeInTheDocument());
-    // await waitFor(() => expect(queryByTestId("carousel-scroll-wrapper")).toBeTruthy());
-    // await waitFor(() => expect(queryByTestId("football-panel")).toBeTruthy());
-    // await waitFor(() => expect(queryByTestId("cricket-panel")).toBeTruthy());
-
-    // console.log(queryByTestId("football-panel"));
+    await waitFor(() => expect(queryByTestId("carousel-scroll-wrapper")).not.toBeNull());
+    await waitFor(() => expect(queryByTestId("football-panel")).not.toBeNull());
+    await waitFor(() => expect(queryByTestId("fixtures")).not.toBeNull());
+    await waitFor(() => expect(queryByTestId("cricket-panel")).not.toBeNull());
 
     expect(screen.toJSON()).toMatchSnapshot();
   });

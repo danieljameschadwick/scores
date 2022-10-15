@@ -20,18 +20,9 @@ describe("FootballPanel component", () => {
     const { queryByTestId } = customRender();
 
     expect(queryByTestId("loading")).toBeTruthy();
-    
-    waitFor(() => expect(queryByTestId("panel-fixture")).toBeTruthy());
-
     expect(screen.toJSON()).toMatchSnapshot();
-  });
 
-  it("renders loaded component", async () => {
-    const { queryByTestId } = customRender();
-
-    expect(queryByTestId("loading")).toBeTruthy();
-    
-    waitFor(() => expect(queryByTestId("panel-fixture")).toBeTruthy());
+    await waitFor(() => expect(queryByTestId("fixtures")).not.toBeNull());
 
     expect(screen.toJSON()).toMatchSnapshot();
   });
