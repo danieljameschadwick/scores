@@ -15,23 +15,26 @@ const customRender = () => {
   );
 };
 
-describe("index page", () => {
-  it("renders base Index", () => {
-    customRender();
+describe("Index page", () => {
+  it("renders base Index", async () => {
+    const { queryByTestId } = customRender();
+
+    const carouselScrollWrapper = queryByTestId("carousel-scroll-wrapper");
+
+    // await waitFor(() => expect(carouselScrollWrapper).toBeTruthy());
 
     expect(screen.toJSON()).toMatchSnapshot();
   });
 
-  it("Index renders expected panels", () => {
-    const { queryByTestId } = customRender();
+  it("Index renders expected panels", async () => {
+    const { getByText } = customRender();
 
-    const footballPanel = queryByTestId("football-panel");
-    const cricketPanel = queryByTestId("cricket-panel");
+    waitFor(() => expect(getByText("Football Panel")).toBeInTheDocument());
+    // await waitFor(() => expect(queryByTestId("carousel-scroll-wrapper")).toBeTruthy());
+    // await waitFor(() => expect(queryByTestId("football-panel")).toBeTruthy());
+    // await waitFor(() => expect(queryByTestId("cricket-panel")).toBeTruthy());
 
-    waitFor(() => {
-      expect(footballPanel).toBeInTheDocument();
-      expect(cricketPanel).toBeInTheDocument();
-    });
+    // console.log(queryByTestId("football-panel"));
 
     expect(screen.toJSON()).toMatchSnapshot();
   });

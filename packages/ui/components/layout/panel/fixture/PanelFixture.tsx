@@ -13,13 +13,13 @@ interface ScoreInterface {
   logo?: string | null;
   score: number;
   result: GAME_RESULT;
-}
+};
 
 interface Props {
   id: string;
   home: ScoreInterface;
   away: ScoreInterface;
-}
+};
 
 export const PanelFixture: React.FC<Props> = ({ id, home, away }) => {
   const themeStyles = getTheme();
@@ -43,12 +43,13 @@ export const PanelFixture: React.FC<Props> = ({ id, home, away }) => {
   return (
     <TouchableOpacity
       style={[styles.container]}
+      testID={"panel-fixture"}
       dataSet={{ media: ids.container }}
       onPress={viewPage}
     >
       <View style={[styles.fixtureContainer]}>
-        <FixtureRow {...home} />
-        <FixtureRow {...away} />
+        <FixtureRow testID={"fixture-row-home"} {...home} />
+        <FixtureRow testID={"fixture-row-away"} {...away} />
       </View>
 
       <View style={[styles.statusContainer]}>

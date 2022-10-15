@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`index page Index renders expected panels 1`] = `
+exports[`Index page Index renders expected panels 1`] = `
 <div
   className="css-view-1dbjc4n"
   style={
@@ -841,4 +841,4 @@ exports[`index page Index renders expected panels 1`] = `
 </div>
 `;
 
-exports[`index page renders base Index 1`] = `null`;
+exports[`Index page renders base Index 1`] = `null`;

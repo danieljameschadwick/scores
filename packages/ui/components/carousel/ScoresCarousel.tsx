@@ -57,7 +57,7 @@ export const ScoresCarousel: React.FC = () => {
 
   return (
     <CarouselContainer month={month} setMonth={setMonth}>
-      <View style={[styles.scrollWrapper]}>
+      <View style={[styles.scrollWrapper]} testID={"carousel-scroll-wrapper"}>
         <View
           style={[
             styles.arrowContainer,

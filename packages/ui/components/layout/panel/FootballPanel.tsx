@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import IonIcon from "react-native-vector-icons/Ionicons";
 import { Panel } from "@scores/ui/components/layout/panel/Panel";
 import { getPrimaryText } from "@scores/theme/utils/variables";
@@ -7,8 +7,10 @@ import { GAME_TYPE } from "@scores/types/enum/GameType";
 import { PanelFixture } from "@scores/ui/components/layout/panel/fixture/PanelFixture";
 import { getFixtures } from "@scores/http/services/football";
 import { normaliseScores } from "@scores/http/utils/normaliseScores";
+import { getTheme } from "@scores/theme/utils/theme";
 
 export const FootballPanel = () => {
+  const themeStyles = getTheme();
   const [fixtures, setFixtures] = useState<{}>(null);
 
   useEffect(() => {
@@ -18,6 +20,22 @@ export const FootballPanel = () => {
 
     fetchData();
   }, []);
+
+  if (!fixtures) {
+    return (
+      <Panel
+        title={"Football"}
+        icon={<IonIcon name={"football"} size={24} color={getPrimaryText()} />}
+        testID={"football-panel"}
+      >
+        <View style={[styles.container]}>
+          <Text style={[themeStyles.text]} testID={"loading"}>
+            Loading
+          </Text>
+        </View>
+      </Panel>
+    );
+  }
 
   return (
     <Panel

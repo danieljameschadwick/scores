@@ -11,6 +11,7 @@ interface ScoreInterface {
   score: number;
   result: GAME_RESULT;
   logo?: string | null;
+  testID?: string;
 }
 
 export const FixtureRow: React.FC<ScoreInterface> = ({
@@ -18,21 +19,19 @@ export const FixtureRow: React.FC<ScoreInterface> = ({
   score,
   result,
   logo = null,
+  testID = "fixture-row",
 }) => {
   const themeStyles = getTheme();
   const teamNameText = [styles.teamNameText];
   const scoreText = [styles.scoreText];
 
   return (
-    <View style={[styles.container]}>
+    <View style={[styles.container]} testID={testID}>
       <View style={[styles.teamNameContainer]}>
         <View style={[styles.iconContainer]}>
           {logo ? (
-            <Image 
-              style={[styles.icon]}
-              source={{ uri: logo}}
-            />
-            ) : (
+            <Image style={[styles.icon]} source={{ uri: logo }} />
+          ) : (
             <AntDesignIcon
               name={"questioncircle"}
               size={20}
@@ -41,11 +40,19 @@ export const FixtureRow: React.FC<ScoreInterface> = ({
           )}
         </View>
 
-        <Text style={[teamNameText, themeStyles.text]} dataSet={{ media: ids.teamNameText }}>{name}</Text>
+        <Text
+          style={[teamNameText, themeStyles.text]}
+          dataSet={{ media: ids.teamNameText }}
+          testID={"name"}
+        >
+          {name}
+        </Text>
       </View>
 
       <View style={[styles.scoreContainer]}>
-        <Text style={[scoreText, themeStyles.text]}>{score}</Text>
+        <Text style={[scoreText, themeStyles.text]} testID={"score"}>
+          {score}
+        </Text>
       </View>
     </View>
   );

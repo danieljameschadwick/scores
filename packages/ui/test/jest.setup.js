@@ -16,3 +16,11 @@ jest.mock('redux-persist', () => {
 });
 
 jest.mock('redux-persist/integration/react', () => ({ PersistGate: (props: any) => props.children, }));
+
+// @TODO: figure strategy for web/app testing
+//  Initial idea - test Platform usages individually, but when testing
+//  app we can just use "web"
+jest.mock('react-native/Libraries/Utilities/Platform', () => ({
+  OS: 'web',
+  select: () => null
+}));

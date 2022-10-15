@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FootballPanel component renders base loading component 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": 10,
+          "marginBottom": 10,
+          "paddingBottom": 16,
+          "paddingHorizontal": 16,
+          "paddingTop": 8,
+        },
+      ],
+      Object {
+        "backgroundColor": "rgb(232, 234, 237)",
+        "borderColor": "rgb(215, 220, 224)",
+      },
+    ]
+  }
+  testID="football-panel"
+>
+  <View
+    style={
+      Array [
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#dcdddf",
+            "borderBottomWidth": 1,
+            "display": "flex",
+            "flexDirection": "row",
+            "marginBottom": 10,
+            "paddingBottom": 5,
+          },
+        ],
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "marginRight": 3,
+          },
+          Object {
+            "color": "#000",
+          },
+        ]
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "color": "#000",
+              "fontSize": 24,
+            },
+            undefined,
+            Object {
+              "fontFamily": "Ionicons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontSize": 13,
+            "fontWeight": "800",
+            "textTransform": "uppercase",
+          },
+          Object {
+            "color": "#000",
+          },
+        ]
+      }
+    >
+      Football
+    </Text>
+  </View>
+  <View>
+    <View
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "flexWrap": "wrap",
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000",
+            },
+          ]
+        }
+        testID="loading"
+      >
+        Loading
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`FootballPanel component renders loaded component 1`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": 10,
+          "marginBottom": 10,
+          "paddingBottom": 16,
+          "paddingHorizontal": 16,
+          "paddingTop": 8,
+        },
+      ],
+      Object {
+        "backgroundColor": "rgb(232, 234, 237)",
+        "borderColor": "rgb(215, 220, 224)",
+      },
+    ]
+  }
+  testID="football-panel"
+>
+  <View
+    style={
+      Array [
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#dcdddf",
+            "borderBottomWidth": 1,
+            "display": "flex",
+            "flexDirection": "row",
+            "marginBottom": 10,
+            "paddingBottom": 5,
+          },
+        ],
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "marginRight": 3,
+          },
+          Object {
+            "color": "#000",
+          },
+        ]
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "color": "#000",
+              "fontSize": 24,
+            },
+            undefined,
+            Object {
+              "fontFamily": "Ionicons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontSize": 13,
+            "fontWeight": "800",
+            "textTransform": "uppercase",
+          },
+          Object {
+            "color": "#000",
+          },
+        ]
+      }
+    >
+      Football
+    </Text>
+  </View>
+  <View>
+    <View
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "flexWrap": "wrap",
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000",
+            },
+          ]
+        }
+        testID="loading"
+      >
+        Loading
+      </Text>
+    </View>
+  </View>
+</View>
+`;

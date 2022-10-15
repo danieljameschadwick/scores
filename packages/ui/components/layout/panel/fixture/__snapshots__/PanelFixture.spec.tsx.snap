@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PanelFixture component renders base loading component 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "row",
+      "opacity": 1,
+      "paddingVertical": 12,
+      "width": "50%",
+    }
+  }
+  testID="panel-fixture"
+>
+  <View
+    style={
+      Array [
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "paddingRight": "5%",
+          "width": "70%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "margin": 2.5,
+          },
+        ]
+      }
+      testID="fixture-row-home"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+              "flexDirection": "row",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginRight": 5,
+              },
+            ]
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                  "fontSize": 20,
+                },
+                undefined,
+                Object {
+                  "fontFamily": null,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+        <Text
+          dataSet={
+            Object {
+              "media": undefined,
+            }
+          }
+          style={
+            Array [
+              Array [
+                Object {
+                  "fontSize": 16,
+                },
+              ],
+              Object {
+                "color": "#000",
+              },
+            ]
+          }
+          testID="name"
+        />
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "width": 25,
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Array [
+                Object {
+                  "fontSize": 16,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+              ],
+              Object {
+                "color": "#000",
+              },
+            ]
+          }
+          testID="score"
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "margin": 2.5,
+          },
+        ]
+      }
+      testID="fixture-row-away"
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+              "flexDirection": "row",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginRight": 5,
+              },
+            ]
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                  "fontSize": 20,
+                },
+                undefined,
+                Object {
+                  "fontFamily": null,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+        <Text
+          dataSet={
+            Object {
+              "media": undefined,
+            }
+          }
+          style={
+            Array [
+              Array [
+                Object {
+                  "fontSize": 16,
+                },
+              ],
+              Object {
+                "color": "#000",
+              },
+            ]
+          }
+          testID="name"
+        />
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "width": 25,
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Array [
+                Object {
+                  "fontSize": 16,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                },
+              ],
+              Object {
+                "color": "#000",
+              },
+            ]
+          }
+          testID="score"
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "flex-start",
+          "display": "flex",
+          "justifyContent": "center",
+          "width": "30%",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000",
+          },
+        ]
+      }
+    >
+      FT
+    </Text>
+  </View>
+</View>
+`;

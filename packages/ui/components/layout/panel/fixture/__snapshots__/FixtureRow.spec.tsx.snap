@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FixtureRow component renders base component 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "margin": 2.5,
+      },
+    ]
+  }
+  testID="fixture-row"
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "marginRight": 5,
+          },
+        ]
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "color": "#000",
+              "fontSize": 20,
+            },
+            undefined,
+            Object {
+              "fontFamily": null,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+    <Text
+      dataSet={
+        Object {
+          "media": undefined,
+        }
+      }
+      style={
+        Array [
+          Array [
+            Object {
+              "fontSize": 16,
+            },
+          ],
+          Object {
+            "color": "#000",
+          },
+        ]
+      }
+      testID="name"
+    >
+      England
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "width": 25,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Array [
+            Object {
+              "fontSize": 16,
+              "fontWeight": "700",
+              "textAlign": "center",
+            },
+          ],
+          Object {
+            "color": "#000",
+          },
+        ]
+      }
+      testID="score"
+    >
+      0
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`FixtureRow component renders base win component 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "margin": 2.5,
+      },
+    ]
+  }
+  testID="fixture-row"
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "marginRight": 5,
+          },
+        ]
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "color": "#000",
+              "fontSize": 20,
+            },
+            undefined,
+            Object {
+              "fontFamily": null,
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+    <Text
+      dataSet={
+        Object {
+          "media": undefined,
+        }
+      }
+      style={
+        Array [
+          Array [
+            Object {
+              "fontSize": 16,
+            },
+          ],
+          Object {
+            "color": "#000",
+          },
+        ]
+      }
+      testID="name"
+    >
+      Manchester United
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "width": 25,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Array [
+            Object {
+              "fontSize": 16,
+              "fontWeight": "700",
+              "textAlign": "center",
+            },
+          ],
+          Object {
+            "color": "#000",
+          },
+        ]
+      }
+      testID="score"
+    >
+      3
+    </Text>
+  </View>
+</View>
+`;
