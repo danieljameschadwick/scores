@@ -1,33 +1,18 @@
 import React from "react";
 import {
   View,
-  Text,
   StyleSheet,
   TouchableOpacity,
   Platform,
 } from "react-native";
 import { getTheme } from "@scores/theme/utils/theme";
 import { ScoreBoxRow } from "@scores/ui/components/carousel/scoreBox/ScoreBoxRow";
-import { GAME_RESULT } from "@scores/types/enum/GameResult";
 import { useRouter } from "@scores/ui/util/router";
 import { System } from "@scores/types/enum/System";
 import { ScoreBoxStatus } from "./scoreBox/ScoreBoxStatus";
 import { useFixture } from "@scores/ui/state/FixtureContext";
 
-interface ScoreInterface {
-  abbreviation: string;
-  score: number;
-  result: GAME_RESULT;
-  logo?: string | null;
-}
-
-interface Props {
-  id: number;
-  home: ScoreInterface;
-  away: ScoreInterface;
-}
-
-export const CarouselScoreBox: React.FC<Props> = () => {
+export const CarouselScoreBox: React.FC = () => {
   const { id, home, away } = useFixture();
   const themeStyles = getTheme();
   const router = useRouter();
@@ -48,7 +33,7 @@ export const CarouselScoreBox: React.FC<Props> = () => {
   };
 
   return (
-    <TouchableOpacity onPress={viewPage}>
+    <TouchableOpacity onPress={viewPage} testID={"score-box"}>
       <View style={[styles.container, themeStyles.darkContainer]}>
         <ScoreBoxStatus />
         <ScoreBoxRow {...home} />

@@ -34,7 +34,7 @@ export const CarouselGroup: React.FC<Props> = ({
 
                 return (
                   <FixtureContext.Provider key={id} value={fixture}>
-                    <CarouselScoreBox key={id} fixture={fixture} />
+                    <CarouselScoreBox key={id} />
                   </FixtureContext.Provider>
                 );
               })}

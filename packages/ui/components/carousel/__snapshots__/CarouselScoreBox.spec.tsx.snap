@@ -1,0 +1,479 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CarouselScoreBox component can navigate to fixture 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID="score-box"
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderRightWidth": 1,
+          "display": "flex",
+          "flexDirection": "column",
+          "paddingBottom": 5,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "paddingTop": 5,
+          "width": 120,
+        },
+        Object {
+          "backgroundColor": "rgb(232, 234, 237)",
+          "borderColor": "rgb(215, 220, 224)",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Array [
+            Object {
+              "fontSize": 10,
+              "fontWeight": "600",
+              "marginBottom": 5,
+            },
+            Object {
+              "color": "#000",
+            },
+            Object {
+              "color": "#d00",
+            },
+          ],
+        ]
+      }
+    >
+      LIVE
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 2,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginRight": 3,
+              },
+            ]
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                  "fontSize": 20,
+                },
+                undefined,
+                Object {
+                  "fontFamily": null,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+        <Text
+          style={
+            Array [
+              Array [
+                Object {
+                  "fontSize": 12,
+                },
+              ],
+              Object {
+                "color": "#000",
+              },
+            ]
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Array [
+              Object {
+                "fontSize": 12,
+                "fontWeight": "600",
+              },
+            ],
+            Object {
+              "color": "#000",
+            },
+          ]
+        }
+      >
+        -
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 2,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginRight": 3,
+              },
+            ]
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                  "fontSize": 20,
+                },
+                undefined,
+                Object {
+                  "fontFamily": null,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+        <Text
+          style={
+            Array [
+              Array [
+                Object {
+                  "fontSize": 12,
+                },
+              ],
+              Object {
+                "color": "#000",
+              },
+            ]
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Array [
+              Object {
+                "fontSize": 12,
+                "fontWeight": "600",
+              },
+            ],
+            Object {
+              "color": "#000",
+            },
+          ]
+        }
+      >
+        -
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`CarouselScoreBox component renders base component 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID="score-box"
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderRightWidth": 1,
+          "display": "flex",
+          "flexDirection": "column",
+          "paddingBottom": 5,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "paddingTop": 5,
+          "width": 120,
+        },
+        Object {
+          "backgroundColor": "rgb(232, 234, 237)",
+          "borderColor": "rgb(215, 220, 224)",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Array [
+            Object {
+              "fontSize": 10,
+              "fontWeight": "600",
+              "marginBottom": 5,
+            },
+            Object {
+              "color": "#000",
+            },
+            Object {
+              "color": "#d00",
+            },
+          ],
+        ]
+      }
+    >
+      LIVE
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 2,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginRight": 3,
+              },
+            ]
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                  "fontSize": 20,
+                },
+                undefined,
+                Object {
+                  "fontFamily": null,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+        <Text
+          style={
+            Array [
+              Array [
+                Object {
+                  "fontSize": 12,
+                },
+              ],
+              Object {
+                "color": "#000",
+              },
+            ]
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Array [
+              Object {
+                "fontSize": 12,
+                "fontWeight": "600",
+              },
+            ],
+            Object {
+              "color": "#000",
+            },
+          ]
+        }
+      >
+        -
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 2,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginRight": 3,
+              },
+            ]
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                  "fontSize": 20,
+                },
+                undefined,
+                Object {
+                  "fontFamily": null,
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+        <Text
+          style={
+            Array [
+              Array [
+                Object {
+                  "fontSize": 12,
+                },
+              ],
+              Object {
+                "color": "#000",
+              },
+            ]
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Array [
+              Object {
+                "fontSize": 12,
+                "fontWeight": "600",
+              },
+            ],
+            Object {
+              "color": "#000",
+            },
+          ]
+        }
+      >
+        -
+      </Text>
+    </View>
+  </View>
+</View>
+`;
