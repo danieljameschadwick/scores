@@ -52,12 +52,15 @@ const normaliseFootballByDate = (data): {} => {
 
 export const normaliseFootball = (game) => {
   const {
-    fixture: { 
+    fixture: {
       id,
       date,
       status: {
         short: shortStatus
-      } },
+      },
+      referee,
+      venue,
+    },
     goals,
     teams: { home, away },
     events,
@@ -72,6 +75,8 @@ export const normaliseFootball = (game) => {
     status: shortStatus,
     events: normaliseEvents(home.id, away.id, events),
     statistics: normaliseStatistics(home.id, away.id, statistics),
+    referee,
+    venue,
   };
 }
 

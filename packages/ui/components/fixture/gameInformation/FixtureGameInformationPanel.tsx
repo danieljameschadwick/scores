@@ -10,7 +10,9 @@ import { LoadingContainer } from "../loadingContainer/LoadingContainer";
 export const FixtureGameInformationPanel = () => {
   const themeStyles = getTheme();
   const fixture = useFixture();
-  const { home, away, statistics } = fixture;
+  const { referee = null, venue = null } = fixture;
+
+  const hasLoaded = referee && venue;
 
   return (
     <Panel
@@ -24,7 +26,23 @@ export const FixtureGameInformationPanel = () => {
       }
     >
       <View style={[styles.container]}>
-        <LoadingContainer />
+        {!hasLoaded ? (
+          <LoadingContainer />
+        ) : (
+          <>
+            <View style={[styles.tableRow]}>
+              <Text style={[styles.label, themeStyles.text]}>Referee:</Text>
+              <Text style={[themeStyles.text]}>{referee}</Text>
+            </View>
+
+            <View style={[styles.tableRow]}>
+              <Text style={[styles.label, themeStyles.text]}>Venue:</Text>
+              <Text style={[themeStyles.text]}>
+                {venue.name}, {venue.city}
+              </Text>
+            </View>
+          </>
+        )}
       </View>
     </Panel>
   );
@@ -40,11 +58,11 @@ const styles = StyleSheet.create({
   tableRow: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
     width: "100%",
     padding: 8,
   },
-  text: {
-    paddingBottom: 10,
+  label: {
+    marginRight: 4,
+    fontWeight: "700",
   },
 });
