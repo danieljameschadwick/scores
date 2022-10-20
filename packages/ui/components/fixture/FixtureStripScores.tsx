@@ -40,6 +40,7 @@ const { styles, ids } = StyleSheet.create({
     flexDirection: "row-reverse",
     justifyContent: "space-evenly",
     paddingVertical: 15,
+    borderBottomWidth: 1,
   },
   statusContainer: {
     display: "flex",

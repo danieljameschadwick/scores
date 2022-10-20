@@ -1,30 +1,30 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import AntDesign from "react-native-vector-icons/AntDesign";
+import { StyleSheet, Text, View } from "react-native";
+import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import { Panel } from "@scores/ui/components/layout/panel/Panel";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 import { useFixture } from "@scores/ui/state/FixtureContext";
 import { getTheme } from "@scores/theme/utils/theme";
-import { PossessionStatistic } from "@scores/ui/components/fixture/splitStatisticsPanel/PossessionStatistic";
+import { LoadingContainer } from "../loadingContainer/LoadingContainer";
 
-export const FixtureSplitStatisticsPanel = () => {
+export const FixtureGameInformationPanel = () => {
   const themeStyles = getTheme();
   const fixture = useFixture();
   const { home, away, statistics } = fixture;
 
   return (
     <Panel
-      title={"H2H Statistics"}
+      title={"Game Information"}
       icon={
-        <AntDesign
-          name={"areachart"}
+        <MaterialCommunityIcon
+          name={"stadium"}
           size={24}
           color={getPrimaryText()}
         />
       }
     >
       <View style={[styles.container]}>
-        <PossessionStatistic />
+        <LoadingContainer />
       </View>
     </Panel>
   );
