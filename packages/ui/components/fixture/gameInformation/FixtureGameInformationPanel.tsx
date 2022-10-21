@@ -5,14 +5,11 @@ import { Panel } from "@scores/ui/components/layout/panel/Panel";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 import { useFixture } from "@scores/ui/state/FixtureContext";
 import { getTheme } from "@scores/theme/utils/theme";
-import { LoadingContainer } from "../loadingContainer/LoadingContainer";
 
 export const FixtureGameInformationPanel = () => {
   const themeStyles = getTheme();
   const fixture = useFixture();
   const { referee = null, venue = null } = fixture;
-
-  const hasLoaded = referee && venue;
 
   return (
     <Panel
@@ -26,23 +23,17 @@ export const FixtureGameInformationPanel = () => {
       }
     >
       <View style={[styles.container]}>
-        {!hasLoaded ? (
-          <LoadingContainer />
-        ) : (
-          <>
-            <View style={[styles.tableRow]}>
-              <Text style={[styles.label, themeStyles.text]}>Referee:</Text>
-              <Text style={[themeStyles.text]}>{referee}</Text>
-            </View>
+        <View style={[styles.tableRow]}>
+          <Text style={[styles.label, themeStyles.text]}>Referee:</Text>
+          <Text style={[themeStyles.text]}>{referee ?? '-'}</Text>
+        </View>
 
-            <View style={[styles.tableRow]}>
-              <Text style={[styles.label, themeStyles.text]}>Venue:</Text>
-              <Text style={[themeStyles.text]}>
-                {venue.name}, {venue.city}
-              </Text>
-            </View>
-          </>
-        )}
+        <View style={[styles.tableRow]}>
+          <Text style={[styles.label, themeStyles.text]}>Venue:</Text>
+          <Text style={[themeStyles.text]}>
+            {venue.name}, {venue.city}
+          </Text>
+        </View>
       </View>
     </Panel>
   );
