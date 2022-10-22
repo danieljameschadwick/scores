@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 import { getFixture } from "@scores/http/services/football";
 import { GameInterface } from "@scores/types/interfaces/GameInterface";
 import { Fixture } from "@scores/ui/components/fixture/Fixture";
@@ -16,7 +16,7 @@ export const FixtureScreen: React.FC<Props> = ({ route }) => {
   } = route;
   const [fixture, setFixture] = useState<GameInterface | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
 
   const insets = useSafeAreaInsets();
   const styles = StyleSheet.create({

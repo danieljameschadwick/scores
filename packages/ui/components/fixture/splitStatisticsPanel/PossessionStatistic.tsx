@@ -1,10 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 import { LoadingContainer } from "../loadingContainer/LoadingContainer";
 
 export const PossessionStatistic = () => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
 
   return (
     <View style={[styles.container]}>

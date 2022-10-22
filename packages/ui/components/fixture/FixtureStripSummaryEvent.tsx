@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import IonIcon from "react-native-vector-icons/Ionicons";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 
 interface Props {
@@ -17,7 +17,7 @@ export const FixtureStripSummaryEvent: React.FC<Props> = ({
   type,
   isAway = false,
 }) => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
   const containerStyles = [styles.container];
   const iconStyles = [styles.icon];
 

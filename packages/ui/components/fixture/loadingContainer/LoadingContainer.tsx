@@ -1,10 +1,10 @@
 import React from "react";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import { getPrimaryText } from "@scores/theme/utils/variables";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 
 export const LoadingContainer: React.FC = () => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
 
   return (
     <View style={[styles.loadingContainer]}>

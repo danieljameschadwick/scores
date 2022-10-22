@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import StyleSheet from "react-native-media-query";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 import { useFixture } from "@scores/ui/state/FixtureContext";
 import { FixtureStripSummaryEvent } from "@scores/ui/components/fixture/FixtureStripSummaryEvent";
 
@@ -20,7 +20,7 @@ const getEventIcon = (type: EVENT_TYPE) => {
 
 export const FixtureStripSummary = () => {
   const fixture = useFixture();
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
 
   const {
     events: { homeEvents = [], awayEvents = [] } = {

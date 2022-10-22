@@ -4,11 +4,11 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import { Panel } from "@scores/ui/components/layout/panel/Panel";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 import { useFixture } from "@scores/ui/state/FixtureContext";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 import { PossessionStatistic } from "@scores/ui/components/fixture/splitStatisticsPanel/PossessionStatistic";
 
 export const FixtureSplitStatisticsPanel = () => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
   const fixture = useFixture();
   const { home, away, statistics } = fixture;
 

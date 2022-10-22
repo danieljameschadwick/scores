@@ -1,5 +1,5 @@
 import React from "react";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 import { View, Text, StyleSheet } from "react-native";
 
 interface Props {
@@ -15,7 +15,7 @@ export const FixtureStatisticsRow: React.FC<Props> = ({
   type,
   isAlternate = false,
 }) => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
   const rowStyles = [styles.row, styles.borderedRow];
 
   if (isAlternate) rowStyles.push(themeStyles.lightContainer);

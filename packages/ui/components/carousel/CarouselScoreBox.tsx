@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   Platform,
 } from "react-native";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 import { ScoreBoxRow } from "@scores/ui/components/carousel/scoreBox/ScoreBoxRow";
 import { useRouter } from "@scores/ui/util/router";
 import { System } from "@scores/types/enum/System";
@@ -14,7 +14,7 @@ import { useFixture } from "@scores/ui/state/FixtureContext";
 
 export const CarouselScoreBox: React.FC = () => {
   const { id, home, away } = useFixture();
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
   const router = useRouter();
 
   const viewPage = () => {

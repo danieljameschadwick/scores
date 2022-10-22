@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 
 interface Props {
   logo: string;
@@ -12,7 +12,7 @@ export const FixtureStatisticsRowHeader: React.FC<Props> = ({
   abbreviation,
   isAway,
 }) => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
   const rowHeaderStyles = [styles.rowHeader];
   const iconStyles = [styles.icon];
 

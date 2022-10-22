@@ -5,13 +5,13 @@ import { ScoresCarousel } from "@scores/ui/components/carousel/ScoresCarousel";
 import { normaliseScores } from "@scores/http/utils/normaliseScores";
 import { GAME_TYPE } from "@scores/types/enum/GameType";
 import { getFixtures } from "@scores/http/services/football";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 import { FootballPanel } from "@scores/ui/components/layout/panel/FootballPanel";
 import { CricketPanel } from "@scores/ui/components/layout/panel/CricketPanel";
 
 export const HomeScreen: React.FC = () => {
   const [footballData, setFootballData] = useState<{}>(null);
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
 
   const insets = useSafeAreaInsets();
   const styles = StyleSheet.create({

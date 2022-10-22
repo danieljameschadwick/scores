@@ -5,7 +5,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { useAppDispatch, useAppSelector } from "@scores/state/hooks";
 import { selectTheme, setTheme } from "@scores/state/reducer/ThemeReducer";
 import { Theme } from "@scores/types/enum/Theme";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 import { RootStackParamList } from "../typing/typing";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Settings">;
@@ -13,7 +13,7 @@ type Props = NativeStackScreenProps<RootStackParamList, "Settings">;
 export const SettingsScreen: React.FC<Props> = ({ navigation }) => {
   const dispatch = useAppDispatch();
   const theme = useAppSelector(selectTheme);
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
 
   const insets = useSafeAreaInsets();
   const styles = StyleSheet.create({

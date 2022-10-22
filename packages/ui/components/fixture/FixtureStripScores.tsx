@@ -2,13 +2,13 @@ import React from "react";
 import { View, Text } from "react-native";
 import StyleSheet from "react-native-media-query";
 import format from "date-fns/format";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 import { useFixture } from "@scores/ui/state/FixtureContext";
 import { FixtureStripScore } from "@scores/ui/components/fixture/FixtureStripScore";
 
 export const FixtureStripScores = () => {
   const fixture = useFixture();
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
 
   const { date, home, away } = fixture;
 

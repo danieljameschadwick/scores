@@ -5,7 +5,7 @@ import { useAppSelector } from "@scores/state/hooks";
 import { selectTheme } from "@scores/state/reducer/ThemeReducer";
 import { getPrimaryText } from "./variables";
 
-export const getTheme = () => {
+export const useTheme = () => {
   const theme = useAppSelector(selectTheme);
 
   if (theme === Theme.DARK_MODE) {
@@ -19,7 +19,7 @@ export const getTheme = () => {
 /**
  * Experimental for not redoing the getPrimaryText hook
  */
-export const getThemes = () => {
+export const useThemes = () => {
   const theme = useAppSelector(selectTheme);
 
   if (theme === Theme.DARK_MODE) {

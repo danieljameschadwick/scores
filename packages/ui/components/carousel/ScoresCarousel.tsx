@@ -8,7 +8,7 @@ import StyleSheet from "react-native-media-query";
 import Icon from "react-native-vector-icons/Entypo";
 import { CarouselGroup } from "@scores/ui/components/carousel/CarouselGroup";
 import { Z_INDEXES } from "@scores/types/enum/zIndex";
-import { getThemes } from "@scores/theme/utils/theme";
+import { useThemes } from "@scores/theme/utils/theme";
 import { normaliseScores } from "@scores/http/utils/normaliseScores";
 import { GAME_TYPE } from "@scores/types/enum/GameType";
 import { getFixtures } from "@scores/http/services/football";
@@ -19,7 +19,7 @@ import { LoadingContainer } from "./layout/LoadingContainer";
 const SCROLL_DISTANCE = 500;
 
 export const ScoresCarousel: React.FC = () => {
-  const { themeStyles, primaryText } = getThemes();
+  const { themeStyles, primaryText } = useThemes();
   const scrollRef = useRef(null);
   const [month, setMonth] = useState<Month>(Month.AUGUST);
   const [position, setPosition] = useState<number>(0);

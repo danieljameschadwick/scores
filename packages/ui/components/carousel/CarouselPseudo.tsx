@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import StyleSheet from "react-native-media-query";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 
 /**
  * Not a fan of this solution to match the exact width of
@@ -11,7 +11,7 @@ import { getTheme } from "@scores/theme/utils/theme";
  */
 
 export const CarouselPseudo: React.FC = () => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
 
   return (
     <View style={[styles.container, themeStyles.lightContainer]} dataSet={{ media: ids.container }} />

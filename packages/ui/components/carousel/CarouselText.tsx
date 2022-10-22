@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
 import StyleSheet from "react-native-media-query";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 
 interface Props {
   text: string;
@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const CarouselText: React.FC<Props> = ({ text, hideable = false }) => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
   const containerStyles = [styles.container];
   let dataSet = null;
 

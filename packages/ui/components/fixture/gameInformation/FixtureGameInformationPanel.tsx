@@ -4,10 +4,10 @@ import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIc
 import { Panel } from "@scores/ui/components/layout/panel/Panel";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 import { useFixture } from "@scores/ui/state/FixtureContext";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 
 export const FixtureGameInformationPanel = () => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
   const fixture = useFixture();
   const { referee = null, venue = null } = fixture;
 

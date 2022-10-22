@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import StyleSheet from "react-native-media-query";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 import { Dropdown } from "@scores/ui/components/common/dropdown/Dropdown";
 import { Month } from "@scores/types/enum/Month";
 
@@ -13,7 +13,7 @@ interface Props {
 }
 
 export const CarouselDateDropdown: React.FC<Props> = ({ month, setMonth }) => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
  
   return (
     <View style={[styles.container, themeStyles.lightContainer]} dataSet={{ media: ids.container }}>

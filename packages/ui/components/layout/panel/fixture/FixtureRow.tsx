@@ -4,7 +4,7 @@ import StyleSheet from "react-native-media-query";
 import AntDesignIcon from "react-native-vector-icons/AntDesign";
 import { GAME_RESULT } from "@scores/types/enum/GameResult";
 import { getPrimaryText } from "@scores/theme/utils/variables";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 
 interface ScoreInterface {
   name: string;
@@ -21,7 +21,7 @@ export const FixtureRow: React.FC<ScoreInterface> = ({
   logo = null,
   testID = "fixture-row",
 }) => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
   const teamNameText = [styles.teamNameText];
   const scoreText = [styles.scoreText];
 

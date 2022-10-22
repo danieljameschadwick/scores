@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 
 interface Props {
   title: string;
@@ -15,7 +15,7 @@ export const Panel: React.FC<Props> = ({
   testID = "panel",
   children,
 }) => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
   const containerStyles = [styles.container];
   const headingStyles = [styles.headingContainer];
 

@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Platform } from "react-native";
 import StyleSheet from "react-native-media-query";
 import { GAME_RESULT } from "@scores/types/enum/GameResult";
 import { FixtureRow } from "@scores/ui/components/layout/panel/fixture/FixtureRow";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 import { System } from "@scores/types/enum/System";
 import { useRouter } from "@scores/ui/util/router";
 
@@ -22,7 +22,7 @@ interface Props {
 };
 
 export const PanelFixture: React.FC<Props> = ({ id, home, away }) => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
   const router = useRouter();
 
   const viewPage = () => {

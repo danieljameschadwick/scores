@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleProp, View, ViewStyle } from "react-native-web";
 import StyleSheet from "react-native-media-query";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 
 interface Props {
   style: StyleProp<ViewStyle>;
@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const PageContent: React.FC<Props> = ({ style: propStyles, children }) => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
 
   return (
     <View style={[styles.container, themeStyles.body, propStyles?.container]} dataSet={{ media: ids.container }}>

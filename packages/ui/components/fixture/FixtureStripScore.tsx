@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 import StyleSheet from "react-native-media-query";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 
 interface Props {
   // @TODO: add interface
@@ -14,7 +14,7 @@ export const FixtureStripScore: React.FC<Props> = ({
   team,
   isHome = false,
 }) => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
 
   const containerStyles = [styles.container];
   const nameContainer = [styles.nameContainer];

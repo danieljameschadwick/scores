@@ -6,7 +6,7 @@ import { getPrimaryText } from "@scores/theme/utils/variables";
 import { useFixture } from "@scores/ui/state/FixtureContext";
 import { FixtureStatisticsRow } from "@scores/ui/components/fixture/statisticsPanel/FixtureStatisticsRow";
 import { FixtureStatisticsRowHeader } from "@scores/ui/components/fixture/statisticsPanel/FixtureStatisticsRowHeader";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 import { LoadingContainer } from "../loadingContainer/LoadingContainer";
 
 export const FixtureStatisticsPanel = () => {

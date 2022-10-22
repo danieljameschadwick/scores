@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text } from "react-native";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 import { GAME_STATUS } from "@scores/types/enum/GameStatus";
 import { isGameNotStartedOrFinished } from "@scores/ui/util/game/isGameNotStartedOrFinished";
 import { getFormattedLiveMatchStatus } from "@scores/ui/util/game/getFormattedLiveMatchStatus";
@@ -9,7 +9,7 @@ import { formatDateTimeString } from "@scores/ui/util/dateTime/formatDateTimeStr
 
 export const ScoreBoxStatus: React.FC = () => {
   const { status, date } = useFixture();
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
   const statusText = [styles.status, themeStyles.text];
 
   if (!isGameNotStartedOrFinished(status) || status === GAME_STATUS.PST) {

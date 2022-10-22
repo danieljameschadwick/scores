@@ -7,10 +7,10 @@ import { GAME_TYPE } from "@scores/types/enum/GameType";
 import { PanelFixture } from "@scores/ui/components/layout/panel/fixture/PanelFixture";
 import { getFixtures } from "@scores/http/services/football";
 import { normaliseScores } from "@scores/http/utils/normaliseScores";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 
 export const FootballPanel = () => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
   const [fixtures, setFixtures] = useState<{}>(null);
 
   useEffect(() => {

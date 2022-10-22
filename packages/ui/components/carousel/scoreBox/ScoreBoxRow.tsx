@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import AntDesignIcon from "react-native-vector-icons/AntDesign";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 import { GAME_RESULT } from "@scores/types/enum/GameResult";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 
@@ -18,7 +18,7 @@ export const ScoreBoxRow: React.FC<Props> = ({
   result,
   logo = null,
 }) => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
   const teamNameText = [styles.teamName];
   const goalsText = [styles.goalsText];
 

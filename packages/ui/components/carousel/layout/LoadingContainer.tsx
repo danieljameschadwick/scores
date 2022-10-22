@@ -1,9 +1,9 @@
-import { getThemes } from "@scores/theme/utils/theme";
+import { useThemes } from "@scores/theme/utils/theme";
 import React from "react";
 import { View, StyleSheet, Text, ActivityIndicator } from "react-native";
 
 export const LoadingContainer = () => {
-  const { themeStyles, primaryText } = getThemes();
+  const { themeStyles, primaryText } = useThemes();
   return (
     <View style={[styles.loadingWrapper]} testID={"carousel-loader"}>
       <ActivityIndicator color={primaryText} />

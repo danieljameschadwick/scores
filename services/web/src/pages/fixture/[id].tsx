@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View } from "react-native-web";
 import StyleSheet from "react-native-media-query";
 import { useRouter } from "next/router";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 import { getFixture } from "@scores/http/services/football";
 import { GameInterface } from "@scores/types/interfaces/GameInterface";
 import { Fixture } from "@scores/ui/components/fixture/Fixture";
@@ -15,7 +15,7 @@ const FixturePage: React.FC = () => {
   const id = parseInt(rawId as string, 10);
   const [fixture, setFixture] = useState<GameInterface | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
 
   useEffect(() => {
     const fetchData = async () => {

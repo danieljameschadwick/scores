@@ -9,13 +9,13 @@ import { ScoresCarousel } from "@scores/ui/components/carousel/ScoresCarousel";
 import { useAppDispatch, useAppSelector } from "@scores/state/hooks";
 import { Theme } from "@scores/types/enum/Theme";
 import { selectTheme, setTheme } from "@scores/state/reducer/ThemeReducer";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 
 export const Header: React.FC = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const theme = useAppSelector(selectTheme);
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
   const user = null;
 
   const dispatchTheme = (theme: Theme) => {

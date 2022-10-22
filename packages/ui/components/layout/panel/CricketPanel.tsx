@@ -2,11 +2,11 @@ import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import { Panel } from "@scores/ui/components/layout/panel/Panel";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 
 export const CricketPanel = () => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
 
   return (
     <Panel

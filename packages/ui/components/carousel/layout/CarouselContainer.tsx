@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { View } from "react-native";
 import StyleSheet from "react-native-media-query";
-import { getThemes } from "@scores/theme/utils/theme";
+import { useThemes } from "@scores/theme/utils/theme";
 import { CarouselDateDropdown } from "../CarouselDropdown";
 import { CarouselText } from "../CarouselText";
 import { Z_INDEXES } from "@scores/types/enum/zIndex";
@@ -18,7 +18,7 @@ export const CarouselContainer: React.FC<Props> = ({
   setMonth,
   children,
 }) => {
-  const { themeStyles } = getThemes();
+  const { themeStyles } = useThemes();
 
   return (
     <View

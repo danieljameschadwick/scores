@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Month } from "@scores/types/enum/Month";
-import { getTheme } from "@scores/theme/utils/theme";
+import { useTheme } from "@scores/theme/utils/theme";
 import { useClickOutside } from "@scores/ui/util/useClickOutside";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 import { Z_INDEXES } from "@scores/types/enum/zIndex";
@@ -19,7 +19,7 @@ interface Props {
 }
 
 export const Dropdown: React.FC<Props> = ({ month, setMonth }) => {
-  const themeStyles = getTheme();
+  const themeStyles = useTheme();
   const [open, setOpen] = useState<boolean>(false);
   const [ref] = useClickOutside(setOpen);
   const [items] = useState([
