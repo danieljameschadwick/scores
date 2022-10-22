@@ -21,5 +21,7 @@ export const getFixtures = async (month = Month.AUGUST): Promise<FixturesRespons
 };
 
 export const getFixture = async (id: number): Promise<GameInterface | null> => {
-  return footballFixtures20220829.response.find(({ fixture }) => fixture.id === id);
+  return footballFixtures20220829.response.find(({ fixture }) => fixture.id === id) ?? 
+    footballFixtures20220905.response.find(({ fixture }) => fixture.id === id)
+  ;
 };

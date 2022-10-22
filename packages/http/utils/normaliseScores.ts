@@ -34,6 +34,7 @@ export const normaliseScores = (data: any, gameType: GAME_TYPE): {} => {
 
 const normaliseFootballByDate = (data): {} => {
   const { response } = data;
+  // @TODO: refactor as map? key by date?
   const scoresByDate = {};
 
   for (const game of response) {
@@ -109,6 +110,7 @@ const normaliseWinner = (result: boolean | null) => {
 };
 
 const normaliseEvents = (homeId, awayId, events = []) => {
+  // @TODO: refactor as map?
   const homeEvents = [];
   const awayEvents = [];
 
@@ -155,6 +157,7 @@ const normaliseStatistics = (homeId, awayId, statistics = []) => {
 
 const normaliseStatistic = (statistic) => {
   const { team, statistics } = statistic;
+  // @TODO: refactor as map
   const formattedStatistics = [];
 
   for (const stat of statistics) {
@@ -191,6 +194,7 @@ const combineNormalisedStatistics = (homeStatistics, awayStatistics) => {
 
   for (const homeStatistic of homeStatistics.statistics) {
     const { id, name, value } = homeStatistic;
+    // @TODO: we shouldn't do this here, should be handled by the component using the data
     const displayOrder = StatisticDisplayOrder[id];
 
     combinedStatistics[displayOrder] = {

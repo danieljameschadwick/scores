@@ -5,26 +5,25 @@ import { Panel } from "@scores/ui/components/layout/panel/Panel";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 import { useFixture } from "@scores/ui/state/FixtureContext";
 import { useTheme } from "@scores/theme/utils/theme";
-import { PossessionStatistic } from "@scores/ui/components/fixture/splitStatisticsPanel/PossessionStatistic";
+import { PossessionStatistic } from "@scores/ui/components/fixture/splitStatisticsPanel/possessionStatistic/PossessionStatistic";
+import { LoadingContainer } from "../loadingContainer/LoadingContainer";
 
 export const FixtureSplitStatisticsPanel = () => {
   const themeStyles = useTheme();
   const fixture = useFixture();
-  const { home, away, statistics } = fixture;
+  const { statistics } = fixture;
 
   return (
     <Panel
       title={"H2H Statistics"}
-      icon={
-        <AntDesign
-          name={"areachart"}
-          size={24}
-          color={getPrimaryText()}
-        />
-      }
+      icon={<AntDesign name={"areachart"} size={24} color={getPrimaryText()} />}
     >
       <View style={[styles.container]}>
-        <PossessionStatistic />
+        {Object.keys(statistics).length === 0 ? (
+          <LoadingContainer />
+        ) : (
+          <PossessionStatistic />
+        )}
       </View>
     </Panel>
   );

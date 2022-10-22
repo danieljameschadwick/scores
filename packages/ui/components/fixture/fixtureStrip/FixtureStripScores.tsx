@@ -4,13 +4,13 @@ import StyleSheet from "react-native-media-query";
 import format from "date-fns/format";
 import { useTheme } from "@scores/theme/utils/theme";
 import { useFixture } from "@scores/ui/state/FixtureContext";
-import { FixtureStripScore } from "@scores/ui/components/fixture/FixtureStripScore";
+import { FixtureStripScore } from "@scores/ui/components/fixture/fixtureStrip/FixtureStripScore";
 
 export const FixtureStripScores = () => {
   const fixture = useFixture();
   const themeStyles = useTheme();
 
-  const { date, home, away } = fixture;
+  const { date, home, away, status } = fixture;
 
   return (
     <View style={[styles.container, themeStyles.lightContainer]}>
@@ -20,7 +20,9 @@ export const FixtureStripScores = () => {
         style={[styles.statusContainer]}
         dataSet={{ media: ids.statusContainer }}
       >
-        <Text style={[styles.statusText, themeStyles.text]}>FT</Text>
+        <Text style={[styles.statusText, themeStyles.text]}>
+          { status }
+        </Text>
         <Text
           style={[styles.dateText, themeStyles.text]}
           dataSet={{ media: ids.dateText }}
