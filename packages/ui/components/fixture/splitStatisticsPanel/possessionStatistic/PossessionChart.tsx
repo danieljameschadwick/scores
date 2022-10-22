@@ -17,6 +17,9 @@ export const PossessionChart = ({ home, away }) => {
   return (
     <View style={[styles.container]}>
       <Possession size={home} color={"red"} />
+
+      <View style={[styles.divider]} />
+
       <Possession size={away} color={"black"}/>
     </View>
   );
@@ -30,5 +33,8 @@ const styles = StyleSheet.create({
     height: 10,
     borderRadius: 50,
     overflow: "hidden",
+  },
+  divider: {
+    width: 5,
   },
 });
