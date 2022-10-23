@@ -16,7 +16,7 @@ export const PossessionStatistic = () => {
       <View style={[styles.row, styles.titleRow]}>
         <Text style={[themeStyles.text]}>{home.abbreviation}</Text>
 
-        <Text style={[styles.title, themeStyles.text]}>Possession</Text>
+        <Text style={[styles.titleText, themeStyles.text]}>Possession</Text>
 
         <Text style={[themeStyles.text]}>{away.abbreviation}</Text>
       </View>
@@ -49,8 +49,9 @@ const styles = StyleSheet.create({
   titleRow: {
     marginBottom: 5,
   },
-  title: {
-    fontSize: 12,
+  titleText: {    
+    fontSize: 14,
+    fontWeight: "600",
   },
   possesionText: {
     fontSize: 24,

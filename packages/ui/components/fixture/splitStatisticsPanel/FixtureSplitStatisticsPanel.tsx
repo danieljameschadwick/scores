@@ -7,6 +7,7 @@ import { useFixture } from "@scores/ui/state/FixtureContext";
 import { useTheme } from "@scores/theme/utils/theme";
 import { PossessionStatistic } from "@scores/ui/components/fixture/splitStatisticsPanel/possessionStatistic/PossessionStatistic";
 import { LoadingContainer } from "../loadingContainer/LoadingContainer";
+import { ShotsStatistic } from "./shotsStatistic/ShotsStatistic";
 
 export const FixtureSplitStatisticsPanel = () => {
   const themeStyles = useTheme();
@@ -22,7 +23,17 @@ export const FixtureSplitStatisticsPanel = () => {
         {Object.keys(statistics).length === 0 ? (
           <LoadingContainer />
         ) : (
-          <PossessionStatistic />
+          <>
+            <View style={[styles.row]}>
+              <PossessionStatistic />
+            </View>
+
+            <View style={[styles.divider]} />
+
+            <View style={[styles.row]}>
+              <ShotsStatistic />
+            </View>
+          </>
         )}
       </View>
     </Panel>
@@ -36,14 +47,14 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     justifyContent: "center",
   },
-  tableRow: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
+  row: {
     width: "100%",
-    padding: 8,
+    marginBottom: 10,
   },
-  text: {
-    paddingBottom: 10,
-  },
+  divider: {
+    width: "100%",
+    marginVertical: 10,
+    borderBottomColor: "rgb(124, 124, 124)",
+    borderBottomWidth: 1,
+  }
 });
