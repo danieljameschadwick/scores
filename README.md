@@ -81,3 +81,12 @@ To generate the dependency graph seen above, run:
 ```
 npx graph
 ```
+
+## Known Issues
+
+Whilst updating packages, there seems to be a bug in Yarn which requires the use of a downgraded `yarn` if you see `error An unexpected error occurred: "expected workspace package to exist for \"@react-native-community/cli-platform-android\"".
+` just do:
+
+```
+npx yarn@1.19.0 add <your packages>
+```

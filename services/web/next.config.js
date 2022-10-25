@@ -13,6 +13,9 @@ const withTM = require("next-transpile-modules")([
 ]);
 
 const nextConfig = {
+  experimental: {
+    esmExternals: "loose",
+  },
   images: {
     disableStaticImages: true,
   },
