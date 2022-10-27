@@ -5,7 +5,7 @@ import { StyleSheet } from "react-native";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import SharedGroupPreferences from "react-native-shared-group-preferences";
-import store, { persistor } from "@scores/state/store";
+import { store, persistor } from "@scores/state/store";
 import { Navigator } from "./src/navigation/Navigator";
 
 const appGroupIdentifier = "com.group.scores";
@@ -28,7 +28,7 @@ const setupWidgets = () => {
     SharedGroupPreferences.setItem(
       "ScoresWidget", // this is a key to pull from later in Swift
       widgetData,
-      appGroupIdentifier,
+      appGroupIdentifier
     );
   } catch (error) {
     console.log(error);
@@ -36,7 +36,8 @@ const setupWidgets = () => {
 };
 
 const App: React.FC = () => {
-  setupWidgets();
+  // @TODO: integrate widgets
+  // setupWidgets();
 
   return (
     <SafeAreaProvider style={styles.container}>

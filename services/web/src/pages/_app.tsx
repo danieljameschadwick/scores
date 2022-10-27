@@ -2,7 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import Head from "next/head";
-import store, { persistor, wrapper } from "@scores/state/store";
+import { store, persistor } from "@scores/state/store";
 
 const App = ({ Component, pageProps }) => {
   return (
@@ -18,4 +18,4 @@ const App = ({ Component, pageProps }) => {
   );
 };
 
-export default wrapper.withRedux(App);
+export default App;

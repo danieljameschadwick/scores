@@ -96,7 +96,8 @@ const styles = StyleSheet.create({
     zIndex: Z_INDEXES.OVERLAY,
   },
   fixedContainer: {
-    position: "fixed",
+    // @TODO: fixed isn't available in an app
+    // position: "fixed",
     paddingVertical: 5,
     paddingHorizontal: 5,
     borderRadius: 5,
