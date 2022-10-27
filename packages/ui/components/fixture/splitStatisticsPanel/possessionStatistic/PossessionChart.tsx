@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "row",
-    width: "100%",
+    // width: "100%",
     height: 10,
     borderRadius: 50,
     overflow: "hidden",

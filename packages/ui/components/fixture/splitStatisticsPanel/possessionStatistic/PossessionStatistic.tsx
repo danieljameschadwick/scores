@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
+import StyleSheet from "react-native-media-query";
 import { useTheme } from "@scores/theme/utils/theme";
 import { useFixture } from "../../../../state/FixtureContext";
 import { PossessionChart } from "./PossessionChart";
@@ -24,7 +25,10 @@ export const PossessionStatistic = () => {
       <View style={[styles.row]}>
         <Text style={[styles.possesionText, themeStyles.text]}>39%</Text>
 
-        <View style={[styles.possessionContainer]}>
+        <View
+          style={[styles.possessionContainer]}
+          dataSet={{ media: ids.possessionContainer }}
+        >
           <PossessionChart home={39} away={61} />
         </View>
 
@@ -34,7 +38,7 @@ export const PossessionStatistic = () => {
   );
 };
 
-const styles = StyleSheet.create({
+const { ids, styles } = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "column",
@@ -59,6 +63,10 @@ const styles = StyleSheet.create({
   },
   possessionContainer: {
     flexGrow: 1,
+    // @TODO: for some reason flexGrow overflows JUST on the app
     marginHorizontal: 15,
+    "@media (max-width: 667px)": {
+      maxWidth: "50%",
+    },
   },
 });
