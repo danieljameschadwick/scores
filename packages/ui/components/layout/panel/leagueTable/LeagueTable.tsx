@@ -117,7 +117,7 @@ const tableHeaderStyles = StyleSheet.create({
     flexDirection: "row",
     borderBottomWidth: 1,
     borderBottomColor: "#dcdddf",
-    paddingVertical: 5,
+    paddingBottom: 5,
     marginBottom: 5,
   },
   td: {
@@ -168,6 +168,7 @@ const tableBodyStyles = StyleSheet.create({
   row: {
     display: "flex",
     flexDirection: "row",
+    marginBottom: 2,
   },
   td: {
     paddingHorizontal: 5,
