@@ -10,8 +10,6 @@ export const PossessionStatistic = () => {
   const fixture = useFixture();
   const { home, away, statistics } = fixture;
 
-  console.log(statistics);
-
   return (
     <View style={[styles.container]}>
       <View style={[styles.row, styles.titleRow]}>

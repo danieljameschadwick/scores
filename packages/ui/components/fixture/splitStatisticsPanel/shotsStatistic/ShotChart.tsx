@@ -32,6 +32,7 @@ export const ShotChart = ({
       display: "flex",
       justifyContent: "flex-end",
       alignItems: "flex-end",
+      // @TODO: again, flexGrow seems to be broken so doesn't fill the container...
       flexGrow: 1,
     },
     reverseChartContainer: {
