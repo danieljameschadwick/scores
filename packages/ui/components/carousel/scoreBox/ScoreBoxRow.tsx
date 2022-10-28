@@ -19,28 +19,15 @@ export const ScoreBoxRow: React.FC<Props> = ({
   logo = null,
 }) => {
   const themeStyles = useTheme();
-  const teamNameText = [styles.teamName];
-  const goalsText = [styles.goalsText];
-
-  if (result === GAME_RESULT.WIN) {
-    teamNameText.push(styles.winText);
-    goalsText.push(styles.winText);
-  }
-
-  if (result === GAME_RESULT.LOSS) {
-    teamNameText.push(styles.lossText);
-    goalsText.push(styles.lossText);
-  }
+  const isWin = result === GAME_RESULT.WIN;
+  const isLoss = result === GAME_RESULT.LOSS;
 
   return (
     <View style={[styles.row]}>
       <View style={[styles.teamContainer]}>
         <View style={[styles.iconContainer]}>
           {logo ? (
-            <Image 
-              style={[styles.icon]}
-              source={{ uri: logo }}
-            />
+            <Image style={[styles.icon]} source={{ uri: logo }} />
           ) : (
             <AntDesignIcon
               name={"questioncircle"}
@@ -49,10 +36,28 @@ export const ScoreBoxRow: React.FC<Props> = ({
             />
           )}
         </View>
-  
-        <Text style={[teamNameText, themeStyles.text]}>{abbreviation}</Text>
+
+        <Text
+          style={[
+            styles.teamName,
+            themeStyles.text,
+            isWin && styles.winText,
+            isLoss && styles.lossText,
+          ]}
+        >
+          {abbreviation}
+        </Text>
       </View>
-      <Text style={[goalsText, themeStyles.text]}>{score ?? "-"}</Text>
+      <Text
+        style={[
+          styles.goalsText,
+          themeStyles.text,
+          isWin && styles.winText,
+          isLoss && styles.lossText,
+        ]}
+      >
+        {score ?? "-"}
+      </Text>
     </View>
   );
 };

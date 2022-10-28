@@ -40,9 +40,6 @@ export const ShotChart = ({
         height: 70,
       },
     },
-    reverseChartContainer: {
-      alignItems: "flex-start",
-    },
     shotsContainer: {
       display: "flex",
       justifyContent: "flex-end",
@@ -73,15 +70,6 @@ export const ShotChart = ({
     },
   });
 
-  const chartContainer = [styles.chartContainer];
-  const shotsContainer = [styles.shotsContainer];
-  const shotsOnTargetContainer = [styles.shotsOnTargetContainer];
-  if (reverse) {
-    chartContainer.push(styles.chartContainer);
-    shotsContainer.push(styles.reverseShotsContainer);
-    shotsOnTargetContainer.push(styles.reverseShotsOnTargetContainer);
-  }
-
   return (
     <View style={[styles.container]}>
       <View style={[styles.chartTitle]}>
@@ -90,9 +78,22 @@ export const ShotChart = ({
         </Text>
       </View>
 
-      <View style={[chartContainer]}>
-        <View style={[shotsContainer]}>
-          <View style={[shotsOnTargetContainer]} />
+      <View
+        style={[styles.chartContainer]}
+        dataSet={{ media: ids.chartContainer }}
+      >
+        <View
+          style={[
+            styles.shotsContainer,
+            reverse && styles.reverseShotsContainer,
+          ]}
+        >
+          <View
+            style={[
+              styles.shotsOnTargetContainer,
+              reverse && styles.reverseShotsOnTargetContainer,
+            ]}
+          />
         </View>
       </View>
     </View>

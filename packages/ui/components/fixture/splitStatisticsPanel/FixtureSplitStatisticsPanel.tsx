@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
+import StyleSheet from "react-native-media-query";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { Panel } from "@scores/ui/components/layout/panel/Panel";
 import { getPrimaryText } from "@scores/theme/utils/variables";
@@ -10,7 +11,6 @@ import { LoadingContainer } from "../loadingContainer/LoadingContainer";
 import { ShotsStatistic } from "./shotsStatistic/ShotsStatistic";
 
 export const FixtureSplitStatisticsPanel = () => {
-  const themeStyles = useTheme();
   const fixture = useFixture();
   const { statistics } = fixture;
 
@@ -40,7 +40,7 @@ export const FixtureSplitStatisticsPanel = () => {
   );
 };
 
-const styles = StyleSheet.create({
+const { styles } = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "row",
@@ -56,5 +56,5 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     borderBottomColor: "rgb(124, 124, 124)",
     borderBottomWidth: 1,
-  }
+  },
 });

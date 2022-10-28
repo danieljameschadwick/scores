@@ -22,7 +22,7 @@ export const FixtureStatisticsRowHeader: React.FC<Props> = ({
           uri: logo,
         }}
       />
-      <Text style={[themeStyles.text]}>{abbreviation}</Text>
+      <Text style={[styles.text, themeStyles.text]}>{abbreviation}</Text>
     </View>
   );
 };
@@ -44,5 +44,8 @@ const styles = StyleSheet.create({
   reverseIcon: {
     marginLeft: 5,
     marginRight: 0,
+  },
+  text: {
+    fontWeight: "700",
   },
 });

@@ -10,20 +10,34 @@ import { formatDateTimeString } from "@scores/ui/util/dateTime/formatDateTimeStr
 export const ScoreBoxStatus: React.FC = () => {
   const { status, date } = useFixture();
   const themeStyles = useTheme();
-  const statusText = [styles.status, themeStyles.text];
 
-  if (!isGameNotStartedOrFinished(status) || status === GAME_STATUS.PST) {
-    statusText.push(styles.inProgressStatus);
-  }
+  const isInProgress =
+    !isGameNotStartedOrFinished(status) || status === GAME_STATUS.PST;
 
   if (status === GAME_STATUS.NS) {
     return (
-      <Text style={[statusText]}>{formatDateTimeString(date, "hh:mm")}</Text>
+      <Text
+        style={[
+          styles.status,
+          themeStyles.text,
+          isInProgress && styles.inProgressStatus,
+        ]}
+      >
+        {formatDateTimeString(date, "hh:mm")}
+      </Text>
     );
   }
 
   return (
-    <Text style={[statusText]}>{getFormattedLiveMatchStatus(status)}</Text>
+    <Text
+      style={[
+        styles.status,
+        themeStyles.text,
+        isInProgress && styles.inProgressStatus,
+      ]}
+    >
+      {getFormattedLiveMatchStatus(status)}
+    </Text>
   );
 };
 

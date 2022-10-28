@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   },
   fixedContainer: {
     // @TODO: fixed isn't available in an app
-    // position: "fixed",
+    position: "fixed",
     paddingVertical: 5,
     paddingHorizontal: 5,
     borderRadius: 5,

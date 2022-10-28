@@ -25,11 +25,11 @@ export const FixtureStatisticsRow: React.FC<Props> = ({
         isAlternate && themeStyles.lightContainer,
       ]}
     >
-      <Text style={[themeStyles.text]}>{homeStatistic}</Text>
+      <Text style={[styles.statisticValueText, themeStyles.text]}>{homeStatistic}</Text>
 
-      <Text style={[themeStyles.text]}>{type}</Text>
+      <Text style={[styles.statisticTypeText, themeStyles.text]}>{type}</Text>
 
-      <Text style={[themeStyles.text]}>{awayStatistic}</Text>
+      <Text style={[styles.statisticValueText, themeStyles.text]}>{awayStatistic}</Text>
     </View>
   );
 };
@@ -46,4 +46,10 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: "#edeef0",
   },
+  statisticValueText: {
+    fontWeight: "600",
+  },
+  statisticTypeText: {
+    fontSize: 13,
+  }
 });
