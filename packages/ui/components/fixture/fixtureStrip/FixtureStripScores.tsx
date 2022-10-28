@@ -20,9 +20,7 @@ export const FixtureStripScores = () => {
         style={[styles.statusContainer]}
         dataSet={{ media: ids.statusContainer }}
       >
-        <Text style={[styles.statusText, themeStyles.text]}>
-          { status }
-        </Text>
+        <Text style={[styles.statusText, themeStyles.text]}>{status}</Text>
         <Text
           style={[styles.dateText, themeStyles.text]}
           dataSet={{ media: ids.dateText }}

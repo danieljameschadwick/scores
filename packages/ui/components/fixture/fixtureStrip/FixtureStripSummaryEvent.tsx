@@ -18,18 +18,11 @@ export const FixtureStripSummaryEvent: React.FC<Props> = ({
   isAway = false,
 }) => {
   const themeStyles = useTheme();
-  const containerStyles = [styles.container];
-  const iconStyles = [styles.icon];
-
-  if (isAway) {
-    containerStyles.push(styles.reverseContainer);
-    iconStyles.push(styles.reversedIcon);
-  }
 
   return (
-    <View style={containerStyles}>
+    <View style={[styles.container, isAway && styles.reverseContainer]}>
       <IonIcon
-        style={iconStyles}
+        style={[styles.icon, isAway && styles.reversedIcon]}
         name={"football"}
         color={getPrimaryText()}
         size={12}
@@ -42,7 +35,9 @@ export const FixtureStripSummaryEvent: React.FC<Props> = ({
         <Text style={[styles.playerNameText, themeStyles.text]}>
           {player.name}
         </Text>
-        <Text style={[styles.elapsedText, themeStyles.text]}>{`(${time.elapsed}")`}</Text>
+        <Text
+          style={[styles.elapsedText, themeStyles.text]}
+        >{`(${time.elapsed}")`}</Text>
       </View>
     </View>
   );

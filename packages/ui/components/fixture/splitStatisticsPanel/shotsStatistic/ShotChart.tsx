@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import StyleSheet from "react-native-media-query";
+import { Text, View } from "react-native";
 import { hexToRGBA } from "@scores/ui/util/color/hexToRGBA";
 import { useTheme } from "@scores/theme/utils/theme";
 
@@ -14,7 +15,7 @@ export const ShotChart = ({
   const shotsPercentage = (shots / maxShots) * 100;
   const onTargetPercentage = (shotsOnTarget / shots) * 100;
 
-  const styles = StyleSheet.create({
+  const { ids, styles } = StyleSheet.create({
     container: {
       display: "flex",
       flexDirection: "column",
@@ -33,7 +34,11 @@ export const ShotChart = ({
       justifyContent: "flex-end",
       alignItems: "flex-end",
       // @TODO: again, flexGrow seems to be broken so doesn't fill the container...
-      flexGrow: 1,
+      // flexGrow: 1,
+      height: 180,
+      "@media (max-width: 667px)": {
+        height: 70,
+      },
     },
     reverseChartContainer: {
       alignItems: "flex-start",

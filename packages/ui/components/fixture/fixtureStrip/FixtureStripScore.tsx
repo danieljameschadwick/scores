@@ -15,43 +15,53 @@ export const FixtureStripScore: React.FC<Props> = ({
   isHome = false,
 }) => {
   const themeStyles = useTheme();
-
-  const containerStyles = [styles.container];
-  const nameContainer = [styles.nameContainer];
-  const abbreviationContainer = [styles.abbreviationContainer];
-  const iconContainer = [styles.iconContainer];
-  const scoreContainer = [styles.scoreContainer];
-
-  if (isHome) {
-    containerStyles.push(homeStyles.container);
-    nameContainer.push(homeStyles.nameContainer);
-    abbreviationContainer.push(homeStyles.abbreviationContainer);
-    iconContainer.push(homeStyles.iconContainer);
-    scoreContainer.push(homeStyles.scoreContainer);
-  }
-
   const { name, logo, abbreviation, score } = team;
 
   return (
-    <View style={[containerStyles]}>
+    <View style={[styles.container, isHome && homeStyles.container]}>
       <Text
-        style={[nameContainer, themeStyles.text]}
+        style={[
+          styles.nameContainer,
+          themeStyles.text,
+          homeStyles.nameContainer,
+        ]}
         dataSet={{ media: ids.nameContainer }}
       >
         {name}
       </Text>
       <Text
-        style={[nameContainer, abbreviationContainer, themeStyles.text]}
+        style={[
+          styles.nameContainer,
+          styles.abbreviationContainer,
+          themeStyles.text,
+          isHome && [
+            homeStyles.nameContainer,
+            homeStyles.abbreviationContainer,
+          ],
+        ]}
         dataSet={{ media: ids.abbreviationContainer }}
       >
         {abbreviation}
       </Text>
       {logo && (
-        <View style={[iconContainer]}>
+        <View
+          style={[
+            styles.iconContainer,
+            isHome && homeStyles.iconContainer,
+          ]}
+        >
           <Image style={[styles.icon]} source={{ uri: logo }} />
         </View>
       )}
-      <Text style={[scoreContainer, themeStyles.text]}>{score}</Text>
+      <Text
+        style={[
+          styles.scoreContainer,
+          themeStyles.text,
+          isHome && homeStyles.scoreContainer,
+        ]}
+      >
+        {score}
+      </Text>
     </View>
   );
 };

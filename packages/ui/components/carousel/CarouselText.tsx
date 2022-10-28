@@ -10,18 +10,15 @@ interface Props {
 
 export const CarouselText: React.FC<Props> = ({ text, hideable = false }) => {
   const themeStyles = useTheme();
-  const containerStyles = [styles.container];
-  let dataSet = null;
-
-  if (hideable) {
-    containerStyles.push(styles.hideableContainer);
-    dataSet = { media: ids.hideableContainer };
-  }
 
   return (
     <View
-      style={[containerStyles, themeStyles.lightContainer]}
-      dataSet={dataSet}
+      style={[
+        styles.container,
+        themeStyles.lightContainer,
+        hideable && styles.hideableContainer,
+      ]}
+      dataSet={{ media: hideable && ids.hideableContainer }}
     >
       <Text style={[styles.text, themeStyles.text]}>{text}</Text>
     </View>

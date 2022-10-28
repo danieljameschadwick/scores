@@ -31,9 +31,6 @@ export const Dropdown: React.FC<Props> = ({ month, setMonth }) => {
     setOpen(!open);
   };
 
-  const menuContainerStyles = [styles.menuContainer];
-  if (!open) menuContainerStyles.push(styles.hiddenContainer);
-
   return (
     <View ref={ref} style={[styles.container]}>
       <TouchableOpacity
@@ -51,7 +48,11 @@ export const Dropdown: React.FC<Props> = ({ month, setMonth }) => {
         />
       </TouchableOpacity>
 
-      <View style={[menuContainerStyles, themeStyles.darkContainer]}>
+      <View style={[
+        styles.menuContainer,
+        themeStyles.darkContainer,
+        !open && styles.hiddenContainer,
+      ]}>
         <View style={[styles.fixedContainer, themeStyles.darkContainer]}>
           {items.map(({ label, value }) => {
             return (

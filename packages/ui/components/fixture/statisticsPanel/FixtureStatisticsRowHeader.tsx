@@ -13,18 +13,11 @@ export const FixtureStatisticsRowHeader: React.FC<Props> = ({
   isAway,
 }) => {
   const themeStyles = useTheme();
-  const rowHeaderStyles = [styles.rowHeader];
-  const iconStyles = [styles.icon];
-
-  if (isAway) {
-    rowHeaderStyles.push(styles.reverseHeader);
-    iconStyles.push(styles.reverseIcon);
-  }
 
   return (
-    <View style={[rowHeaderStyles]}>
+    <View style={[styles.rowHeader, isAway && styles.reverseHeader]}>
       <Image
-        style={[iconStyles]}
+        style={[styles.icon, isAway && styles.reverseIcon]}
         source={{
           uri: logo,
         }}

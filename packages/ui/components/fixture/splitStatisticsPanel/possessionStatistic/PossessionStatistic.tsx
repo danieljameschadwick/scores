@@ -8,6 +8,7 @@ import { PossessionChart } from "./PossessionChart";
 export const PossessionStatistic = () => {
   const themeStyles = useTheme();
   const fixture = useFixture();
+  // @TODO: will hook up to statistics after refactor
   const { home, away, statistics } = fixture;
 
   return (

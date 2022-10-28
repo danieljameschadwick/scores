@@ -16,12 +16,15 @@ export const FixtureStatisticsRow: React.FC<Props> = ({
   isAlternate = false,
 }) => {
   const themeStyles = useTheme();
-  const rowStyles = [styles.row, styles.borderedRow];
-
-  if (isAlternate) rowStyles.push(themeStyles.lightContainer);
 
   return (
-    <View style={[rowStyles]}>
+    <View
+      style={[
+        styles.row,
+        styles.borderedRow,
+        isAlternate && themeStyles.lightContainer,
+      ]}
+    >
       <Text style={[themeStyles.text]}>{homeStatistic}</Text>
 
       <Text style={[themeStyles.text]}>{type}</Text>

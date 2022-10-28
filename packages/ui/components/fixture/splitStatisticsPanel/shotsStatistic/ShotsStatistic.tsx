@@ -62,6 +62,7 @@ export const ShotsStatistic = () => {
 };
 
 const { ids, styles } = StyleSheet.create({
+  // @TODO: this container isn't growing with the content
   container: {
     display: "flex",
     flexDirection: "column",

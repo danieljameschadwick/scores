@@ -16,23 +16,23 @@ export const Panel: React.FC<Props> = ({
   children,
 }) => {
   const themeStyles = useTheme();
-  const containerStyles = [styles.container];
-  const headingStyles = [styles.headingContainer];
-
-  if (!icon) {
-    containerStyles.push(styles.containerWithoutIcon);
-    headingStyles.push(styles.headingContainerWithoutIcon);
-  }
 
   return (
     <View
-      style={[containerStyles, themeStyles.mediumContainer]}
+      style={[
+        styles.container,
+        themeStyles.mediumContainer,
+        !icon && styles.containerWithoutIcon,
+      ]}
       testID={testID}
     >
-      <View style={[headingStyles]}>
-        {icon && (
-          <View style={[styles.headingIcon, themeStyles.text]}>{icon}</View>
-        )}
+      <View
+        style={[
+          styles.headingContainer,
+          !icon && styles.headingContainerWithoutIcon,
+        ]}
+      >
+        {icon && <View style={[styles.headingIcon]}>{icon}</View>}
 
         <Text style={[styles.headingText, themeStyles.text]}>{title}</Text>
       </View>
