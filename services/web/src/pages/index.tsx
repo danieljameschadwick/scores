@@ -6,6 +6,7 @@ import { Header } from "@src/components/layout/header/Header";
 import { FootballPanel } from "@scores/ui/components/layout/panel/FootballPanel";
 import { CricketPanel } from "@scores/ui/components/layout/panel/CricketPanel";
 import { FluidPageContent } from "@src/components/layout/FluidPageContent";
+import { LeagueTablePanel } from "@scores/ui/components/layout/panel/leagueTable/LeagueTablePanel";
 
 const Index: React.FC = () => {
   return (
@@ -15,11 +16,20 @@ const Index: React.FC = () => {
 
         <FluidPageContent style={containerStyles}>
           <View
-            style={[styles.pageContainer]}
-            dataSet={{ media: ids.pageContainer }}
+            style={[styles.pageContent]}
+            dataSet={{ media: ids.pageContent }}
           >
-            <FootballPanel />
-            <CricketPanel />
+            <View
+              style={[styles.mainContent]}
+              dataSet={{ media: ids.mainContent }}
+            >
+              <FootballPanel />
+              <CricketPanel />
+            </View>
+
+            <View style={[styles.sidebar]} dataSet={{ media: ids.sidebar }}>
+              <LeagueTablePanel league={1} />
+            </View>
           </View>
         </FluidPageContent>
       </View>
@@ -31,12 +41,29 @@ const { ids, styles } = StyleSheet.create({
   container: {
     minHeight: "100%",
   },
-  pageContainer: {
+  pageContent: {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "nowrap",
     marginTop: 15,
     marginHorizontal: "auto",
-    width: "100%",
-    "@media (min-width: 667px)": {
-      width: 660,
+    "@media (max-width: 990px)": {
+      width: "100%",
+      paddingHorizontal: 15,
+    },
+  },
+  mainContent: {
+    width: 660,
+    paddingHorizontal: 10,
+    "@media (max-width: 990px)": {
+      width: "100%",
+    },
+  },
+  sidebar: {
+    width: 330,
+    paddingHorizontal: 10,
+    "@media (max-width: 990px)": {
+      display: "none",
     },
   },
   heading: {

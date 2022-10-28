@@ -8,6 +8,7 @@ import { FixtureContext } from "@scores/ui/state/FixtureContext";
 import { FixtureStatisticsPanel } from "@scores/ui/components/fixture/statisticsPanel/FixtureStatisticsPanel";
 import { FixtureSplitStatisticsPanel } from "./splitStatisticsPanel/FixtureSplitStatisticsPanel";
 import { FixtureGameInformationPanel } from "./gameInformation/FixtureGameInformationPanel";
+import { LeagueTablePanel } from "../layout/panel/leagueTable/LeagueTablePanel";
 
 interface Props {
   fixture: GameInterface;
@@ -19,28 +20,50 @@ export const Fixture: React.FC<Props> = ({ fixture }) => {
       <View style={[styles.container]}>
         <FixtureStrip />
       </View>
-      
+
       <View style={[styles.pageContent]} dataSet={{ media: ids.pageContent }}>
-        <FixtureStatisticsPanel />
-        <FixtureSplitStatisticsPanel />
-        <FixtureGameInformationPanel />
+        <View style={[styles.mainContent]} dataSet={{ media: ids.mainContent }}>
+          <FixtureStatisticsPanel />
+          <FixtureSplitStatisticsPanel />
+          <FixtureGameInformationPanel />
+        </View>
+
+        <View style={[styles.sidebar]} dataSet={{ media: ids.sidebar }}>
+          <LeagueTablePanel league={1} />
+        </View>
       </View>
     </FixtureContext.Provider>
   );
 };
 
-const {styles, ids} = StyleSheet.create({
+const { styles, ids } = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "column",
   },
   pageContent: {
-    width: 660,
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "nowrap",
     marginTop: 15,
     marginHorizontal: "auto",
-    "@media (max-width: 660px)": {
+    "@media (max-width: 990px)": {
       width: "100%",
       paddingHorizontal: 15,
+    },
+  },
+  mainContent: {
+    width: 660,
+    paddingHorizontal: 10,
+    "@media (max-width: 990px)": {
+      width: "100%",
+    },
+  },
+  sidebar: {
+    width: 330,
+    paddingHorizontal: 10,
+    "@media (max-width: 990px)": {
+      display: "none",
     },
   },
 });
