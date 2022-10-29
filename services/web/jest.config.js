@@ -15,8 +15,8 @@ module.exports = {
   moduleNameMapper: {
     "@src/(.*)$": "<rootDir>/src/$1",
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-      "<rootDir>/test/__mocks__/fileMock.js",
-    "\\.(css|less)$": "<rootDir>/test/__mocks__/styleMock.js",
+      "<rootDir>/tests/__mocks__/fileMock.js",
+    "\\.(css|less)$": "<rootDir>/tests/__mocks__/styleMock.js",
   },
   coverageDirectory: ".jest-coverage",
   testPathIgnorePatterns: ["/node_modules/", "/.next/"],

@@ -8,6 +8,8 @@ const withTM = require("next-transpile-modules")([
   "@scores/theme",
   "@scores/types",
   "@scores/ui",
+  "react-native",
+  "react-native-web",
   "react-native-vector-icons",
   "react-native-svg",
 ]);

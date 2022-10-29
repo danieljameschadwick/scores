@@ -3,7 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react-native";
 import { Provider } from "react-redux";
 import store, { persistor } from "@scores/state/store";
 import { PersistGate } from "redux-persist/integration/react";
-import Index from "./index";
+import Index from "../../src/pages/index";
 
 const customRender = () => {
   return render(

@@ -124,6 +124,7 @@ const tableHeaderStyles = StyleSheet.create({
     paddingHorizontal: 5,
   },
   tdText: {
+    fontSize: 12,
     fontWeight: "600",
     textTransform: "uppercase",
   },
@@ -144,18 +145,36 @@ const TableBody = ({ data }) => {
   return (
     <View>
       {data.map((row, index) => {
+        const isAlternate = index % 2;
+
         return (
-          <View key={index} style={[tableBodyStyles.row]}>
+          <View
+            key={index}
+            style={[
+              tableBodyStyles.row,
+              isAlternate && themeStyles.lightContainer,
+            ]}
+          >
             <View style={[tableBodyStyles.td, tableBodyStyles.indexedTd]}>
-              <Text style={[tableBodyStyles.tdCenter, themeStyles.text]}>
+              <Text
+                style={[
+                  tableBodyStyles.text,
+                  tableBodyStyles.tdCenter,
+                  themeStyles.text,
+                ]}
+              >
                 {index + 1}
               </Text>
             </View>
             <View style={[tableBodyStyles.td, tableBodyStyles.tdGrow]}>
-              <Text style={[themeStyles.text]}>{row.name}</Text>
+              <Text style={[tableBodyStyles.text, themeStyles.text]}>
+                {row.name}
+              </Text>
             </View>
             <View style={[tableBodyStyles.td]}>
-              <Text style={[themeStyles.text]}>{row.points}</Text>
+              <Text style={[tableBodyStyles.text, themeStyles.text]}>
+                {row.points}
+              </Text>
             </View>
           </View>
         );
@@ -168,7 +187,12 @@ const tableBodyStyles = StyleSheet.create({
   row: {
     display: "flex",
     flexDirection: "row",
-    marginBottom: 2,
+    paddingVertical: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: "rgb(85, 85, 85)",
+  },
+  text: {
+    fontSize: 13,
   },
   td: {
     paddingHorizontal: 5,
