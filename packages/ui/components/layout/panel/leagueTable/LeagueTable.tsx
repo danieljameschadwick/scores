@@ -152,7 +152,7 @@ const TableBody = ({ data }) => {
             key={index}
             style={[
               tableBodyStyles.row,
-              isAlternate && themeStyles.lightContainer,
+              !isAlternate && themeStyles.lightContainer,
             ]}
           >
             <View style={[tableBodyStyles.td, tableBodyStyles.indexedTd]}>

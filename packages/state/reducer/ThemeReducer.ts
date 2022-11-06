@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
 import { AppState } from "@scores/state/store";
 import { Theme } from "@scores/types/enum/Theme";
 
