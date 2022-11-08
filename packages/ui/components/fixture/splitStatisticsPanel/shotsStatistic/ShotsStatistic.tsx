@@ -41,8 +41,8 @@ export const ShotsStatistic = () => {
           dataSet={{ media: ids.chartContainer }}
         >
           <ShotChart
-            shots={10}
-            shotsOnTarget={6}
+            shots={homeShots.shots}
+            shotsOnTarget={homeShots.shotsOnTarget}
             maxShots={maxShots}
             color={"#DA020E"}
           />
@@ -55,8 +55,8 @@ export const ShotsStatistic = () => {
           dataSet={{ media: ids.chartContainer }}
         >
           <ShotChart
-            shots={16}
-            shotsOnTarget={3}
+            shots={awayShots.shots}
+            shotsOnTarget={awayShots.shotsOnTarget}
             maxShots={maxShots}
             color={"#000000"}
             reverse={true}
