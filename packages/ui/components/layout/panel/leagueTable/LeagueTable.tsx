@@ -118,7 +118,6 @@ const tableHeaderStyles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#dcdddf",
     paddingBottom: 5,
-    marginBottom: 5,
   },
   td: {
     paddingHorizontal: 5,
