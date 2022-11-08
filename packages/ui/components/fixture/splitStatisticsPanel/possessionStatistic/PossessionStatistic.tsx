@@ -4,34 +4,46 @@ import StyleSheet from "react-native-media-query";
 import { useTheme } from "@scores/theme/utils/theme";
 import { useFixture } from "../../../../state/FixtureContext";
 import { PossessionChart } from "./PossessionChart";
+import { Statistic } from "@scores/types/enum/Statistic";
 
 export const PossessionStatistic = () => {
   const themeStyles = useTheme();
   const fixture = useFixture();
-  // @TODO: will hook up to statistics after refactor
   const { home, away, statistics } = fixture;
+
+  // @TODO: a map would be much better here than an object
+  // e.g statistics.get(Statistic.POSSESSION);
+  const { homeValue, awayValue } = statistics[Statistic.POSSESSION];
 
   return (
     <View style={[styles.container]}>
       <View style={[styles.row, styles.titleRow]}>
-        <Text style={[styles.abbreviationText, themeStyles.text]}>{home.abbreviation}</Text>
+        <Text style={[styles.abbreviationText, themeStyles.text]}>
+          {home.abbreviation}
+        </Text>
 
         <Text style={[styles.titleText, themeStyles.text]}>Possession</Text>
 
-        <Text style={[styles.abbreviationText, themeStyles.text]}>{away.abbreviation}</Text>
+        <Text style={[styles.abbreviationText, themeStyles.text]}>
+          {away.abbreviation}
+        </Text>
       </View>
 
       <View style={[styles.row]}>
-        <Text style={[styles.possesionText, themeStyles.text]}>39%</Text>
+        <Text style={[styles.possesionText, themeStyles.text]}>
+          {homeValue}%
+        </Text>
 
         <View
           style={[styles.possessionContainer]}
           dataSet={{ media: ids.possessionContainer }}
         >
-          <PossessionChart home={39} away={61} />
+          <PossessionChart home={homeValue} away={awayValue} />
         </View>
 
-        <Text style={[styles.possesionText, themeStyles.text]}>61%</Text>
+        <Text style={[styles.possesionText, themeStyles.text]}>
+          {awayValue}%
+        </Text>
       </View>
     </View>
   );
@@ -55,7 +67,7 @@ const { ids, styles } = StyleSheet.create({
   abbreviationText: {
     fontWeight: "700",
   },
-  titleText: {    
+  titleText: {
     fontSize: 14,
     fontWeight: "600",
   },

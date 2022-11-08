@@ -27,6 +27,8 @@ export const ScoresCarousel: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      // @TODO: we don't need to normalise all the stats here
+      // only those that are necessary e.g scores, match status
       setData(normaliseScores(await getFixtures(month), GAME_TYPE.FOOTBALL));
     };
 
@@ -85,6 +87,7 @@ export const ScoresCarousel: React.FC = () => {
             leagueName={"PL"}
             scores={data}
           />
+          {/* // @TODO: add Carousel customisation */}
           {/* <CarouselGroup groupName={"NBA"} scores={basketballFixtures} /> */}
         </ScrollView>
       </View>

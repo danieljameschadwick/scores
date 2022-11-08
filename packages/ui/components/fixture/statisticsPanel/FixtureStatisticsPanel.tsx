@@ -1,27 +1,38 @@
 import React from "react";
-import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import IonIcon from "react-native-vector-icons/Ionicons";
 import { Panel } from "@scores/ui/components/layout/panel/Panel";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 import { useFixture } from "@scores/ui/state/FixtureContext";
 import { FixtureStatisticsRow } from "@scores/ui/components/fixture/statisticsPanel/FixtureStatisticsRow";
 import { FixtureStatisticsRowHeader } from "@scores/ui/components/fixture/statisticsPanel/FixtureStatisticsRowHeader";
-import { useTheme } from "@scores/theme/utils/theme";
 import { LoadingContainer } from "../loadingContainer/LoadingContainer";
+import { StatisticDisplayOrder } from "@scores/types/maps/StatisticDisplayOrder";
+
+const formatStatistics = (statistics) => {
+  const formattedStatistics = {};
+
+  for (const [key, statistic] of Object.entries(statistics)) {
+    if (!StatisticDisplayOrder[key]) {
+      continue;
+    }
+
+    formattedStatistics[StatisticDisplayOrder[key]] = statistic;
+  }
+
+  return formattedStatistics;
+};
 
 export const FixtureStatisticsPanel = () => {
   const fixture = useFixture();
   const { home, away, statistics } = fixture;
+  const formattedStatistics = formatStatistics(statistics);
 
   return (
     <Panel
       title={"Statistics"}
       icon={
-        <IonIcon
-          name={"bar-chart-sharp"}
-          size={24}
-          color={getPrimaryText()}
-        />
+        <IonIcon name={"bar-chart-sharp"} size={24} color={getPrimaryText()} />
       }
     >
       <View style={[styles.container]}>
@@ -30,12 +41,10 @@ export const FixtureStatisticsPanel = () => {
           <FixtureStatisticsRowHeader {...away} isAway={true} />
         </View>
 
-        {Object.keys(statistics).length === 0 && (
-            <LoadingContainer />
-        )}
+        {Object.keys(statistics).length === 0 && <LoadingContainer />}
 
-        {Object.keys(statistics).map((key, index) => {
-          const { homeValue, awayValue, name } = statistics[key];
+        {Object.keys(formattedStatistics).map((key, index) => {
+          const { homeValue, awayValue, name } = formattedStatistics[key];
 
           return (
             <FixtureStatisticsRow

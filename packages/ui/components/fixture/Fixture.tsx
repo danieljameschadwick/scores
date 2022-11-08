@@ -15,8 +15,10 @@ interface Props {
 }
 
 export const Fixture: React.FC<Props> = ({ fixture }) => {
+  const normalisedFixture = normaliseFootball(fixture);
+
   return (
-    <FixtureContext.Provider value={normaliseFootball(fixture)}>
+    <FixtureContext.Provider value={normalisedFixture}>
       <View style={[styles.container]}>
         <FixtureStrip />
       </View>
