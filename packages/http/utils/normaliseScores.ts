@@ -17,8 +17,8 @@ interface TeamInterface {
  * Normalising data to the same format so we can use the same
  * types across different sports and reuse the same components.
  * 
- * This will be replaced with an API when we cache data in 
- * the backend.
+ * This will be replaced with an API when we noramlise data in 
+ * the backend as it can be ingested from many 3rd party APIs.
  */
 export const normaliseScores = (data: any, gameType: GAME_TYPE): {} => {
   switch (gameType) {
@@ -157,21 +157,17 @@ const normaliseStatistics = (homeId, awayId, statistics = []) => {
 
 const normaliseStatistic = (statistic) => {
   const { team, statistics } = statistic;
-  // @TODO: refactor as map
+  // @TODO: refactor as map for performance?
   const formattedStatistics = [];
 
   for (const stat of statistics) {
     const { type, value } = stat;
     const keyedType = keyifyType(type);
 
-    if (!Object.values(Statistic).includes(keyedType)) {
-      continue;
-    }
-
     formattedStatistics.push({
       id: keyedType,
       name: type,
-      value: value ?? 0,
+      value: sanitiseValue(value),
     });
   }
 
@@ -181,8 +177,16 @@ const normaliseStatistic = (statistic) => {
   };
 }
 
+
 const keyifyType = (type: string): string => {
   return lowercaseFirstLetter(type.replace(/ /g, ''));
+}
+
+const sanitiseValue = (value: string | number | null) => {
+  if (!value) return 0;
+  if (typeof value === 'number') return value;
+
+  return Number(value.replace(/\D/g, ''));
 }
 
 const lowercaseFirstLetter = (string: string): string => {
@@ -194,10 +198,7 @@ const combineNormalisedStatistics = (homeStatistics, awayStatistics) => {
 
   for (const homeStatistic of homeStatistics.statistics) {
     const { id, name, value } = homeStatistic;
-    // @TODO: we shouldn't do this here, should be handled by the component using the data
-    const displayOrder = StatisticDisplayOrder[id];
-
-    combinedStatistics[displayOrder] = {
+    combinedStatistics[id] = {
       id,
       name,
       homeValue: value,
@@ -207,7 +208,7 @@ const combineNormalisedStatistics = (homeStatistics, awayStatistics) => {
   for (const awayStatistic of awayStatistics.statistics) {
     const { id, value } = awayStatistic;
 
-    combinedStatistics[StatisticDisplayOrder[id]].awayValue = value;
+    combinedStatistics[id].awayValue = value;
   }
 
   return combinedStatistics;

@@ -2,22 +2,28 @@ import React from "react";
 import { Text, View } from "react-native";
 import StyleSheet from "react-native-media-query";
 import { useTheme } from "@scores/theme/utils/theme";
+import { Statistic } from "@scores/types/enum/Statistic";
 import { useFixture } from "../../../../state/FixtureContext";
 import { ShotChart } from "./ShotChart";
 
 export const ShotsStatistic = () => {
   const themeStyles = useTheme();
   const fixture = useFixture();
-  const { home, away, statistics } = fixture;
+  const { statistics } = fixture;
+
+  const { homeValue: homeOnTarget, awayValue: awayOnTarget } =
+    statistics[Statistic.SHOTS_ON_TARGET];
+  const { homeValue: homeTotal, awayValue: awayTotal } =
+    statistics[Statistic.TOTAL_SHOTS];
 
   const homeShots = {
-    shots: 10,
-    shotsOnTarget: 6,
+    shots: homeTotal,
+    shotsOnTarget: homeOnTarget,
   };
 
   const awayShots = {
-    shots: 16,
-    shotsOnTarget: 3,
+    shots: awayTotal,
+    shotsOnTarget: awayOnTarget,
   };
 
   const maxShots =

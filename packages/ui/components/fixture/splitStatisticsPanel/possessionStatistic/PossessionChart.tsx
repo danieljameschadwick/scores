@@ -14,6 +14,8 @@ const Possession = ({ size, color }) => {
 };
 
 export const PossessionChart = ({ home, away }) => {
+  // @TODO: add team accent colors, rather than hard coded
+
   return (
     <View style={[styles.container]}>
       <Possession size={home} color={"red"} />
