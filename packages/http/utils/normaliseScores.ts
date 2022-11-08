@@ -152,8 +152,6 @@ const normaliseStatistics = (homeId, awayId, statistics = []) => {
     return {};
   }
 
-  console.log(homeStatistics, awayStatistics);
-
   return combineNormalisedStatistics(homeStatistics, awayStatistics);
 };
 
