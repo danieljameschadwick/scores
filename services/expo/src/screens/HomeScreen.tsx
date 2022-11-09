@@ -3,7 +3,7 @@ import { StyleSheet, View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ScoresCarousel } from "@scores/ui/components/carousel/ScoresCarousel";
 import { normaliseScores } from "@scores/http/utils/normaliseScores";
-import { GAME_TYPE } from "@scores/types/enum/GameType";
+import { Game } from "@scores/types/enum/Game";
 import { getFixtures } from "@scores/http/services/football";
 import { useTheme } from "@scores/theme/utils/theme";
 import { FootballPanel } from "@scores/ui/components/layout/panel/FootballPanel";
@@ -41,7 +41,7 @@ export const HomeScreen: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setFootballData(normaliseScores(await getFixtures(), GAME_TYPE.FOOTBALL));
+      setFootballData(normaliseScores(await getFixtures(), Game.FOOTBALL));
     };
 
     fetchData();

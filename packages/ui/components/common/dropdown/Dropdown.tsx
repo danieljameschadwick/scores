@@ -13,19 +13,17 @@ const formattedMonthKeys = {
   [Month.SEPTEMBER]: "September",
 };
 
-interface Props {
-  month: Month;
-  setMonth: (month: Month) => {};
+interface Props<T> {
+  value: T;
+  setValue: (value: T) => {};
+  values: T[];
 }
 
-export const Dropdown: React.FC<Props> = ({ month, setMonth }) => {
+export const Dropdown: React.FC<Props<string>> = ({ value, setValue, values }) => {
   const themeStyles = useTheme();
   const [open, setOpen] = useState<boolean>(false);
   const [ref] = useClickOutside(setOpen);
-  const [items] = useState([
-    { label: "August", value: Month.AUGUST },
-    { label: "September", value: Month.SEPTEMBER },
-  ]);
+  const [items, setItems] = useState(values);
 
   const toggleOpen = () => {
     setOpen(!open);
@@ -38,7 +36,8 @@ export const Dropdown: React.FC<Props> = ({ month, setMonth }) => {
         onPress={() => toggleOpen()}
       >
         <Text style={[styles.dropdownText, themeStyles.text]}>
-          {formattedMonthKeys[month]}
+          {/* {formattedMonthKeys[value]} */}
+          { value }
         </Text>
 
         <EntypoIcon
@@ -56,7 +55,7 @@ export const Dropdown: React.FC<Props> = ({ month, setMonth }) => {
         <View style={[styles.fixedContainer, themeStyles.darkContainer]}>
           {items.map(({ label, value }) => {
             return (
-              <TouchableOpacity key={value} onPress={() => setMonth(value)}>
+              <TouchableOpacity key={value} onPress={() => setValue(value)}>
                 <View style={[styles.dropdownItem]}>
                   <Text style={[themeStyles.text]}>{label}</Text>
                 </View>

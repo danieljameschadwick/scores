@@ -2,10 +2,11 @@ import React, { Dispatch, SetStateAction } from "react";
 import { View } from "react-native";
 import StyleSheet from "react-native-media-query";
 import { useThemes } from "@scores/theme/utils/theme";
-import { CarouselDateDropdown } from "../CarouselDropdown";
+import { CarouselDateDropdown } from "../CarouselDateDropdown";
 import { CarouselText } from "../CarouselText";
 import { Z_INDEXES } from "@scores/types/enum/zIndex";
 import { Month } from "@scores/types/enum/Month";
+import { CarouselGameDropdown } from "../CarouselGameDropdown";
 
 interface Props {
   month: Month;
@@ -16,6 +17,8 @@ interface Props {
 export const CarouselContainer: React.FC<Props> = ({
   month,
   setMonth,
+  game,
+  setGame,
   children,
 }) => {
   const { themeStyles } = useThemes();
@@ -30,7 +33,7 @@ export const CarouselContainer: React.FC<Props> = ({
         dataSet={{ media: ids.scoresContainer }}
       >
         <CarouselDateDropdown month={month} setMonth={setMonth} />
-        <CarouselText text={"Football"} hideable={true} />
+        <CarouselGameDropdown game={game} setGame={setGame} />
 
         { children }
       </View>

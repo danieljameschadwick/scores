@@ -8,7 +8,7 @@ import { FixtureContext } from "../../state/FixtureContext";
 
 interface Props {
   groupName: string;
-  leagueName: string;
+  leagueName: string | null;
   scores: any; // @TODO: type mocks/API data
 }
 
@@ -18,7 +18,9 @@ export const CarouselGroup: React.FC<Props> = ({
 }) => {
   return (
     <>
-      <CarouselText text={leagueName} />
+      { leagueName && (
+        <CarouselText text={leagueName} />
+      )}
 
       {Object.keys(scoresByDate)
         .sort()

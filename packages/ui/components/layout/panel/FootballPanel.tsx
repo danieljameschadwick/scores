@@ -3,11 +3,11 @@ import { StyleSheet, Text, View } from "react-native";
 import IonIcon from "react-native-vector-icons/Ionicons";
 import { Panel } from "@scores/ui/components/layout/panel/Panel";
 import { getPrimaryText } from "@scores/theme/utils/variables";
-import { GAME_TYPE } from "@scores/types/enum/GameType";
 import { PanelFixture } from "@scores/ui/components/layout/panel/fixture/PanelFixture";
 import { getFixtures } from "@scores/http/services/football";
 import { normaliseScores } from "@scores/http/utils/normaliseScores";
 import { useTheme } from "@scores/theme/utils/theme";
+import { Game } from "@scores/types/enum/Game";
 
 export const FootballPanel = () => {
   const themeStyles = useTheme();
@@ -15,7 +15,7 @@ export const FootballPanel = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setFixtures(normaliseScores(await getFixtures(), GAME_TYPE.FOOTBALL));
+      setFixtures(normaliseScores(await getFixtures(), Game.FOOTBALL));
     };
 
     fetchData();

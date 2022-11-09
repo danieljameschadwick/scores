@@ -1,8 +1,8 @@
 import parseISO from "date-fns/parseISO";
 import { GAME_RESULT } from "@scores/types/enum/GameResult";
-import { GAME_TYPE } from "@scores/types/enum/GameType";
 import { Statistic } from "@scores/types/enum/Statistic";
 import { StatisticDisplayOrder } from "@scores/types/maps/StatisticDisplayOrder";
+import { Game } from "@scores/types/enum/Game";
 
 interface TeamInterface {
   name: string;
@@ -20,16 +20,19 @@ interface TeamInterface {
  * This will be replaced with an API when we noramlise data in 
  * the backend as it can be ingested from many 3rd party APIs.
  */
-export const normaliseScores = (data: any, gameType: GAME_TYPE): {} => {
-  switch (gameType) {
-    case GAME_TYPE.FOOTBALL:
+export const normaliseScores = (data: any, game: Game): {} => {
+  switch (game) {
+    case Game.FOOTBALL:
       return normaliseFootballByDate(data);
 
-    case GAME_TYPE.NBA:
-      return normaliseNba(data);
+    case Game.NFL:
+      return normaliseNFLByDate(data);
+
+    case Game.NBA:
+      return normaliseNBA(data);
   }
 
-  throw new Error(`Invalid gameType passed: ${gameType}`);
+  throw new Error(`Invalid gameType passed: ${game}`);
 };
 
 const normaliseFootballByDate = (data): {} => {
@@ -81,11 +84,93 @@ export const normaliseFootball = (game) => {
   };
 }
 
-const normaliseNba = (data) => {
+const normaliseNBA = (data) => {
   // @TODO: implement
 
   throw new Error('NotImplementedError');
 };
+
+const normaliseNFLByDate = (data): {} => {
+  const { response } = data;
+  // @TODO: refactor as map? key by date?
+  const scoresByDate = {};
+
+  for (const game of response) {
+    const { game: { date: { date } } } = game;
+    const startOfDay = parseISO(date).setUTCHours(0, 0, 0, 0);
+
+    if (!scoresByDate[startOfDay]) {
+      scoresByDate[startOfDay] = [];
+    }
+
+    scoresByDate[startOfDay].push(normaliseNFL(game));
+  }
+
+  return scoresByDate;
+};
+
+const normaliseNFL = (game) => {
+  const {
+    game: {
+      id,
+      date,
+      status: {
+        short: shortStatus
+      },
+      referee,
+      venue,
+    },
+    scores: {
+      home: {
+        total: homeScore,
+      },
+      away: {
+        total: awayScore,
+      },
+    },
+    teams: { home: homeTeam, away: awayTeam },
+    events,
+    statistics,
+  } = game;
+
+  const home = normaliseTeam(homeTeam, homeScore, awayScore, true);
+  const away = normaliseTeam(awayTeam, homeScore, awayScore, false);
+
+  return {
+    id: id,
+    home: createScoreDTO(home, homeScore),
+    away: createScoreDTO(away, awayScore),
+    date: date,
+    status: shortStatus,
+    events: normaliseEvents(home.id, away.id, events),
+    statistics: normaliseStatistics(home.id, away.id, statistics),
+    referee,
+    venue,
+  };
+};
+
+const normaliseTeam = (team, homeScore: number, awayScore: number, isHome: boolean) => {
+  const winner = normaliseResult(homeScore, awayScore, isHome);
+
+  return {
+    ...team,
+    winner,
+  };
+};
+
+const normaliseResult = (homeScore: number, awayScore: number, isHome: boolean) => {
+  if (isHome) {
+    if (homeScore > awayScore) return true;
+    if (homeScore < awayScore) return false;
+
+    return null;
+  } else {
+    if (homeScore < awayScore) return true;
+    if (homeScore > awayScore) return false;
+
+    return null;
+  }
+}
 
 const createScoreDTO = (team: TeamInterface, score: string) => {
   const { name, abbreviation, winner, logo = null } = team;
@@ -94,6 +179,7 @@ const createScoreDTO = (team: TeamInterface, score: string) => {
     name,
     abbreviation,
     score,
+    // @TODO: should flip this and only normalise where needed
     result: normaliseWinner(winner),
     logo,
   };

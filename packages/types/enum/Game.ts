@@ -1,4 +1,4 @@
-export enum GAME_TYPE {
+export enum Game {
   FOOTBALL = "FOOTBALL",
   NBA = "NBA",
   NFL = "NFL",
