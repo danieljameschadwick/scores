@@ -15,6 +15,14 @@ interface FixturesResponse {
   response: GameInterface[],
 };
 
+/**
+ * @TODO: manage multiple services for games, e.g. football.ts, nfl.ts
+ * or shall we keep this in the same API?
+ * 
+ * either:
+ * 1. /games?gameType=NFL
+ * 2. or, /games/nfl, /games/football
+ */
 export const getFixtures = async (month = Month.AUGUST, game = Game.FOOTBALL): Promise<FixturesResponse> => {
   if (game === Game.FOOTBALL) {
     if (month === Month.SEPTEMBER) {
