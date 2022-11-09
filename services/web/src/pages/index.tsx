@@ -4,6 +4,7 @@ import StyleSheet from "react-native-media-query";
 import NoSsrWrapper from "@src/components/util/noSsrWrapper";
 import { Header } from "@src/components/layout/header/Header";
 import { FootballPanel } from "@scores/ui/components/layout/panel/FootballPanel";
+import { NFLPanel } from "@scores/ui/components/layout/panel/NFLPanel";
 import { CricketPanel } from "@scores/ui/components/layout/panel/CricketPanel";
 import { FluidPageContent } from "@src/components/layout/FluidPageContent";
 import { LeagueTablePanel } from "@scores/ui/components/layout/panel/leagueTable/LeagueTablePanel";
@@ -24,6 +25,7 @@ const Index: React.FC = () => {
               dataSet={{ media: ids.mainContent }}
             >
               <FootballPanel />
+              <NFLPanel />
               <CricketPanel />
             </View>
 

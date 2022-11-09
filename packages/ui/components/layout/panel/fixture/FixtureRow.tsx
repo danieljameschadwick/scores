@@ -79,6 +79,12 @@ const { styles, ids } = StyleSheet.create({
   },
   teamNameText: {
     fontSize: 16,
+    "@media (min-width: 370px)": {
+      maxWidth: 140,
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+    },
     "@media (max-width: 370px)": {
       maxWidth: 120,
       whiteSpace: "nowrap",

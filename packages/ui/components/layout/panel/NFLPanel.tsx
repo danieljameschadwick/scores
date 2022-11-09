@@ -1,27 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import IonIcon from "react-native-vector-icons/Ionicons";
+import { StyleSheet, View, Text } from "react-native";
+import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import { Panel } from "@scores/ui/components/layout/panel/Panel";
-import { getPrimaryText } from "@scores/theme/utils/variables";
-import { PanelFixture } from "@scores/ui/components/layout/panel/fixture/PanelFixture";
-import { getFixtures } from "@scores/http/services/football";
-import { normaliseScores } from "@scores/http/utils/normaliseScores";
 import { useTheme } from "@scores/theme/utils/theme";
+import { getPrimaryText } from "@scores/theme/utils/variables";
 import { Game } from "@scores/types/enum/Game";
+import { normaliseScores } from "@scores/http/utils/normaliseScores";
+import { getFixtures } from "@scores/http/services/football";
 import { Month } from "@scores/types/enum/Month";
+import { PanelFixture } from "./fixture/PanelFixture";
 
-export const FootballPanel = () => {
+export const NFLPanel = () => {
   const themeStyles = useTheme();
   const [fixtures, setFixtures] = useState<{}>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       setFixtures(
-        normaliseScores(
-          // @TODO: default fixtures
-          await getFixtures(Month.AUGUST, Game.FOOTBALL),
-          Game.FOOTBALL
-        )
+        // @TODO: default fixtures
+        normaliseScores(await getFixtures(Month.SEPTEMBER, Game.NFL), Game.NFL)
       );
     };
 
@@ -31,9 +28,15 @@ export const FootballPanel = () => {
   if (!fixtures) {
     return (
       <Panel
-        title={"Football"}
-        icon={<IonIcon name={"football"} size={24} color={getPrimaryText()} />}
-        testID={"football-panel"}
+        title={"NFL"}
+        icon={
+          <MaterialCommunityIcon
+            name={"football"}
+            size={24}
+            color={getPrimaryText()}
+          />
+        }
+        testID={"nfl-panel"}
       >
         <View style={[styles.container]}>
           <Text style={[themeStyles.text]} testID={"loading"}>
@@ -48,9 +51,15 @@ export const FootballPanel = () => {
 
   return (
     <Panel
-      title={"Football"}
-      icon={<IonIcon name={"football"} size={24} color={getPrimaryText()} />}
-      testID={"football-panel"}
+      title={"NFL"}
+      icon={
+        <MaterialCommunityIcon
+          name={"football"}
+          size={24}
+          color={getPrimaryText()}
+        />
+      }
+      testID={"nfl-panel"}
     >
       {fixtures && (
         <View style={[styles.container]} testID={"fixtures"}>
