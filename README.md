@@ -12,6 +12,13 @@ Desktop (Dark)             |  Desktop Mobile (Dark)
 :-------------------------:|:-------------------------:
 ![Score page on desktop.](./docs/images/scores-page--dark-desktop.png) | ![Scores page on small desktop.](./docs/images/scores-page--dark-mobile.png)
 
+| Scores Carousel - supporting multiple sports scoring |
+:-------------------------:|
+| Football
+![Scores Carousel with Football.](./docs/images/scores-carousel-football--dark-desktop.png) |
+| NFL
+![Scores Carousel with NFL.](./docs/images/scores-carousel-nfl--dark-desktop.png)   |
+
 Mobile                     |  Mobile (Dark)
 :-------------------------:|:-------------------------:
 ![Score page on desktop.](./docs/images/scores-page--light-app.png) | ![Scores page on mobile.](./docs/images/scores-page--dark-app.png)
