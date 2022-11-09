@@ -1,6 +1,6 @@
-import { useThemes } from "@scores/theme/utils/theme";
 import React from "react";
 import { View, StyleSheet, Text, ActivityIndicator } from "react-native";
+import { useThemes } from "@scores/theme/utils/theme";
 
 export const LoadingContainer = () => {
   const { themeStyles, primaryText } = useThemes();

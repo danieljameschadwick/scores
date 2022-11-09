@@ -1,6 +1,7 @@
 import footballFixtures20220829 from "@scores/http/mocks/footballFixtures-2022-08-29";
 import footballFixtures20220905 from "@scores/http/mocks/footballFixtures-2022-09-05";
-import footballFixtures20220911 from "@scores/http/mocks/nflFixtures-2022-09-11";
+import nflFixtures20220801 from "@scores/http/mocks/nflFixtures-2022-08-01";
+import nflFixtures20220901 from "@scores/http/mocks/nflFixtures-2022-09-01";
 import { Game } from "@scores/types/enum/Game";
 import { Month } from "@scores/types/enum/Month";
 import { GameInterface } from "@scores/types/interfaces/GameInterface";
@@ -24,7 +25,11 @@ export const getFixtures = async (month = Month.AUGUST, game = Game.FOOTBALL): P
   }
 
   if (game === Game.NFL) {
-    return footballFixtures20220911;
+    if (month === Month.SEPTEMBER) {
+      return nflFixtures20220901;
+    }
+
+    return nflFixtures20220801;
   }
 };
 

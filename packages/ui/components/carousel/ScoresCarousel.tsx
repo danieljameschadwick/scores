@@ -3,6 +3,7 @@ import {
   ScrollView,
   View,
   TouchableOpacity,
+  Text,
 } from "react-native";
 import StyleSheet from "react-native-media-query";
 import Icon from "react-native-vector-icons/Entypo";
@@ -15,6 +16,7 @@ import { getFixtures } from "@scores/http/services/football";
 import { Month } from "@scores/types/enum/Month";
 import { CarouselContainer } from "./layout/CarouselContainer";
 import { LoadingContainer } from "./layout/LoadingContainer";
+import { NoGamesScheduledContainer } from "./layout/NoGamesScheduled";
 
 const SCROLL_DISTANCE = 500;
 
@@ -59,13 +61,22 @@ export const ScoresCarousel: React.FC = () => {
 
   if (data === null) {
     return (
-      <CarouselContainer month={month} setMonth={setMonth}>
+      <CarouselContainer month={month} setMonth={setMonth} game={game}>
         <LoadingContainer />
       </CarouselContainer>
     );
   }
 
+  if (Object.keys(data).length === 0) {
+    return (
+      <CarouselContainer month={month} setMonth={setMonth} game={game}>
+          <NoGamesScheduledContainer />
+      </CarouselContainer>
+    );
+  }
+
   return (
+    // @TODO: add useContext for sharing carousel data
     <CarouselContainer
       month={month}
       setMonth={setMonth}

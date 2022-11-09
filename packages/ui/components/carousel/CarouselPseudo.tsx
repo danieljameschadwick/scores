@@ -20,6 +20,7 @@ export const CarouselPseudo: React.FC = () => {
 
 const { ids, styles } = StyleSheet.create({
   container: {
+    // @TODO: calculate width based on shown content
     width: 295,
     display: "flex",
     justifyContent: "center",
