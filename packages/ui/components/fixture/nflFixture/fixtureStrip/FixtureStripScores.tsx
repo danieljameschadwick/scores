@@ -12,7 +12,7 @@ export const FixtureStripScores = () => {
 
   // @TODO: only reason we haven't got combined strip
   // scores as normalised data types dont match
-  const { date: { date }, home, away, status } = fixture;
+  const { date, home, away, status } = fixture;
 
   return (
     <View style={[styles.container, themeStyles.lightContainer]}>

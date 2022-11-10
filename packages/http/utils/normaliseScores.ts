@@ -135,7 +135,7 @@ const normaliseNFL = (game) => {
   const {
     game: {
       id,
-      date,
+      date: { date },
       status: {
         short: shortStatus
       },
