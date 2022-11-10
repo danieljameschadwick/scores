@@ -7,7 +7,7 @@ import { PanelFixture } from "@scores/ui/components/layout/panel/fixture/PanelFi
 import { getFixtures } from "@scores/http/services/football";
 import { normaliseScores } from "@scores/http/utils/normaliseScores";
 import { useTheme } from "@scores/theme/utils/theme";
-import { Game } from "@scores/types/enum/Game";
+import { GameType } from "@scores/types/enum/GameType";
 import { Month } from "@scores/types/enum/Month";
 
 export const FootballPanel = () => {
@@ -19,8 +19,8 @@ export const FootballPanel = () => {
       setFixtures(
         normaliseScores(
           // @TODO: default fixtures
-          await getFixtures(Month.AUGUST, Game.FOOTBALL),
-          Game.FOOTBALL
+          await getFixtures(Month.AUGUST, GameType.FOOTBALL),
+          GameType.FOOTBALL
         )
       );
     };
@@ -44,8 +44,6 @@ export const FootballPanel = () => {
     );
   }
 
-  console.log(fixtures);
-
   return (
     <Panel
       title={"Football"}
@@ -57,10 +55,10 @@ export const FootballPanel = () => {
           {Object.keys(fixtures)
             .sort()
             .map((key) => {
-              return fixtures[key].map((score) => {
-                const { id } = score;
+              return fixtures[key].map((game) => {
+                const { id } = game;
 
-                return <PanelFixture key={id} {...score} />;
+                return <PanelFixture key={id} {...game} />;
               });
             })}
         </View>

@@ -8,3 +8,4 @@ We require the ingester to:
 - Normalise scores to a common format,
 - Add extra information that may not available in API:
   - Abbreviations, logos etc. (provided from a 'core' data set)
+  - Logos should be managed by us, rather than loaded off a CDN from a 3rd party.

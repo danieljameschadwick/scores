@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View } from "react-native";
 import StyleSheet from "react-native-media-query";
 import { useTheme } from "@scores/theme/utils/theme";
-import { useFixture } from "../../../../state/FixtureContext";
+import { useFixture } from "@scores/ui/state/FixtureContext";
 import { PossessionChart } from "./PossessionChart";
 import { Statistic } from "@scores/types/enum/Statistic";
 

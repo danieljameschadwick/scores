@@ -4,7 +4,7 @@ import StyleSheet from "react-native-media-query";
 import { useTheme } from "@scores/theme/utils/theme";
 import { Dropdown } from "@scores/ui/components/common/dropdown/Dropdown";
 import { System } from "@scores/types/enum/System";
-import { Game } from "@scores/types/enum/Game";
+import { GameType } from "@scores/types/enum/GameType";
 
 interface Props {
   game: Game;
@@ -28,8 +28,8 @@ export const CarouselGameDropdown: React.FC<Props> = ({ game, setGame }) => {
         value={game}
         setValue={setGame}
         values={[
-          { label: "Football", value: Game.FOOTBALL },
-          { label: "NFL", value: Game.NFL },
+          { label: "Football", value: GameType.FOOTBALL },
+          { label: "NFL", value: GameType.NFL },
         ]}
       />
     </View>

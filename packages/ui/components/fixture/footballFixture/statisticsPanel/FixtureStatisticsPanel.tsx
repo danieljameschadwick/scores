@@ -4,9 +4,9 @@ import IonIcon from "react-native-vector-icons/Ionicons";
 import { Panel } from "@scores/ui/components/layout/panel/Panel";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 import { useFixture } from "@scores/ui/state/FixtureContext";
-import { FixtureStatisticsRow } from "@scores/ui/components/fixture/statisticsPanel/FixtureStatisticsRow";
-import { FixtureStatisticsRowHeader } from "@scores/ui/components/fixture/statisticsPanel/FixtureStatisticsRowHeader";
-import { LoadingContainer } from "../loadingContainer/LoadingContainer";
+import { FixtureStatisticsRow } from "@scores/ui/components/fixture/footballFixture/statisticsPanel/FixtureStatisticsRow";
+import { FixtureStatisticsRowHeader } from "@scores/ui/components/fixture/footballFixture/statisticsPanel/FixtureStatisticsRowHeader";
+import { LoadingContainer } from "@scores/ui/components/fixture/loadingContainer/LoadingContainer";
 import { StatisticDisplayOrder } from "@scores/types/maps/StatisticDisplayOrder";
 
 const formatStatistics = (statistics) => {

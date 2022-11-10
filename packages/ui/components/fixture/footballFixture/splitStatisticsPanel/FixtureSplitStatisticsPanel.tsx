@@ -5,9 +5,8 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import { Panel } from "@scores/ui/components/layout/panel/Panel";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 import { useFixture } from "@scores/ui/state/FixtureContext";
-import { useTheme } from "@scores/theme/utils/theme";
-import { PossessionStatistic } from "@scores/ui/components/fixture/splitStatisticsPanel/possessionStatistic/PossessionStatistic";
-import { LoadingContainer } from "../loadingContainer/LoadingContainer";
+import { PossessionStatistic } from "@scores/ui/components/fixture/footballFixture/splitStatisticsPanel/possessionStatistic/PossessionStatistic";
+import { LoadingContainer } from "@scores/ui/components/fixture/loadingContainer/LoadingContainer";
 import { ShotsStatistic } from "./shotsStatistic/ShotsStatistic";
 
 export const FixtureSplitStatisticsPanel = () => {

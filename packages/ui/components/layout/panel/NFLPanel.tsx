@@ -4,7 +4,7 @@ import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIc
 import { Panel } from "@scores/ui/components/layout/panel/Panel";
 import { useTheme } from "@scores/theme/utils/theme";
 import { getPrimaryText } from "@scores/theme/utils/variables";
-import { Game } from "@scores/types/enum/Game";
+import { GameType } from "@scores/types/enum/GameType";
 import { normaliseScores } from "@scores/http/utils/normaliseScores";
 import { getFixtures } from "@scores/http/services/football";
 import { Month } from "@scores/types/enum/Month";
@@ -18,7 +18,7 @@ export const NFLPanel = () => {
     const fetchData = async () => {
       setFixtures(
         // @TODO: default fixtures
-        normaliseScores(await getFixtures(Month.SEPTEMBER, Game.NFL), Game.NFL)
+        normaliseScores(await getFixtures(Month.SEPTEMBER, GameType.NFL), GameType.NFL)
       );
     };
 
@@ -46,8 +46,6 @@ export const NFLPanel = () => {
       </Panel>
     );
   }
-
-  console.log(fixtures);
 
   return (
     <Panel

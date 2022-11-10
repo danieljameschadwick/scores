@@ -13,14 +13,16 @@ import { ScoreBoxStatus } from "./scoreBox/ScoreBoxStatus";
 import { useFixture } from "@scores/ui/state/FixtureContext";
 
 export const CarouselScoreBox: React.FC = () => {
-  const { id, home, away } = useFixture();
   const themeStyles = useTheme();
+  const fixture = useFixture();
+  const { id, gameType, home, away } = fixture;
   const router = useRouter();
 
   const viewPage = () => {
     // @TODO: write own proxy router implementation
     if (Platform.OS === System.WEB) {
-      router.push(`/fixture/${id}`);
+      console.log(gameType);
+      router.push(`/fixture/${gameType.toLowerCase()}/${id}`);
 
       return;
     }

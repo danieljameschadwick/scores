@@ -2,7 +2,7 @@ import parseISO from "date-fns/parseISO";
 import { GAME_RESULT } from "@scores/types/enum/GameResult";
 import { Statistic } from "@scores/types/enum/Statistic";
 import { StatisticDisplayOrder } from "@scores/types/maps/StatisticDisplayOrder";
-import { Game } from "@scores/types/enum/Game";
+import { GameType } from "@scores/types/enum/GameType";
 
 interface TeamInterface {
   name: string;
@@ -20,20 +20,35 @@ interface TeamInterface {
  * This will be replaced with an API when we noramlise data in 
  * the backend as it can be ingested from many 3rd party APIs.
  */
-export const normaliseScores = (data: any, game: Game): {} => {
+export const normaliseScores = (data: any, game: GameType): {} => {
   switch (game) {
-    case Game.FOOTBALL:
+    case GameType.FOOTBALL:
       return normaliseFootballByDate(data);
 
-    case Game.NFL:
+    case GameType.NFL:
       return normaliseNFLByDate(data);
 
-    case Game.NBA:
-      return normaliseNBA(data);
+    case GameType.NBA:
+      return normaliseNBAByDate(data);
   }
 
   throw new Error(`Invalid gameType passed: ${game}`);
 };
+
+export const normaliseScore = (game: GameType, gameType: GameType) => {
+  switch (gameType) {
+    case GameType.FOOTBALL:
+      return normaliseFootball(game);
+
+    case GameType.NFL:
+      return normaliseNFL(game);
+
+    case GameType.NBA:
+      return normaliseNBA(game);
+  }
+
+  throw new Error(`Invalid gameType passed: ${gameType}`);
+}
 
 const normaliseFootballByDate = (data): {} => {
   const { response } = data;
@@ -73,6 +88,7 @@ export const normaliseFootball = (game) => {
 
   return {
     id: id,
+    gameType: GameType.FOOTBALL,
     home: createScoreDTO(home, goals.home),
     away: createScoreDTO(away, goals.away),
     date: date,
@@ -83,6 +99,12 @@ export const normaliseFootball = (game) => {
     venue,
   };
 }
+
+const normaliseNBAByDate = (data) => {
+  // @TODO: implement
+
+  throw new Error('NotImplementedError');
+};
 
 const normaliseNBA = (data) => {
   // @TODO: implement
@@ -138,6 +160,7 @@ const normaliseNFL = (game) => {
 
   return {
     id: id,
+    gameType: GameType.NFL,
     home: createScoreDTO(home, homeScore),
     away: createScoreDTO(away, awayScore),
     date: date,

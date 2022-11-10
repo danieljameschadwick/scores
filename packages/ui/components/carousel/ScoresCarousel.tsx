@@ -11,7 +11,7 @@ import { CarouselGroup } from "@scores/ui/components/carousel/CarouselGroup";
 import { Z_INDEXES } from "@scores/types/enum/zIndex";
 import { useThemes } from "@scores/theme/utils/theme";
 import { normaliseScores } from "@scores/http/utils/normaliseScores";
-import { Game } from "@scores/types/enum/Game";
+import { GameType } from "@scores/types/enum/GameType";
 import { getFixtures } from "@scores/http/services/football";
 import { Month } from "@scores/types/enum/Month";
 import { CarouselContainer } from "./layout/CarouselContainer";
@@ -23,15 +23,15 @@ const SCROLL_DISTANCE = 500;
 // @TODO: crude map as some sports e.g. NFL only need to support 1 league
 // (or atleast only ones we care to support)
 const leagueMap = {
-  [Game.FOOTBALL]: 'PL',
-  [Game.NFL]: null,
+  [GameType.FOOTBALL]: 'PL',
+  [GameType.NFL]: null,
 }
 
 export const ScoresCarousel: React.FC = () => {
   const { themeStyles, primaryText } = useThemes();
   const scrollRef = useRef(null);
   const [month, setMonth] = useState<Month>(Month.AUGUST);
-  const [game, setGame] = useState<Game>(Game.FOOTBALL);
+  const [game, setGame] = useState<Game>(GameType.FOOTBALL);
   const [position, setPosition] = useState<number>(0);
   const [data, setData] = useState<{} | null>(null);
 

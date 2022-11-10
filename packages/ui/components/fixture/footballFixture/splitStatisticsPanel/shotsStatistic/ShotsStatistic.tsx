@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 import StyleSheet from "react-native-media-query";
 import { useTheme } from "@scores/theme/utils/theme";
 import { Statistic } from "@scores/types/enum/Statistic";
-import { useFixture } from "../../../../state/FixtureContext";
+import { useFixture } from "@scores/ui/state/FixtureContext";
 import { ShotChart } from "./ShotChart";
 
 export const ShotsStatistic = () => {

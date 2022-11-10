@@ -6,6 +6,7 @@ import { FixtureRow } from "@scores/ui/components/layout/panel/fixture/FixtureRo
 import { useTheme } from "@scores/theme/utils/theme";
 import { System } from "@scores/types/enum/System";
 import { useRouter } from "@scores/ui/util/router";
+import { GameType } from "@scores/types/enum/GameType";
 
 interface ScoreInterface {
   name: string;
@@ -17,18 +18,19 @@ interface ScoreInterface {
 
 interface Props {
   id: string;
+  gameType: GameType;
   home: ScoreInterface;
   away: ScoreInterface;
 };
 
-export const PanelFixture: React.FC<Props> = ({ id, home, away }) => {
+export const PanelFixture: React.FC<Props> = ({ id, gameType, home, away }) => {
   const themeStyles = useTheme();
   const router = useRouter();
 
   const viewPage = () => {
     // @TODO: write own proxy router implementation
     if (Platform.OS === System.WEB) {
-      router.push(`/fixture/${id}`);
+      router.push(`/fixture/${gameType.toLowerCase()}/${id}`);
 
       return;
     }
