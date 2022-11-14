@@ -14,10 +14,12 @@ interface Props {
 export const Fixture: React.FC<Props> = ({ fixture, gameType }) => {
   // @TODO: we need to be GameType aware
   // is this where we diverge our fixtures?
-  const normalisedFixture = normaliseScore(fixture, gameType);
+  // const normalisedFixture = normaliseScore(fixture, gameType);
 
   return (
-    <FixtureContext.Provider value={normalisedFixture}>
+    // <FixtureContext.Provider value={normalisedFixture}>
+    <FixtureContext.Provider value={fixture}>
+      {/* // @TODO: replace with map? */}
       { gameType === GameType.FOOTBALL && <FootballFixture /> }
       { gameType === GameType.NFL && <NFLFixture /> }
     </FixtureContext.Provider>

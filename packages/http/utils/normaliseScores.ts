@@ -87,7 +87,7 @@ export const normaliseFootball = (game) => {
   } = game;
 
   return {
-    id: id,
+    id,
     gameType: GameType.FOOTBALL,
     home: createScoreDTO(home, goals.home),
     away: createScoreDTO(away, goals.away),
@@ -159,7 +159,7 @@ const normaliseNFL = (game) => {
   const away = normaliseTeam(awayTeam, homeScore, awayScore, false);
 
   return {
-    id: id,
+    id,
     gameType: GameType.NFL,
     home: createScoreDTO(home, homeScore),
     away: createScoreDTO(away, awayScore),

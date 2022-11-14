@@ -7,6 +7,7 @@ import { GameInterface } from "@scores/types/interfaces/GameInterface";
 import { Fixture } from "@scores/ui/components/fixture/Fixture";
 import { Header } from "@src/components/layout/header/Header";
 import { FluidPageContent } from "@src/components/layout/FluidPageContent";
+import { normaliseScore } from "@scores/http/utils/normaliseScores";
 
 const formatEnum = (string: string) => {
   return string.toUpperCase();
@@ -14,35 +15,35 @@ const formatEnum = (string: string) => {
 
 const FixturePage: React.FC = () => {
   const router = useRouter();
-  // @TODO: is there a better way to cast this
+  // @TODO: is there a better way to cast this?
   const { gameType: rawGameType, id: rawId } = router.query;
   const id = parseInt(rawId as string, 10);
+  const gameType = (rawGameType as string)?.toUpperCase();
 
   const [fixture, setFixture] = useState<GameInterface | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-  
+
   useEffect(() => {
+    if (!router.isReady) return;
+
     const fetchData = async () => {
-      setFixture(await getFixture(id));
+      // @ts-ignore -- @TODO: again, how do we type a string to enum?
+      setFixture(normaliseScore(await getFixture(id), gameType));
       setLoading(false);
     };
-    
-    if (!id) {
-      return;
-    }
-    
+
+    setLoading(true);
+    setFixture(null);
     fetchData();
-  }, [id]);
-  
-  if (loading || !rawGameType) {
+  }, [id, router.isReady]);
+
+  if (loading) {
     return null;
   }
 
   if (!fixture) {
     throw new Error("Fixture not found");
   }
-
-  const gameType = (rawGameType as string).toUpperCase();
 
   return (
     <View style={styles.container}>

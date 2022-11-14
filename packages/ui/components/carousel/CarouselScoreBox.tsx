@@ -21,7 +21,6 @@ export const CarouselScoreBox: React.FC = () => {
   const viewPage = () => {
     // @TODO: write own proxy router implementation
     if (Platform.OS === System.WEB) {
-      console.log(gameType);
       router.push(`/fixture/${gameType.toLowerCase()}/${id}`);
 
       return;

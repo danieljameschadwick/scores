@@ -1,7 +1,8 @@
-export interface GameInterface {
-  fixture: any;
-  league: any;
-  teams: any;
-  goals: any;
-  score: any;
-};
+export type GameInterface =
+  FootballInterface |
+  NFLInterface
+;
+
+export type FootballInterface = any;
+
+export type NFLInterface = any;
