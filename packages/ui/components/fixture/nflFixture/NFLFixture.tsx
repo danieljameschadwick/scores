@@ -1,14 +1,25 @@
-import { useTheme } from "@scores/theme/utils/theme";
 import React from "react";
 import { View } from "react-native";
 import StyleSheet from "react-native-media-query";
 import { FixtureStrip } from "@scores/ui/components/fixture/nflFixture/fixtureStrip/FixtureStrip";
+import { DivisionTablePanel } from "../../layout/panel/fixture/nfl/DivisionTablePanel";
 
 export const NFLFixture = () => {
   return (
     <>
       <View style={[styles.container]}>
         <FixtureStrip />
+      </View>
+
+      <View style={[styles.pageContent]} dataSet={{ media: ids.pageContent }}>
+        <View style={[styles.mainContent]} dataSet={{ media: ids.mainContent }}>
+          {/* // @TODO: statistics / match report */}
+          {/* <FixtureStatisticsPanel /> */}
+        </View>
+
+        <View style={[styles.sidebar]} dataSet={{ media: ids.sidebar }}>
+          <DivisionTablePanel league={1} conference={1} division={2} />
+        </View>
       </View>
     </>
   );
