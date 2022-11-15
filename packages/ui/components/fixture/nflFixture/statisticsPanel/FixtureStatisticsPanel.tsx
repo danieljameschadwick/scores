@@ -28,8 +28,6 @@ export const FixtureStatisticsPanel = () => {
   const { home, away, statistics = {} } = fixture;
   const formattedStatistics = formatStatistics(statistics);
 
-  console.log(statistics);
-
   return (
     <Panel
       title={"Statistics"}

@@ -27,8 +27,6 @@ const normaliseStatistic = (statistic) => {
   // @TODO: refactor as map for performance?
   const formattedStatistics = [];
 
-  console.log(statistics);
-
   for (const [key, stat] of Object.entries(statistics)) {
     // @TODO: type
     const { total } = stat;
