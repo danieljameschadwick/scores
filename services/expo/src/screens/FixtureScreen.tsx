@@ -7,12 +7,13 @@ import { getFixture } from "@scores/http/services/football";
 import { GameInterface } from "@scores/types/interfaces/GameInterface";
 import { Fixture } from "@scores/ui/components/fixture/Fixture";
 import { RootStackParamList } from "../typing/typing";
+import { normaliseScore } from "@scores/http/utils/normaliseScores";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Fixture">;
 
 export const FixtureScreen: React.FC<Props> = ({ route }) => {
   const {
-    params: { id },
+    params: { id, gameType },
   } = route;
   const [fixture, setFixture] = useState<GameInterface | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -37,9 +38,10 @@ export const FixtureScreen: React.FC<Props> = ({ route }) => {
     }
   });
 
+  // @TODO: could we combine the 'controller' logic here to the web app too?
   useEffect(() => {
     const fetchData = async () => {
-      setFixture(await getFixture(id));
+      setFixture(normaliseScore(await getFixture(id), gameType));
       setLoading(false);
     };
 
@@ -62,7 +64,7 @@ export const FixtureScreen: React.FC<Props> = ({ route }) => {
   return (
     <View style={[styles.container, themeStyles.container]}>
       <ScrollView>
-        <Fixture fixture={fixture} />
+        <Fixture fixture={fixture} gameType={gameType} />
       </ScrollView>
     </View>
   );

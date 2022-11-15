@@ -2,15 +2,12 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ScoresCarousel } from "@scores/ui/components/carousel/ScoresCarousel";
-import { normaliseScores } from "@scores/http/utils/normaliseScores";
-import { GameType } from "@scores/types/enum/GameType";
-import { getFixtures } from "@scores/http/services/football";
 import { useTheme } from "@scores/theme/utils/theme";
 import { FootballPanel } from "@scores/ui/components/layout/panel/FootballPanel";
+import { NFLPanel } from "@scores/ui/components/layout/panel/NFLPanel";
 import { CricketPanel } from "@scores/ui/components/layout/panel/CricketPanel";
 
 export const HomeScreen: React.FC = () => {
-  const [footballData, setFootballData] = useState<{}>(null);
   const themeStyles = useTheme();
 
   const insets = useSafeAreaInsets();
@@ -39,23 +36,16 @@ export const HomeScreen: React.FC = () => {
     },
   });
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setFootballData(normaliseScores(await getFixtures(), GameType.FOOTBALL));
-    };
-
-    fetchData();
-  }, []);
-
   return (
     <View style={[styles.container, themeStyles.container]}>
       <View style={[styles.carouselContainer]}>
-        { footballData && <ScoresCarousel data={footballData} />}
+        <ScoresCarousel />
       </View>
 
       <ScrollView style={[styles.contentContainer]}>
         <View style={[styles.panelContainer]}>
           <FootballPanel />
+          <NFLPanel />
           <CricketPanel />
         </View>
       </ScrollView>

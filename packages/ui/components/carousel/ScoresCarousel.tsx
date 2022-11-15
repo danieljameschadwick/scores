@@ -25,13 +25,13 @@ const SCROLL_DISTANCE = 500;
 const leagueMap = {
   [GameType.FOOTBALL]: 'PL',
   [GameType.NFL]: null,
-}
+};
 
 export const ScoresCarousel: React.FC = () => {
   const { themeStyles, primaryText } = useThemes();
   const scrollRef = useRef(null);
   const [month, setMonth] = useState<Month>(Month.AUGUST);
-  const [game, setGame] = useState<Game>(GameType.FOOTBALL);
+  const [game, setGame] = useState<GameType>(GameType.FOOTBALL);
   const [position, setPosition] = useState<number>(0);
   const [data, setData] = useState<{} | null>(null);
 
