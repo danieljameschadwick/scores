@@ -1,6 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { useTheme } from "@scores/theme/utils/theme";
+import { Table } from "@scores/ui/components/layout/table/Table";
 
 const mockData = [
   {
@@ -29,153 +28,34 @@ const mockData = [
   },
 ];
 
-// @TODO: copied from LeagueTable to refactor to common
-const TableHeader = () => {
-  const themeStyles = useTheme();
-
-  return (
-    <View style={[tableHeaderStyles.row]}>
-      <View style={[tableHeaderStyles.td, tableHeaderStyles.indexedTd]}>
-        <Text
-          style={[
-            tableHeaderStyles.tdText,
-            tableHeaderStyles.tdCenter,
-            themeStyles.text,
-          ]}
-        >
-          #
-        </Text>
-      </View>
-      <View style={[tableHeaderStyles.td, tableHeaderStyles.tdGrow]}>
-        <Text style={[tableHeaderStyles.tdText, themeStyles.text]}>Team</Text>
-      </View>
-      <View style={[tableHeaderStyles.td]}>
-        <Text style={[tableHeaderStyles.tdText, themeStyles.text]}>W</Text>
-      </View>
-      <View style={[tableHeaderStyles.td]}>
-        <Text style={[tableHeaderStyles.tdText, themeStyles.text]}>L</Text>
-      </View>
-      <View style={[tableHeaderStyles.td]}>
-        <Text style={[tableHeaderStyles.tdText, themeStyles.text]}>T</Text>
-      </View>
-    </View>
-  );
-};
-
-const tableHeaderStyles = StyleSheet.create({
-  row: {
-    display: "flex",
-    flexDirection: "row",
-    borderBottomWidth: 1,
-    borderBottomColor: "#dcdddf",
-    paddingBottom: 5,
+const config = [
+  {
+    key: "name",
+    label: "Team",
+    accessor: "name",
+    style: {
+      grow: true,
+    },
   },
-  td: {
-    paddingHorizontal: 5,
+  {
+    key: "wins",
+    label: "W",
+    accessor: "wins",
   },
-  tdText: {
-    fontSize: 12,
-    fontWeight: "600",
-    textTransform: "uppercase",
+  {
+    key: "losses",
+    label: "L",
+    accessor: "losses",
   },
-  indexedTd: {
-    width: 30,
+  {
+    key: "draws",
+    label: "D",
+    accessor: "draws",
   },
-  tdCenter: {
-    textAlign: "center",
-  },
-  tdGrow: {
-    flexGrow: 1,
-  },
-});
-
-const TableBody = ({ data }) => {
-  const themeStyles = useTheme();
-
-  return (
-    <View>
-      {data.map((row, index) => {
-        const isAlternate = index % 2;
-
-        return (
-          <View
-            key={index}
-            style={[
-              tableBodyStyles.row,
-              !isAlternate && themeStyles.lightContainer,
-            ]}
-          >
-            <View style={[tableBodyStyles.td, tableBodyStyles.indexedTd]}>
-              <Text
-                style={[
-                  tableBodyStyles.text,
-                  tableBodyStyles.tdCenter,
-                  themeStyles.text,
-                ]}
-              >
-                {index + 1}
-              </Text>
-            </View>
-            <View style={[tableBodyStyles.td, tableBodyStyles.tdGrow]}>
-              <Text style={[tableBodyStyles.text, themeStyles.text]}>
-                {row.name}
-              </Text>
-            </View>
-            <View style={[tableBodyStyles.td]}>
-              <Text style={[tableBodyStyles.text, themeStyles.text]}>
-                {row.wins}
-              </Text>
-            </View>
-            <View style={[tableBodyStyles.td]}>
-              <Text style={[tableBodyStyles.text, themeStyles.text]}>
-                {row.losses}
-              </Text>
-            </View>
-            <View style={[tableBodyStyles.td]}>
-              <Text style={[tableBodyStyles.text, themeStyles.text]}>
-                {row.draws}
-              </Text>
-            </View>
-          </View>
-        );
-      })}
-    </View>
-  );
-};
-
-const tableBodyStyles = StyleSheet.create({
-  row: {
-    display: "flex",
-    flexDirection: "row",
-    paddingVertical: 5,
-    borderBottomWidth: 1,
-    borderBottomColor: "rgb(85, 85, 85)",
-  },
-  text: {
-    fontSize: 13,
-  },
-  td: {
-    paddingHorizontal: 5,
-  },
-  indexedTd: {
-    width: 30,
-  },
-  tdCenter: {
-    textAlign: "center",
-  },
-  tdGrow: {
-    flexGrow: 1,
-  },
-});
+];
 
 export const DivisionTable = () => {
   const data = mockData;
 
-  return (
-    <View>
-      <TableHeader />
-
-      <TableBody data={data} />
-    </View>
-  );
+  return <Table data={data} config={config} />;
 };

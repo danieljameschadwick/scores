@@ -1,6 +1,5 @@
 import React from "react";
 import { GameInterface } from "@scores/types/interfaces/GameInterface";
-import { normaliseScore } from "@scores/http/utils/normaliseScores";
 import { FixtureContext } from "@scores/ui/state/FixtureContext";
 import { GameType } from "@scores/types/enum/GameType";
 import { FootballFixture } from "./footballFixture/FootballFixture";
