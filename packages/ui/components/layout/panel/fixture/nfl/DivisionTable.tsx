@@ -49,7 +49,7 @@ const config = [
   },
   {
     key: "draws",
-    label: "D",
+    label: "T",
     accessor: "draws",
   },
 ];
