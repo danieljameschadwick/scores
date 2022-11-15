@@ -1,10 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import {
-  ScrollView,
-  View,
-  TouchableOpacity,
-  Text,
-} from "react-native";
+import { ScrollView, View, TouchableOpacity } from "react-native";
 import StyleSheet from "react-native-media-query";
 import Icon from "react-native-vector-icons/Entypo";
 import { CarouselGroup } from "@scores/ui/components/carousel/CarouselGroup";
@@ -14,16 +9,16 @@ import { normaliseScores } from "@scores/http/utils/normaliseScores";
 import { GameType } from "@scores/types/enum/GameType";
 import { getFixtures } from "@scores/http/services/football";
 import { Month } from "@scores/types/enum/Month";
-import { CarouselContainer } from "./layout/CarouselContainer";
-import { LoadingContainer } from "./layout/LoadingContainer";
-import { NoGamesScheduledContainer } from "./layout/NoGamesScheduled";
+import { CarouselContainer } from "@scores/ui/components/carousel/layout/CarouselContainer";
+import { LoadingContainer } from "@scores/ui/components/carousel/layout/LoadingContainer";
+import { NoGamesScheduledContainer } from "@scores/ui/components/carousel/layout/NoGamesScheduled";
 
 const SCROLL_DISTANCE = 500;
 
 // @TODO: crude map as some sports e.g. NFL only need to support 1 league
 // (or atleast only ones we care to support)
 const leagueMap = {
-  [GameType.FOOTBALL]: 'PL',
+  [GameType.FOOTBALL]: "PL",
   [GameType.NFL]: null,
 };
 
@@ -70,7 +65,7 @@ export const ScoresCarousel: React.FC = () => {
   if (Object.keys(data).length === 0) {
     return (
       <CarouselContainer month={month} setMonth={setMonth} game={game}>
-          <NoGamesScheduledContainer />
+        <NoGamesScheduledContainer />
       </CarouselContainer>
     );
   }
@@ -107,12 +102,7 @@ export const ScoresCarousel: React.FC = () => {
           onScroll={(e) => setPosition(e.nativeEvent.contentOffset.x)}
           scrollEventThrottle={0}
         >
-          <CarouselGroup
-            leagueName={leagueMap[game]}
-            scores={data}
-          />
-          {/* // @TODO: add Carousel customisation */}
-          {/* <CarouselGroup groupName={"NBA"} scores={basketballFixtures} /> */}
+          <CarouselGroup leagueName={leagueMap[game]} scores={data} />
         </ScrollView>
       </View>
 

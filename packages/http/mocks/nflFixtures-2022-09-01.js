@@ -2411,7 +2411,147 @@ export default {
                     "overtime": null,
                     "total": 27
                 }
-            }
+            },
+            "statistics": [
+                {
+                    "team": {
+                        "id": 23,
+                        "name": "Seattle Seahawks",
+                        "logo": "https://media.api-sports.io/american-football/teams/23.png"
+                    },
+                    "statistics": {
+                        "first_downs": {
+                            "total": 23,
+                            "passing": 15,
+                            "rushing": 8,
+                            "from_penalties": 0,
+                            "third_down_efficiency": "9-17",
+                            "fourth_down_efficiency": "2-3"
+                        },
+                        "plays": {
+                            "total": 69
+                        },
+                        "yards": {
+                            "total": 420,
+                            "yards_per_play": "8",
+                            "total_drives": "6.1"
+                        },
+                        "passing": {
+                            "total": 308,
+                            "comp_att": "32-44",
+                            "yards_per_pass": "6.7",
+                            "interceptions_thrown": 1,
+                            "sacks_yards_lost": "2-17"
+                        },
+                        "rushings": {
+                            "total": 112,
+                            "attempts": 23,
+                            "yards_per_rush": "4.9"
+                        },
+                        "red_zone": {
+                            "made_att": "2-5"
+                        },
+                        "penalties": {
+                            "total": "6-47"
+                        },
+                        "turnovers": {
+                            "total": 1,
+                            "lost_fumbles": 0,
+                            "interceptions": 1
+                        },
+                        "posession": {
+                            "total": "31:46"
+                        },
+                        "interceptions": {
+                            "total": 1
+                        },
+                        "fumbles_recovered": {
+                            "total": 1
+                        },
+                        "sacks": {
+                            "total": 3
+                        },
+                        "safeties": {
+                            "total": 0
+                        },
+                        "int_touchdowns": {
+                            "total": 0
+                        },
+                        "points_against": {
+                            "total": 27
+                        }
+                    }
+                },
+                {
+                    "team": {
+                        "id": 8,
+                        "name": "Atlanta Falcons",
+                        "logo": "https://media.api-sports.io/american-football/teams/8.png"
+                    },
+                    "statistics": {
+                        "first_downs": {
+                            "total": 24,
+                            "passing": 13,
+                            "rushing": 8,
+                            "from_penalties": 3,
+                            "third_down_efficiency": "4-7",
+                            "fourth_down_efficiency": "0-0"
+                        },
+                        "plays": {
+                            "total": 54
+                        },
+                        "yards": {
+                            "total": 386,
+                            "yards_per_play": "9",
+                            "total_drives": "7.1"
+                        },
+                        "passing": {
+                            "total": 207,
+                            "comp_att": "13-20",
+                            "yards_per_pass": "9.0",
+                            "interceptions_thrown": 1,
+                            "sacks_yards_lost": "3-22"
+                        },
+                        "rushings": {
+                            "total": 179,
+                            "attempts": 31,
+                            "yards_per_rush": "5.8"
+                        },
+                        "red_zone": {
+                            "made_att": "3-4"
+                        },
+                        "penalties": {
+                            "total": "2-15"
+                        },
+                        "turnovers": {
+                            "total": 2,
+                            "lost_fumbles": 1,
+                            "interceptions": 1
+                        },
+                        "posession": {
+                            "total": "28:14"
+                        },
+                        "interceptions": {
+                            "total": 1
+                        },
+                        "fumbles_recovered": {
+                            "total": 0
+                        },
+                        "sacks": {
+                            "total": 2
+                        },
+                        "safeties": {
+                            "total": 0
+                        },
+                        "int_touchdowns": {
+                            "total": 0
+                        },
+                        "points_against": {
+                            "total": 23
+                        }
+                    }
+                }
+            ]
         },
         {
             "game": {

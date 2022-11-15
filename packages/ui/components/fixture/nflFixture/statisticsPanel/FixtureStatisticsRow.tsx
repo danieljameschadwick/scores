@@ -27,7 +27,6 @@ export const FixtureStatisticsRow: React.FC<Props> = ({
     >
       <Text style={[styles.statisticValueText, themeStyles.text]}>{homeStatistic}</Text>
 
-      {/* // @TODO: translate type */}
       <Text style={[styles.statisticTypeText, themeStyles.text]}>{type}</Text>
 
       <Text style={[styles.statisticValueText, themeStyles.text]}>{awayStatistic}</Text>

@@ -3,7 +3,6 @@ import { View } from "react-native";
 import StyleSheet from "react-native-media-query";
 import { useThemes } from "@scores/theme/utils/theme";
 import { CarouselDateDropdown } from "../CarouselDateDropdown";
-import { CarouselText } from "../CarouselText";
 import { Z_INDEXES } from "@scores/types/enum/zIndex";
 import { Month } from "@scores/types/enum/Month";
 import { CarouselGameDropdown } from "../CarouselGameDropdown";

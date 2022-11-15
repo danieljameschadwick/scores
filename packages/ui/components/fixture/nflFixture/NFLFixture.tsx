@@ -2,7 +2,8 @@ import React from "react";
 import { View } from "react-native";
 import StyleSheet from "react-native-media-query";
 import { FixtureStrip } from "@scores/ui/components/fixture/nflFixture/fixtureStrip/FixtureStrip";
-import { DivisionTablePanel } from "../../layout/panel/fixture/nfl/DivisionTablePanel";
+import { DivisionTablePanel } from "@scores/ui/components/layout/panel/fixture/nfl/DivisionTablePanel";
+import { FixtureStatisticsPanel } from "@scores/ui/components/fixture/nflFixture/statisticsPanel/FixtureStatisticsPanel";
 
 export const NFLFixture = () => {
   return (
@@ -13,8 +14,7 @@ export const NFLFixture = () => {
 
       <View style={[styles.pageContent]} dataSet={{ media: ids.pageContent }}>
         <View style={[styles.mainContent]} dataSet={{ media: ids.mainContent }}>
-          {/* // @TODO: statistics / match report */}
-          {/* <FixtureStatisticsPanel /> */}
+          <FixtureStatisticsPanel />
         </View>
 
         <View style={[styles.sidebar]} dataSet={{ media: ids.sidebar }}>

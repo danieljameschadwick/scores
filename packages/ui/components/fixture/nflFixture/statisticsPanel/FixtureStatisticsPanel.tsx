@@ -7,17 +7,17 @@ import { useFixture } from "@scores/ui/state/FixtureContext";
 import { FixtureStatisticsRow } from "@scores/ui/components/fixture/footballFixture/statisticsPanel/FixtureStatisticsRow";
 import { FixtureStatisticsRowHeader } from "@scores/ui/components/fixture/footballFixture/statisticsPanel/FixtureStatisticsRowHeader";
 import { LoadingContainer } from "@scores/ui/components/fixture/loadingContainer/LoadingContainer";
-import { FootballStatisticDisplayOrder } from "@scores/types/maps/FootballStatisticDisplayOrder";
+import { NFLStatisticDisplayOrder } from "@scores/types/maps/NFLStatisticDisplayOrder";
 
 const formatStatistics = (statistics) => {
   const formattedStatistics = {};
 
   for (const [key, statistic] of Object.entries(statistics)) {
-    if (!FootballStatisticDisplayOrder[key]) {
+    if (!NFLStatisticDisplayOrder[key]) {
       continue;
     }
 
-    formattedStatistics[FootballStatisticDisplayOrder[key]] = statistic;
+    formattedStatistics[NFLStatisticDisplayOrder[key]] = statistic;
   }
 
   return formattedStatistics;
@@ -25,8 +25,10 @@ const formatStatistics = (statistics) => {
 
 export const FixtureStatisticsPanel = () => {
   const fixture = useFixture();
-  const { home, away, statistics } = fixture;
+  const { home, away, statistics = {} } = fixture;
   const formattedStatistics = formatStatistics(statistics);
+
+  console.log(statistics);
 
   return (
     <Panel
