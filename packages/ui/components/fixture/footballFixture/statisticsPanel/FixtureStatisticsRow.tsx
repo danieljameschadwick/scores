@@ -1,6 +1,7 @@
 import React from "react";
-import { useTheme } from "@scores/theme/utils/theme";
 import { View, Text, StyleSheet } from "react-native";
+import { useTranslation } from "react-i18next";
+import { useTheme } from "@scores/theme/utils/theme";
 
 interface Props {
   homeStatistic: number;
@@ -16,6 +17,7 @@ export const FixtureStatisticsRow: React.FC<Props> = ({
   isAlternate = false,
 }) => {
   const themeStyles = useTheme();
+  const { t } = useTranslation();
 
   return (
     <View
@@ -28,7 +30,9 @@ export const FixtureStatisticsRow: React.FC<Props> = ({
       <Text style={[styles.statisticValueText, themeStyles.text]}>{homeStatistic}</Text>
 
       {/* // @TODO: translate type */}
-      <Text style={[styles.statisticTypeText, themeStyles.text]}>{type}</Text>
+      <Text style={[styles.statisticTypeText, themeStyles.text]}>
+        { t(`nfl:${type}`) }
+      </Text>
 
       <Text style={[styles.statisticValueText, themeStyles.text]}>{awayStatistic}</Text>
     </View>

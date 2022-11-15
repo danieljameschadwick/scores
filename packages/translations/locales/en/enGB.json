@@ -1,0 +1,12 @@
+{
+  "nfl": {
+    "firstDowns": "First Downs",
+    "plays": "Plays",
+    "yards": "Yards",
+    "passing": "Passing",
+    "rushings": "Rushing",
+    "turnovers": "Turnovers",
+    "interceptions": "Interceptions",
+    "penalties": "Penalties"
+  }
+}

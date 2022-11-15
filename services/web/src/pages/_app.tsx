@@ -4,6 +4,8 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "@scores/state/store";
 
+import "@scores/translations/i18n";
+
 const App = ({ Component, pageProps }) => {
   return (
     <Provider store={store}>

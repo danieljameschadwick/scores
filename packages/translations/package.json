@@ -1,0 +1,13 @@
+{
+    "name": "@scores/translations",
+    "version": "0.0.1",
+    "type": "module",
+    "license": "UNLICENSED",
+    "dependencies": {
+        "i18next": "^22.0.5",
+        "react": "18.1.0",
+        "react-dom": "18.1.0",
+        "react-i18next": "^12.0.0",
+        "react-native": "0.70.5"
+    }
+}
