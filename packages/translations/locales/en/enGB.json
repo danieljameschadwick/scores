@@ -8,5 +8,13 @@
     "turnovers": "Turnovers",
     "interceptions": "Interceptions",
     "penalties": "Penalties"
+  },
+  "football": {
+    "fouls": "Fouls",
+    "yellowCards": "Yellow cards",
+    "redCards": "Red cards",
+    "offsides": "Offsides",
+    "cornerKicks": "Corner Kicks",
+    "goalkeeperSaves": "Goalkeeper Saves"
   }
 }

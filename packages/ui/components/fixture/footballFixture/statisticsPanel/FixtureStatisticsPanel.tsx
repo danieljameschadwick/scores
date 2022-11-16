@@ -1,15 +1,16 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
+import { useTranslation } from "react-i18next";
 import IonIcon from "react-native-vector-icons/Ionicons";
 import { Panel } from "@scores/ui/components/layout/panel/Panel";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 import { useFixture } from "@scores/ui/state/FixtureContext";
-import { FixtureStatisticsRow } from "@scores/ui/components/fixture/footballFixture/statisticsPanel/FixtureStatisticsRow";
-import { FixtureStatisticsRowHeader } from "@scores/ui/components/fixture/footballFixture/statisticsPanel/FixtureStatisticsRowHeader";
+import { FixtureStatisticsRow } from "@scores/ui/components/fixture/panels/statisticsPanel/FixtureStatisticsRow";
+import { FixtureStatisticsRowHeader } from "@scores/ui/components/fixture/panels/statisticsPanel/FixtureStatisticsRowHeader";
 import { LoadingContainer } from "@scores/ui/components/fixture/loadingContainer/LoadingContainer";
 import { FootballStatisticDisplayOrder } from "@scores/types/maps/FootballStatisticDisplayOrder";
 
-const formatStatistics = (statistics) => {
+const formatStatistics = (statistics) => (t) => {
   const formattedStatistics = {};
 
   for (const [key, statistic] of Object.entries(statistics)) {
@@ -17,7 +18,10 @@ const formatStatistics = (statistics) => {
       continue;
     }
 
-    formattedStatistics[FootballStatisticDisplayOrder[key]] = statistic;
+    formattedStatistics[FootballStatisticDisplayOrder[key]] = {
+      ...statistic,
+      name: t(`football:${key}`),
+    };
   }
 
   return formattedStatistics;
@@ -26,7 +30,8 @@ const formatStatistics = (statistics) => {
 export const FixtureStatisticsPanel = () => {
   const fixture = useFixture();
   const { home, away, statistics } = fixture;
-  const formattedStatistics = formatStatistics(statistics);
+  const { t } = useTranslation();
+  const formattedStatistics = formatStatistics(statistics)(t);
 
   return (
     <Panel
@@ -51,7 +56,7 @@ export const FixtureStatisticsPanel = () => {
               key={key}
               homeStatistic={homeValue}
               awayStatistic={awayValue}
-              type={name}
+              name={name}
               isAlternate={index % 2 === 0}
             />
           );

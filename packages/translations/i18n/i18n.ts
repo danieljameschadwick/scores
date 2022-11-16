@@ -1,5 +1,6 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+// @TODO: investigate tsconfig with resolveJsonModule
 import * as enGB from "@scores/translations/locales/en/enGB.json";
 
 i18n
