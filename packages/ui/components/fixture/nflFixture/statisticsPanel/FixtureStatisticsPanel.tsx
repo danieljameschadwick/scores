@@ -6,8 +6,8 @@ import { Panel } from "@scores/ui/components/layout/panel/Panel";
 import { getPrimaryText } from "@scores/theme/utils/variables";
 import { useFixture } from "@scores/ui/state/FixtureContext";
 import { LoadingContainer } from "@scores/ui/components/fixture/loadingContainer/LoadingContainer";
-import { FixtureStatisticsRow } from "@scores/ui/components/fixture/panels/statisticsPanel/FixtureStatisticsRow";
-import { FixtureStatisticsRowHeader } from "@scores/ui/components/fixture/panels/statisticsPanel/FixtureStatisticsRowHeader";
+import { FixtureStatisticsRow } from "@scores/ui/components/fixture/layout/statisticsPanel/FixtureStatisticsRow";
+import { FixtureStatisticsRowHeader } from "@scores/ui/components/fixture/layout/statisticsPanel/FixtureStatisticsRowHeader";
 import { NFLStatisticDisplayOrder } from "@scores/types/maps/NFLStatisticDisplayOrder";
 
 const formatStatistics = (statistics) => (t) => {

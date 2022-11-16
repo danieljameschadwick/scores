@@ -3,7 +3,7 @@ import { View } from "react-native";
 import StyleSheet from "react-native-media-query";
 import { useTheme } from "@scores/theme/utils/theme";
 import { useFixture } from "@scores/ui/state/FixtureContext";
-import { FixtureStripSummaryEvent } from "@scores/ui/components/fixture/footballFixture/fixtureStrip/FixtureStripSummaryEvent";
+import { FixtureStripSummaryEvent } from "@scores/ui/components/fixture/layout/fixtureStrip/FixtureStripSummaryEvent";
 
 enum EVENT_TYPE {
   GOAL = "goal",

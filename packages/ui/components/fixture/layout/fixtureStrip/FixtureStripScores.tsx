@@ -4,7 +4,7 @@ import StyleSheet from "react-native-media-query";
 import format from "date-fns/format";
 import { useTheme } from "@scores/theme/utils/theme";
 import { useFixture } from "@scores/ui/state/FixtureContext";
-import { FixtureStripScore } from "@scores/ui/components/fixture/footballFixture/fixtureStrip/FixtureStripScore";
+import { FixtureStripScore } from "@scores/ui/components/fixture/layout/fixtureStrip/FixtureStripScore";
 
 export const FixtureStripScores = () => {
   const fixture = useFixture();

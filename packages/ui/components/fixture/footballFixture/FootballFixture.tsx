@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import StyleSheet from "react-native-media-query";
-import { FixtureStrip } from "@scores/ui/components/fixture/footballFixture/fixtureStrip/FixtureStrip";
+import { FixtureStrip } from "@scores/ui/components/fixture/layout/fixtureStrip/FixtureStrip";
 import { FixtureStatisticsPanel } from "@scores/ui/components/fixture/footballFixture/statisticsPanel/FixtureStatisticsPanel";
 import { FixtureSplitStatisticsPanel } from "@scores/ui/components/fixture/footballFixture/splitStatisticsPanel/FixtureSplitStatisticsPanel";
 import { FixtureGameInformationPanel } from "@scores/ui/components/fixture/footballFixture/gameInformation/FixtureGameInformationPanel";
