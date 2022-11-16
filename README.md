@@ -27,9 +27,17 @@ Fixture Desktop                     |  Fixture Mobile
 :-------------------------:|:-------------------------:
 ![Fixture page on desktop.](./docs/images/scores-fixture--light-desktop.png) | ![Fixture page on mobile.](./docs/images/scores-fixture--light-mobile.png)
 
+Fixture Desktop (NFL / Light)             |  Fixture Mobile (NFL / Light)
+:-------------------------:|:-------------------------:
+![NFL Fixture page on desktop.](./docs/images/scores-fixture--nfl-light-desktop.png) | ![NFL Fixture page on small desktop.](./docs/images/scores-fixture--nfl-light-mobile.png)
+
 Fixture Desktop (Dark)             |  Fixture Mobile (Dark)
 :-------------------------:|:-------------------------:
 ![Fixture page on desktop.](./docs/images/scores-fixture--dark-desktop.png) | ![Fixture page on small desktop.](./docs/images/scores-fixture--dark-mobile.png)
+
+Fixture Desktop (NFL / Dark)             |  Fixture Mobile (NFL / Dark)
+:-------------------------:|:-------------------------:
+![NFL Fixture page on desktop.](./docs/images/scores-fixture--nfl-dark-desktop.png) | ![NFL Fixture page on small desktop.](./docs/images/scores-fixture--nfl-dark-mobile.png)
 
 #### iOS
 
