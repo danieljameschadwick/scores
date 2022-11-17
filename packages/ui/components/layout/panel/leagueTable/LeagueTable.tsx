@@ -103,5 +103,5 @@ const config = [
 export const LeagueTable = () => {
   const data = mockData;
 
-  return <Table data={data} config={config} />;
+  return <Table data={data} config={config} showIndex={true} />;
 };

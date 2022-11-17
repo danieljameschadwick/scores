@@ -1,11 +1,12 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ViewProps } from "react-native";
 import { useTheme } from "@scores/theme/utils/theme";
 
 interface Props {
   title: string;
   icon?: any | null; // @TODO: typing
   testID?: string | null;
+  styles: ViewProps;
   children: React.ReactNode;
 }
 
@@ -13,6 +14,7 @@ export const Panel: React.FC<Props> = ({
   title,
   icon = null,
   testID = "panel",
+  style: propStyles = null,
   children,
 }) => {
   const themeStyles = useTheme();
@@ -22,6 +24,7 @@ export const Panel: React.FC<Props> = ({
       style={[
         styles.container,
         themeStyles.mediumContainer,
+        propStyles?.container,
         !icon && styles.containerWithoutIcon,
       ]}
       testID={testID}

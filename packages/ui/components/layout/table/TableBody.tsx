@@ -3,7 +3,12 @@ import { View, Text, StyleSheet } from "react-native";
 import { useTable } from "@scores/ui/components/layout/table/TableContext";
 import { useTheme } from "@scores/theme/utils/theme";
 
-export const TableBody = ({ data }) => {
+interface Props {
+  data: any; // @TODO: add to generics
+  showIndex: boolean;
+}
+
+export const TableBody: React.FC<Props> = ({ data, showIndex }) => {
   const tableConfig = useTable();
   const themeStyles = useTheme();
 
@@ -20,26 +25,34 @@ export const TableBody = ({ data }) => {
               !isAlternate && themeStyles.lightContainer,
             ]}
           >
-            <View style={[tableBodyStyles.td, tableBodyStyles.indexedTd]}>
-              <Text
-                style={[
-                  tableBodyStyles.text,
-                  tableBodyStyles.tdCenter,
-                  themeStyles.text,
-                ]}
-              >
-                {index + 1}
-              </Text>
-            </View>
+            {/* // @TODO: add showIndex to context */}
+            { showIndex && (
+              <View style={[tableBodyStyles.td, tableBodyStyles.indexedTd]}>
+                <Text
+                  style={[
+                    tableBodyStyles.text,
+                    tableBodyStyles.tdTextCenter,
+                    themeStyles.text,
+                  ]}
+                >
+                  {index + 1}
+                </Text>
+              </View>
+            )}
             {tableConfig.map((config, index) => (
               <View
                 key={index}
                 style={[
                   tableBodyStyles.td,
+                  config.style?.limited && tableBodyStyles.limitedTd,
                   config.style?.grow && tableBodyStyles.tdGrow,
                 ]}
               >
-                <Text style={[tableBodyStyles.text, themeStyles.text]}>
+                <Text style={[
+                  themeStyles.text,
+                  tableBodyStyles.text,
+                  config.style?.center && tableBodyStyles.tdTextCenter,
+                ]}>
                   {row[config.accessor]}
                 </Text>
               </View>
@@ -65,10 +78,13 @@ const tableBodyStyles = StyleSheet.create({
   td: {
     paddingHorizontal: 5,
   },
+  limitedTd: {
+    width: "15%",
+  },
   indexedTd: {
     width: 30,
   },
-  tdCenter: {
+  tdTextCenter: {
     textAlign: "center",
   },
   tdGrow: {

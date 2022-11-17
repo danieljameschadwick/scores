@@ -4,6 +4,31 @@ import StyleSheet from "react-native-media-query";
 import { FixtureStrip } from "@scores/ui/components/fixture/layout/fixtureStrip/FixtureStrip";
 import { DivisionTablePanel } from "@scores/ui/components/layout/panel/fixture/nfl/DivisionTablePanel";
 import { FixtureStatisticsPanel } from "@scores/ui/components/fixture/nflFixture/statisticsPanel/FixtureStatisticsPanel";
+import { TeamStatisticsPanel } from "./teamStatisticsPanel/TeamStatisticsPanel";
+
+const falconsPassingData = [
+  {
+    name: 'M. Mariota',
+    attempts: '13/20',
+    yards: 229,
+    touchdowns: 1,
+    interceptions: 1,
+    sacks: '3-22',
+    qbr: '36.7',
+  },
+];
+
+const seahawksPassingData = [
+  {
+    name: 'G. Smith',
+    attempts: '32/44',
+    yards: 325,
+    touchdowns: 2,
+    interceptions: 1,
+    sacks: '2-17',
+    qbr: '57.3',
+  },
+];
 
 export const NFLFixture = () => {
   return (
@@ -15,6 +40,19 @@ export const NFLFixture = () => {
       <View style={[styles.pageContent]} dataSet={{ media: ids.pageContent }}>
         <View style={[styles.mainContent]} dataSet={{ media: ids.mainContent }}>
           <FixtureStatisticsPanel />
+
+          <View style={[styles.splitContainer]} dataSet={{ media: ids.splitContainer }}>
+            <TeamStatisticsPanel
+              title={"Seahawks Statistics"}
+              style={styles.splitPanel}
+              passingData={seahawksPassingData}
+            />
+            <TeamStatisticsPanel
+              title={"Falcons Statistics"}
+              style={styles.splitPanel}
+              passingData={falconsPassingData}
+            />
+          </View>
         </View>
 
         <View style={[styles.sidebar]} dataSet={{ media: ids.sidebar }}>
@@ -46,6 +84,23 @@ const { styles, ids } = StyleSheet.create({
     paddingHorizontal: 10,
     "@media (max-width: 990px)": {
       width: "100%",
+    },
+  },
+  splitContainer: {
+    display: "flex",
+    flexWrap: "wrap",
+    flexDirection: "row",
+    marginVertical: -4,
+    marginHorizontal: -4,
+    "@media (max-width: 660px)": {
+      flexDirection: "column",
+    },
+  },
+  splitPanel: {
+    container: {
+      flexGrow: 1,
+      marginVertical: 4,
+      marginHorizontal: 4,
     },
   },
   sidebar: {

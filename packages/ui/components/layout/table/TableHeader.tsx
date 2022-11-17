@@ -3,32 +3,43 @@ import { View, Text, StyleSheet } from "react-native";
 import { useTable } from "@scores/ui/components/layout/table/TableContext";
 import { useTheme } from "@scores/theme/utils/theme";
 
-export const TableHeader = () => {
+interface Props {
+  showIndex: boolean;
+}
+
+export const TableHeader = ({ showIndex }) => {
   const tableConfig = useTable();
   const themeStyles = useTheme();
 
   return (
     <View style={[tableHeaderStyles.row]}>
-      <View style={[tableHeaderStyles.td, tableHeaderStyles.indexedTd]}>
-        <Text
-          style={[
-            tableHeaderStyles.tdText,
-            tableHeaderStyles.tdCenter,
-            themeStyles.text,
-          ]}
-        >
-          #
-        </Text>
-      </View>
+      {showIndex && (
+        <View style={[tableHeaderStyles.td, tableHeaderStyles.indexedTd]}>
+          <Text
+            style={[
+              tableHeaderStyles.tdText,
+              tableHeaderStyles.tdTextCenter,
+              themeStyles.text,
+            ]}
+          >
+            #
+          </Text>
+        </View>
+      )}
       {tableConfig.map((config, index) => (
         <View
           key={index}
           style={[
             tableHeaderStyles.td,
+            config.style?.limited && tableHeaderStyles.limitedTd,
             config.style?.grow && tableHeaderStyles.tdGrow,
           ]}
         >
-          <Text style={[tableHeaderStyles.tdText, themeStyles.text]}>
+          <Text style={[
+            tableHeaderStyles.tdText,
+            themeStyles.text,
+            config.style?.center && tableHeaderStyles.tdTextCenter,
+          ]}>
             {config.label}
           </Text>
         </View>
@@ -48,6 +59,9 @@ const tableHeaderStyles = StyleSheet.create({
   td: {
     paddingHorizontal: 5,
   },
+  limitedTd: {
+    width: "15%",
+  },
   tdText: {
     fontSize: 12,
     fontWeight: "600",
@@ -56,7 +70,7 @@ const tableHeaderStyles = StyleSheet.create({
   indexedTd: {
     width: 30,
   },
-  tdCenter: {
+  tdTextCenter: {
     textAlign: "center",
   },
   tdGrow: {

@@ -57,5 +57,5 @@ const config = [
 export const DivisionTable = () => {
   const data = mockData;
 
-  return <Table data={data} config={config} />;
+  return <Table data={data} config={config} showIndex={true} />;
 };

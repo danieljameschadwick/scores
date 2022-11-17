@@ -3,12 +3,18 @@ import { TableContext } from "@scores/ui/components/layout/table/TableContext";
 import { TableHeader } from "@scores/ui/components/layout/table/TableHeader";
 import { TableBody } from "@scores/ui/components/layout/table/TableBody";
 
-export const Table = ({ config, data }) => {
+interface Props {
+  config: any; // @TODO: type config
+  data: any; // @TODO: add generic
+  showIndex: boolean; // @TODO: add to context
+}
+
+export const Table: React.FC<Props> = ({ config, data, showIndex = false }) => {
   return (
     <TableContext.Provider value={config}>
-      <TableHeader />
+      <TableHeader showIndex={showIndex} />
 
-      <TableBody data={data} />
+      <TableBody data={data} showIndex={showIndex} />
     </TableContext.Provider>
-  )
+  );
 };
