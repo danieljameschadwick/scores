@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { useTable } from "@scores/ui/components/layout/table/TableContext";
 import { useTheme } from "@scores/theme/utils/theme";
+import { TableTd } from "./TableTd";
 
 interface Props {
   showIndex: boolean;
@@ -27,22 +28,11 @@ export const TableHeader = ({ showIndex }) => {
         </View>
       )}
       {tableConfig.map((config, index) => (
-        <View
+        <TableTd
           key={index}
-          style={[
-            tableHeaderStyles.td,
-            config.style?.limited && tableHeaderStyles.limitedTd,
-            config.style?.grow && tableHeaderStyles.tdGrow,
-          ]}
-        >
-          <Text style={[
-            tableHeaderStyles.tdText,
-            themeStyles.text,
-            config.style?.center && tableHeaderStyles.tdTextCenter,
-          ]}>
-            {config.label}
-          </Text>
-        </View>
+          config={config}
+          value={config.label}
+        />
       ))}
     </View>
   );
@@ -55,6 +45,7 @@ const tableHeaderStyles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#dcdddf",
     paddingBottom: 5,
+    justifyContent: "space-between",
   },
   td: {
     paddingHorizontal: 5,

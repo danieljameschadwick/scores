@@ -8,25 +8,25 @@ import { TeamStatisticsPanel } from "./teamStatisticsPanel/TeamStatisticsPanel";
 
 const falconsPassingData = [
   {
-    name: 'M. Mariota',
-    attempts: '13/20',
+    name: "M. Mariota",
+    attempts: "13/20",
     yards: 229,
     touchdowns: 1,
     interceptions: 1,
-    sacks: '3-22',
-    qbr: '36.7',
+    sacks: "3-22",
+    qbr: "36.7",
   },
 ];
 
 const seahawksPassingData = [
   {
-    name: 'G. Smith',
-    attempts: '32/44',
+    name: "G. Smith",
+    attempts: "32/44",
     yards: 325,
     touchdowns: 2,
     interceptions: 1,
-    sacks: '2-17',
-    qbr: '57.3',
+    sacks: "2-17",
+    qbr: "57.3",
   },
 ];
 
@@ -41,15 +41,16 @@ export const NFLFixture = () => {
         <View style={[styles.mainContent]} dataSet={{ media: ids.mainContent }}>
           <FixtureStatisticsPanel />
 
-          <View style={[styles.splitContainer]} dataSet={{ media: ids.splitContainer }}>
+          <View
+            style={[styles.splitContainer]}
+            dataSet={{ media: ids.splitContainer }}
+          >
             <TeamStatisticsPanel
               title={"Seahawks Statistics"}
-              style={styles.splitPanel}
               passingData={seahawksPassingData}
             />
             <TeamStatisticsPanel
               title={"Falcons Statistics"}
-              style={styles.splitPanel}
               passingData={falconsPassingData}
             />
           </View>
@@ -88,19 +89,12 @@ const { styles, ids } = StyleSheet.create({
   },
   splitContainer: {
     display: "flex",
-    flexWrap: "wrap",
+    flexWrap: "nowrap",
     flexDirection: "row",
     marginVertical: -4,
     marginHorizontal: -4,
-    "@media (max-width: 660px)": {
+    "@media (max-width: 730px)": {
       flexDirection: "column",
-    },
-  },
-  splitPanel: {
-    container: {
-      flexGrow: 1,
-      marginVertical: 4,
-      marginHorizontal: 4,
     },
   },
   sidebar: {

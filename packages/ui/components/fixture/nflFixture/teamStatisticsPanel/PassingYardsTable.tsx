@@ -8,7 +8,7 @@ const config = [
     accessor: "name",
     style: {
       grow: true,
-      limited: true,
+      key: true,
     },
   },
   {
@@ -17,7 +17,7 @@ const config = [
     accessor: "attempts",
     style: {
       center: true,
-      limited: true,
+      width: 40,
     },
   },
   {
@@ -26,7 +26,7 @@ const config = [
     accessor: "yards",
     style: {
       center: true,
-      limited: true,
+      width: 30,
     },
   },
   {
@@ -35,7 +35,7 @@ const config = [
     accessor: "interceptions",
     style: {
       center: true,
-      limited: true,
+      width: 25,
     },
   },
   {
@@ -44,7 +44,7 @@ const config = [
     accessor: "sacks",
     style: {
       center: true,
-      limited: true,
+      width: 45,
     },
   },
   {
@@ -53,7 +53,7 @@ const config = [
     accessor: "qbr",
     style: {
       center: true,
-      limited: true,
+      width: 30,
     },
   },
 ];

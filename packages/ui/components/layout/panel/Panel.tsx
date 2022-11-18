@@ -15,6 +15,7 @@ export const Panel: React.FC<Props> = ({
   icon = null,
   testID = "panel",
   style: propStyles = null,
+  dataSet: propDataSet = null,
   children,
 }) => {
   const themeStyles = useTheme();
@@ -27,6 +28,7 @@ export const Panel: React.FC<Props> = ({
         propStyles?.container,
         !icon && styles.containerWithoutIcon,
       ]}
+      dataSet={{ media: propDataSet?.container }}
       testID={testID}
     >
       <View

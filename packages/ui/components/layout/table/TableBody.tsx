@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { useTable } from "@scores/ui/components/layout/table/TableContext";
 import { useTheme } from "@scores/theme/utils/theme";
+import { TableTd } from "./TableTd";
 
 interface Props {
   data: any; // @TODO: add to generics
@@ -22,11 +23,12 @@ export const TableBody: React.FC<Props> = ({ data, showIndex }) => {
             key={index}
             style={[
               tableBodyStyles.row,
+              themeStyles.mediumContainer,
               !isAlternate && themeStyles.lightContainer,
             ]}
           >
             {/* // @TODO: add showIndex to context */}
-            { showIndex && (
+            {showIndex && (
               <View style={[tableBodyStyles.td, tableBodyStyles.indexedTd]}>
                 <Text
                   style={[
@@ -40,22 +42,11 @@ export const TableBody: React.FC<Props> = ({ data, showIndex }) => {
               </View>
             )}
             {tableConfig.map((config, index) => (
-              <View
+              <TableTd
                 key={index}
-                style={[
-                  tableBodyStyles.td,
-                  config.style?.limited && tableBodyStyles.limitedTd,
-                  config.style?.grow && tableBodyStyles.tdGrow,
-                ]}
-              >
-                <Text style={[
-                  themeStyles.text,
-                  tableBodyStyles.text,
-                  config.style?.center && tableBodyStyles.tdTextCenter,
-                ]}>
-                  {row[config.accessor]}
-                </Text>
-              </View>
+                config={config}
+                value={row[config.accessor]}
+              />
             ))}
           </View>
         );
@@ -70,7 +61,7 @@ const tableBodyStyles = StyleSheet.create({
     flexDirection: "row",
     paddingVertical: 5,
     borderBottomWidth: 1,
-    borderBottomColor: "rgb(85, 85, 85)",
+    justifyContent: "space-between",
   },
   text: {
     fontSize: 13,
