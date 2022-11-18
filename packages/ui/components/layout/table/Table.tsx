@@ -9,12 +9,17 @@ interface Props {
   showIndex: boolean; // @TODO: add to context
 }
 
-export const Table: React.FC<Props> = ({ config, data, showIndex = false }) => {
+export const Table: React.FC<Props> = ({
+  config,
+  data,
+  showIndex = false,
+  spaced = false,
+}) => {
   return (
     <TableContext.Provider value={config}>
-      <TableHeader showIndex={showIndex} />
+      <TableHeader showIndex={showIndex} spaced={spaced} />
 
-      <TableBody data={data} showIndex={showIndex} />
+      <TableBody data={data} showIndex={showIndex} spaced={spaced} />
     </TableContext.Provider>
   );
 };

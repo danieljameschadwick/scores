@@ -6,14 +6,18 @@ import { TableTd } from "./TableTd";
 
 interface Props {
   showIndex: boolean;
+  spaced: boolean;
 }
 
-export const TableHeader = ({ showIndex }) => {
+export const TableHeader = ({ showIndex, spaced }) => {
   const tableConfig = useTable();
   const themeStyles = useTheme();
 
   return (
-    <View style={[tableHeaderStyles.row]}>
+    <View style={[
+      tableHeaderStyles.row,
+      spaced && tableHeaderStyles.rowSpaced,
+    ]}>
       {showIndex && (
         <View style={[tableHeaderStyles.td, tableHeaderStyles.indexedTd]}>
           <Text
@@ -31,6 +35,7 @@ export const TableHeader = ({ showIndex }) => {
         <TableTd
           key={index}
           config={config}
+          showIndex={showIndex}
           value={config.label}
         />
       ))}
@@ -45,6 +50,8 @@ const tableHeaderStyles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#dcdddf",
     paddingBottom: 5,
+  },
+  rowSpaced: {
     justifyContent: "space-between",
   },
   td: {

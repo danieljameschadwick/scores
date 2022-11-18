@@ -3,7 +3,7 @@ import StyleSheet from "react-native-media-query";
 import { View, Text } from "react-native";
 import { useTheme } from "@scores/theme/utils/theme";
 
-export const TableTd = ({ config, value }) => {
+export const TableTd = ({ config, showIndex, value }) => {
   const themeStyles = useTheme();
 
   const { ids, styles } = StyleSheet.create({
@@ -39,14 +39,19 @@ export const TableTd = ({ config, value }) => {
     },
   });
 
+  // we need a way to disable keyTd if it is not indexed 
+  const media =
+    (!showIndex && config.style?.key) && ids.keyTd
+  ;
+
   return (
     <View
       style={[
         styles.td,
         config.style?.grow && styles.tdGrow,
-        config.style?.key && styles.keyTd,
+        (!showIndex && config.style?.key) && styles.keyTd,
       ]}
-      dataSet={{ media: ids.keyTd }}
+      dataSet={{ media: media }}
     >
       <Text
         style={[

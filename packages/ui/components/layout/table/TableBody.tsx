@@ -7,9 +7,10 @@ import { TableTd } from "./TableTd";
 interface Props {
   data: any; // @TODO: add to generics
   showIndex: boolean;
+  spaced: boolean;
 }
 
-export const TableBody: React.FC<Props> = ({ data, showIndex }) => {
+export const TableBody: React.FC<Props> = ({ data, showIndex, spaced }) => {
   const tableConfig = useTable();
   const themeStyles = useTheme();
 
@@ -24,6 +25,7 @@ export const TableBody: React.FC<Props> = ({ data, showIndex }) => {
             style={[
               tableBodyStyles.row,
               themeStyles.mediumContainer,
+              spaced && tableBodyStyles.rowSpaced,
               !isAlternate && themeStyles.lightContainer,
             ]}
           >
@@ -45,6 +47,7 @@ export const TableBody: React.FC<Props> = ({ data, showIndex }) => {
               <TableTd
                 key={index}
                 config={config}
+                showIndex={showIndex}
                 value={row[config.accessor]}
               />
             ))}
@@ -61,6 +64,8 @@ const tableBodyStyles = StyleSheet.create({
     flexDirection: "row",
     paddingVertical: 5,
     borderBottomWidth: 1,
+  },
+  rowSpaced: {
     justifyContent: "space-between",
   },
   text: {
