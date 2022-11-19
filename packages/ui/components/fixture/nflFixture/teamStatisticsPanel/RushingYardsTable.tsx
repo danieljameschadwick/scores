@@ -12,9 +12,9 @@ const config = [
     },
   },
   {
-    key: "attempts",
-    label: "ATT",
-    accessor: "attempts",
+    key: "carries",
+    label: "CAR",
+    accessor: "carries",
     style: {
       center: true,
       width: 40,
@@ -30,34 +30,16 @@ const config = [
     },
   },
   {
-    key: "int",
-    label: "INT",
-    accessor: "interceptions",
+    key: "touchdowns",
+    label: "TDS",
+    accessor: "touchdowns",
     style: {
       center: true,
       width: 25,
     },
   },
-  {
-    key: "sacks",
-    label: "SCK",
-    accessor: "sacks",
-    style: {
-      center: true,
-      width: 30,
-    },
-  },
-  {
-    key: "qbr",
-    label: "QBR",
-    accessor: "qbr",
-    style: {
-      center: true,
-      width: 30,
-    },
-  },
 ];
 
-export const PassingYardsTable = ({ data }) => {
+export const RushingYardsTable = ({ data }) => {
   return <Table config={config} data={data} />;
 };

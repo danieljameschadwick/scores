@@ -13,8 +13,73 @@ const falconsPassingData = [
     yards: 229,
     touchdowns: 1,
     interceptions: 1,
-    sacks: "3-22",
+    sacks: 3,
     qbr: "36.7",
+  },
+];
+
+const falconsRushingData = [
+  {
+    name: "C. Patterson",
+    carries: 17,
+    yards: 141,
+    touchdowns: 1,
+  },
+  {
+    name: "T. Allgeier",
+    carries: 6,
+    yards: 25,
+    touchdowns: 0,
+  },
+  {
+    name: "A. Williams",
+    carries: 1,
+    yards: 9,
+    touchdowns: 0,
+  },
+  {
+    name: "M. Mariota",
+    carries: 7,
+    yards: 4,
+    touchdowns: 1,
+  },
+];
+
+const falconsReceivingData = [
+  {
+    name: "K. Pitts",
+    receptions: 5,
+    yards: 87,
+    touchdowns: 0,
+    targets: 8,
+  },
+  {
+    name: "D. London",
+    receptions: 3,
+    yards: 54,
+    touchdowns: 1,
+    targets: 6,
+  },
+  {
+    name: "O. Zaccheaus",
+    receptions: 2,
+    yards: 49,
+    touchdowns: 0,
+    targets: 2,
+  },
+  {
+    name: "A. Firkser",
+    receptions: 1,
+    yards: 22,
+    touchdowns: 0,
+    targets: 1,
+  },
+  {
+    name: "C. Patterson",
+    receptions: 1,
+    yards: 12,
+    touchdowns: 0,
+    targets: 1,
   },
 ];
 
@@ -25,8 +90,79 @@ const seahawksPassingData = [
     yards: 325,
     touchdowns: 2,
     interceptions: 1,
-    sacks: "2-17",
+    sacks: 2,
     qbr: "57.3",
+  },
+];
+
+const seahawksRushingData = [
+  {
+    name: "R. Penny",
+    carries: 14,
+    yards: 66,
+    touchdowns: 0,
+  },
+  {
+    name: "D. Dallas",
+    carries: 3,
+    yards: 21,
+    touchdowns: 0,
+  },
+  {
+    name: "K. Walker III",
+    carries: 3,
+    yards: 19,
+    touchdowns: 0,
+  },
+  {
+    name: "T. Homer",
+    carries: 1,
+    yards: 7,
+    touchdowns: 0,
+  },
+  {
+    name: "G. Smith",
+    carries: 2,
+    yards: -1,
+    touchdowns: 0,
+  },
+];
+
+const seahawksReceivingData = [
+  {
+    name: "T. Lockett",
+    receptions: 9,
+    yards: 76,
+    touchdowns: 0,
+    targets: 11,
+  },
+  {
+    name: "D. Metcalf",
+    receptions: 5,
+    yards: 64,
+    touchdowns: 1,
+    targets: 12,
+  },
+  {
+    name: "C. Parkinson",
+    receptions: 2,
+    yards: 44,
+    touchdowns: 0,
+    targets: 2,
+  },
+  {
+    name: "W. Dissly",
+    receptions: 3,
+    yards: 34,
+    touchdowns: 1,
+    targets: 3,
+  },
+  {
+    name: "M. Goodwin",
+    receptions: 2,
+    yards: 31,
+    touchdowns: 0,
+    targets: 5,
   },
 ];
 
@@ -48,10 +184,14 @@ export const NFLFixture = () => {
             <TeamStatisticsPanel
               title={"Seahawks Statistics"}
               passingData={seahawksPassingData}
+              rushingData={seahawksRushingData}
+              receivingData={seahawksReceivingData}
             />
             <TeamStatisticsPanel
               title={"Falcons Statistics"}
               passingData={falconsPassingData}
+              rushingData={falconsRushingData}
+              receivingData={falconsReceivingData}
             />
           </View>
         </View>

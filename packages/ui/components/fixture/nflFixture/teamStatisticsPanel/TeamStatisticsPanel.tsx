@@ -1,26 +1,31 @@
 import React from "react";
 import StyleSheet from "react-native-media-query";
-import { ViewProps } from "react-native";
 import { Panel } from "../../../layout/panel/Panel";
+import { Divider } from "./Divider";
 import { PassingYardsTable } from "./PassingYardsTable";
+import { RecievingYardsTable } from "./ReceivingYardsTable";
+import { RushingYardsTable } from "./RushingYardsTable";
 
 interface Props {
   title: string;
-  passingData: any;
+  passingData: any[];
+  rushingData: any[];
+  receivingData: any[];
 }
 
 export const TeamStatisticsPanel: React.FC<Props> = ({
   title,
-  passingData,
+  passingData = [],
+  rushingData = [],
+  receivingData = [],
 }) => {
   return (
     <Panel title={title} style={panelStyles} dataSet={panelIds}>
-      {/* Passing Yards */}
       <PassingYardsTable data={passingData} />
-
-      {/* Rushing Yards */}
-
-      {/* Recieving Yards */}
+      <Divider />
+      <RushingYardsTable data={rushingData} />
+      <Divider />
+      <RecievingYardsTable data={receivingData} />
     </Panel>
   );
 };

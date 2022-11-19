@@ -14,9 +14,6 @@ export const TableTd = ({ config, showIndex, value }) => {
       "@media (max-width: 400px)": {
         maxWidth: 55,
       },
-      "@media (min-width: 990px)": {
-        maxWidth: 55,
-      },
     },
     widthTd: {
       width: config?.style?.width,
@@ -24,7 +21,6 @@ export const TableTd = ({ config, showIndex, value }) => {
     tdText: {
       fontSize: 12,
       fontWeight: "600",
-      textTransform: "uppercase",
     },
     keyTdText: {
       whiteSpace: "nowrap",
