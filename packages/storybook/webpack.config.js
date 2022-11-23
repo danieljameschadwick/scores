@@ -1,11 +1,6 @@
 var path = require('path');
-var webpack = require('webpack');
 
 module.exports = {
-  plugins: [
-    new webpack.NoErrorsPlugin(),
-    new webpack.HotModuleReplacementPlugin()
-  ],
   module: {
     loaders: [
       {
