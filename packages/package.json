@@ -5,7 +5,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.20.2",
-    "@storybook/addon-actions": "^5.3",
+    "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-knobs": "^5.3",
     "@storybook/addon-links": "^5.3",
     "@storybook/addon-ondevice-actions": "^5.3.23",
@@ -14,7 +14,9 @@
     "@storybook/react-native-server": "^5.3.23",
     "babel-loader": "^8.3.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@storybook/react": "^6.5.13"
+  },
   "scripts": {
     "storybook": "start-storybook -p 7007",
     "build-storybook": "build-storybook"
