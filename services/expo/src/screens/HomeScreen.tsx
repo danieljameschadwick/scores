@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { StyleSheet, View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ScoresCarousel } from "@scores/ui/components/carousel/ScoresCarousel";
@@ -39,13 +39,14 @@ export const HomeScreen: React.FC = () => {
   return (
     <View style={[styles.container, themeStyles.container]}>
       <View style={[styles.carouselContainer]}>
-        <ScoresCarousel />
+        {/* // @TODO: investigate useState hook fail */}
+        {/* <ScoresCarousel /> */}
       </View>
 
       <ScrollView style={[styles.contentContainer]}>
         <View style={[styles.panelContainer]}>
-          <FootballPanel />
-          <NFLPanel />
+          {/* <FootballPanel /> */}
+          {/* <NFLPanel /> */}
           <CricketPanel />
         </View>
       </ScrollView>

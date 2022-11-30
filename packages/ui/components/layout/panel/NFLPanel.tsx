@@ -18,7 +18,10 @@ export const NFLPanel = () => {
     const fetchData = async () => {
       setFixtures(
         // @TODO: default fixtures
-        normaliseScores(await getFixtures(Month.SEPTEMBER, GameType.NFL), GameType.NFL)
+        normaliseScores(
+          await getFixtures(Month.SEPTEMBER, GameType.NFL),
+          GameType.NFL
+        )
       );
     };
 
